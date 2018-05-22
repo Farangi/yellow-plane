@@ -4,7 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HomeRoutingModule } from './home-routing.module';
 
-import { FilePickerModules } from '../../../../shared/modules/file-picker';
+//import { FilePickerModules } from '../../../../shared/modules/file-picker';
 
 import { HomeComponent } from './pages/home/home.page';
 import { NewsFeedComponent } from './pages/news-feed/news-feed.page';
@@ -14,7 +14,7 @@ import { NewsFeedComponent } from './pages/news-feed/news-feed.page';
     CommonModule,
     NgbModule,
     HomeRoutingModule,
-    FilePickerModules
+    //FilePickerModules
   ],
   declarations: [HomeComponent, NewsFeedComponent]
 })

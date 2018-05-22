@@ -1,5 +1,7 @@
 /*------------- #FORMS --------------*/
-
+.form-control:focus {
+  box-shadow: none;
+}
 
 label.control-label {
   color: $placeholder-form-color;

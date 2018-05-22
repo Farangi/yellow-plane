@@ -32,6 +32,7 @@ export class LandingComponent implements OnInit {
       password: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      age: ['', Validators.required],
       gender: ['', Validators.required],
     });
   }
@@ -44,12 +45,12 @@ export class LandingComponent implements OnInit {
   }
 
   tryLogin(value) {
-    // this.authService.doLogin(value)
-    //   .then(res => {
+    this.authService.doLogin(value)
+      .then(res => {
         this.router.navigate(['/home']);
-      // }, err => {
-      //   console.log(err);
-      // });
+      }, err => {
+        console.log(err);
+      });
   }
 
   tryRegister(value) {
