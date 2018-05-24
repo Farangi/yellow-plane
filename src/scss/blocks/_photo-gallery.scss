@@ -123,6 +123,7 @@
 
 .photo-album-wrapper {
   margin-right: -12px;
+  padding-top: 15px
 }
 
 .photo-album-item-wrap {
@@ -140,6 +141,34 @@
 
   &:last-child {
 	margin-right: 0;
+  }
+
+  .full-block {
+  	cursor: pointer;
+  }
+
+  .overlay {
+  	bottom: 132px;
+  }
+
+  .remove {
+  	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: #fff;
+	fill: #fff;
+	opacity: 0;
+	transition: all .3s ease;
+	cursor: pointer;
+
+	&:hover {
+	  color: rgba(255, 255, 255, 0.7);
+
+	}
+  }
+
+  &:hover .overlay, &:hover .remove {
+  	opacity: 1;
   }
 
   .photo-item {
@@ -183,6 +212,7 @@
   &.create-album {
 	background-color: transparent;
 	border: 2px dashed #bbc0d5;
+	height: calc(159px + 132px);
 
 	.content {
 	  position: absolute;
@@ -190,6 +220,19 @@
 	  left: 50%;
 	  transform: translate(-50%, -50%);
 	  width: 90%;
+
+	  .btn-control {
+	  	cursor: pointer;
+	  }
+
+	  .title {
+	  	color: $body-font-color;
+	  	cursor: pointer;
+
+	  	&:hover {
+	  	  color: $primary-color;
+	  	}
+	  }
 	}
 
 	.btn-control {
@@ -210,6 +253,10 @@
 	  width: 100%;
 	  border-radius: 5px 5px 0 0;
 	  overflow: hidden;
+	}
+
+	& > .form-control {
+		border-radius: 0;
 	}
   }
 

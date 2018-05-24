@@ -28,8 +28,7 @@
             ],
             "styles": [
               "src/scss/styles.scss",
-              "src/scss/fonts.scss",
-              "src/scss/lib.scss"
+              "src/scss/fonts.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -38,23 +37,23 @@
               "src/js/material.min.js",
               "src/js/theme-plugins.js",
               "src/js/main.js",
-              "src/js/moment.min.js",
-              "src/js/ajax-pagination.js",
-              "src/js/Chart.min.js",
-              "src/js/chartjs-plugin-deferred.min.js",
-              "src/js/circle-progress.min.js",
-              "src/js/fullcalendar.js",
-              "src/js/isotope.pkgd.min.js",
-              "src/js/jquery.gifplayer.js",
-              "src/js/jquery.magnific-popup.min.js",
-              "src/js/run-chart.js",
-              "src/js/selectize.min.js",
-              "src/js/simplecalendar.js",
-              "src/js/smooth-scroll.min.js",
-              "src/js/swiper.jquery.min.js",
-              "src/js/daterangepicker.min.js",
-              "src/js/tether.min.js",
-              "src/js/webfontloader.min.js"
+              // "src/js/moment.min.js",
+              // "src/js/ajax-pagination.js",
+              // "src/js/Chart.min.js",
+              // "src/js/chartjs-plugin-deferred.min.js",
+              // "src/js/circle-progress.min.js",
+              // "src/js/fullcalendar.js",
+              // "src/js/isotope.pkgd.min.js",
+              // "src/js/jquery.gifplayer.js",
+              // "src/js/jquery.magnific-popup.min.js",
+              // "src/js/run-chart.js",
+              // "src/js/selectize.min.js",
+              // "src/js/simplecalendar.js",
+              // "src/js/smooth-scroll.min.js",
+              // "src/js/swiper.jquery.min.js",
+              // "src/js/daterangepicker.min.js",
+              // "src/js/tether.min.js",
+              // "src/js/webfontloader.min.js"
             ]
           },
           "configurations": {

@@ -1,0 +1,290 @@
+<!-- Photo Post viewer component -->
+<app-photo-post-viewer #photoPostVewerComp></app-photo-post-viewer>
+
+<!-- Upload Photo Dialogue -->
+<ng-template #addPhoto let-c="close" let-d="dismiss">
+  	<div class="modal-header">
+    	<h4 class="modal-title">Upload Photos</h4>
+    	<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      	<span aria-hidden="true">&times;</span>
+    	</button>
+  	</div>
+
+  	<form>
+	  	<div class="modal-body">
+	  		<div class="news-feed-form">
+		    	<div class="author-thumb">
+					<img src="/assets/img/author-page.jpg" alt="author">
+				</div>
+
+				<div class="form-group with-icon label-floating is-empty">
+					<label class="control-label">Write something about this photo...</label>
+					<textarea class="form-control" style="min-height:80px" name="description" [(ngModel)]="addPhotoModalForm.description"></textarea>
+				</div>
+
+				<div class="photo-upload-dialogue-nav">
+					<div class="photo-upload-dialogue-item img-item" *ngFor="let photo of pickedPhotos let idx = index">
+				    	<img [src]="photo.content">
+				    	<div class="overlay overlay-dark-light"></div>
+				    	<a (click)="removePhoto(idx)" class="remove"><i class="fa fa-times"></i></a>
+					</div>
+
+					<div class="photo-upload-dialogue-item add-photo">
+						<a class="full-block" ngxFilePicker accept="image/*" (filePick)="onFilePicked($event)"></a>
+
+						<div class="content">
+							<a class="btn btn-control bg-primary" ngxFilePicker accept="image/*" (filePick)="onFilePicked($event)">
+								<svg class="olymp-plus-icon"><use xlink:href="/assets/icons/icons.svg#olymp-plus-icon"></use></svg>
+							</a>
+
+							<span class="title" ngxFilePicker accept="image/*" (filePick)="onFilePicked($event)">Add Photo</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+	  	</div>
+
+	  	<div class="modal-footer">
+	  		<ng-select style="min-width: 120px;" [items]="privacyOptions" [(ngModel)]="addPhotoModalForm.privacy" name="privacy" bindLabel="name" bindValue="value" [clearable]="false">
+	  			<ng-template ng-label-tmp let-item="item">
+			        <i class="fa {{item.icon}}"></i>
+			        {{item.name}}
+			    </ng-template>
+			    <ng-template ng-option-tmp let-item="item">
+			        <i class="fa {{item.icon}}"></i>
+			        {{item.name}}
+			    </ng-template>
+			</ng-select>
+	  		<button type="button" class="btn btn-outline-primary" (click)="postPhotos()">Post</button>
+	  	</div>
+	</form>
+</ng-template>
+
+<!-- Create Album Dialogue -->
+<ng-template #addAlbum let-c="close" let-d="dismiss">
+  	<div class="modal-header">
+    	<h4 class="modal-title">Upload Photos</h4>
+    	<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      	<span aria-hidden="true">&times;</span>
+    	</button>
+  	</div>
+
+  	<form>
+	  	<div class="modal-body">
+			<div class="ui-block-content">
+
+				<div class="form-group label-floating is-empty">
+					<label class="control-label">Album Name</label>
+					<input class="form-control" placeholder="" type="text" name="name" [(ngModel)]="addAlbumModalForm.name">
+				</div>
+				<div class="form-group label-floating is-empty">
+					<label class="control-label">Album Description</label>
+					<textarea class="form-control" placeholder="" name="description" [(ngModel)]="addAlbumModalForm.description"></textarea>>
+				</div>
+
+				<div class="photo-album-wrapper">
+					<div class="photo-album-item-wrap col-3-width" >
+						<div class="photo-album-item create-album">
+							<a class="full-block" ngxFilePicker accept="image/*" (filePick)="onAlbumFilePicked($event)"></a>
+							<div class="content">
+								<a ngxFilePicker multiple accept="image/*" (filePick)="onAlbumFilePicked($event)" class="btn btn-control bg-primary">
+									<svg class="olymp-plus-icon"><use xlink:href="/assets/icons/icons.svg#olymp-plus-icon"></use></svg>
+								</a>
+
+								<span ngxFilePicker multiple accept="image/*" (filePick)="onAlbumFilePicked($event)" class="title h5">Add More Photos...</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="photo-album-item-wrap col-3-width" *ngFor="let photo of pickedAlbumPhotos let idx = index">
+						<div class="photo-album-item">
+							<div class="form-group">
+								<img [src]="photo.content" alt="photo" style="height: 159px;">
+								<div class="overlay overlay-dark-light"></div>
+			    				<a href clickStopPropagation (click)="removeAlbumPhoto(idx)" class="remove"><i class="fa fa-times"></i></a>
+								<textarea class="form-control" placeholder="Write something about this photo..."></textarea>
+							</div>
+						</div>
+					</div>
+
+				</div>
+		  	</div>
+		  	
+		 </div>
+
+	  	<div class="modal-footer">
+	  		<ng-select style="min-width: 120px;" [items]="privacyOptions" [(ngModel)]="addAlbumModalForm.privacy" name="privacy" bindLabel="name" bindValue="value" [clearable]="false">
+	  			<ng-template ng-label-tmp let-item="item">
+			        <i class="fa {{item.icon}}"></i>
+			        {{item.name}}
+			    </ng-template>
+			    <ng-template ng-option-tmp let-item="item">
+			        <i class="fa {{item.icon}}"></i>
+			        {{item.name}}
+			    </ng-template>
+			</ng-select>
+	  		<button type="button" class="btn btn-outline-primary" (click)="postAlbum()">Post</button>
+	  	</div>
+	</form>>
+</ng-template>
+
+<!-- Photos Top Bar -->
+<div class="container" id="albumTop" #albumTop>
+	<div class="row">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">Hassan’s Photo Gallery</div>
+
+					<div class="block-btn align-right">
+						<button ngxFilePicker multiple accept="image/*" (filePick)="onAlbumFilePicked($event)" class="btn btn-primary btn-md-2">Create Album  +</button>
+
+						<button ngxFilePicker accept="image/*" (filePick)="onFilePicked($event)" class="btn btn-md-2 btn-border-think custom-color c-grey">Add Photos</button>
+					</div>
+
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Photos Tab -->
+<div class="container">
+	<div class="row">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<!-- Tab panes -->
+			<ngb-tabset type="pills">
+			  	<ngb-tab title="Photos">
+			    	<ng-template ngbTabContent>
+						<div class="photo-album-wrapper">
+
+							<div class="photo-item col-4-width" *ngFor="let photo of photos">
+								<img src="{{photo.img}}" alt="photo">
+								<div class="overlay overlay-dark"></div>
+								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+								<a href="#" class="post-add-icon inline-items">
+									<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
+									<span>{{photo.likes}}</span>
+								</a>
+								<a (click)="showPhotoPost(photo.id)" class="full-block"></a>
+								<div class="content">
+									<a href="#" class="h6 title">{{photo.albumName}}</a>
+									<time class="published" datetime="2017-03-24T18:18">{{photo.time}}</time>
+								</div>
+							</div>
+
+							<a (click)="getMorePhotos()" class="btn btn-control btn-more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+						</div>
+					</ng-template>
+				</ngb-tab>
+
+				<ngb-tab title="Albums">
+    				<ng-template ngbTabContent>
+    					<div>
+	    					<div class="photo-album-wrapper" *ngIf="selectedAlbumPhotos.length > 0">
+
+								<div class="photo-item col-4-width" *ngFor="let photo of selectedAlbumPhotos">
+									<img src="{{photo.img}}" alt="photo">
+									<div class="overlay overlay-dark"></div>
+									<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+									<a href="#" class="post-add-icon inline-items">
+										<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
+										<span>{{photo.likes}}</span>
+									</a>
+									<a href="#" data-toggle="modal" data-target="#open-photo-popup-v2" class="  full-block"></a>
+									<div class="content">
+										<a href="#" class="h6 title">{{photo.albumName}}</a>
+										<time class="published" datetime="2017-03-24T18:18">{{photo.time}}</time>
+									</div>
+								</div>
+
+								<a (click)="getMoreAlbumPhotos()" class="btn btn-control btn-more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+							</div>
+
+							<div class="photo-album-wrapper">
+
+								<div class="photo-album-item-wrap col-4-width" >
+									<div class="photo-album-item create-album" style="height: 417.547px;">
+										<a ngxFilePicker multiple accept="image/*" (filePick)="onAlbumFilePicked($event)" class="full-block"></a>
+
+										<div class="content">
+											<a ngxFilePicker multiple accept="image/*" (filePick)="onAlbumFilePicked($event)" class="btn btn-control bg-primary">
+												<svg class="olymp-plus-icon"><use xlink:href="/assets/icons/icons.svg#olymp-plus-icon"></use></svg>
+											</a>
+
+											<span class="title h5" ngxFilePicker multiple accept="image/*" (filePick)="onAlbumFilePicked($event)">Create an Album</span>
+											<span class="sub-title">It only takes a few minutes!</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="photo-album-item-wrap col-4-width" *ngFor="let album of albums">
+									<div class="photo-album-item">
+										<div class="photo-item">
+											<img [src]="album.coverImg" alt="photo">
+											<div class="overlay overlay-dark"></div>
+											<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+											<a href="#" class="post-add-icon">
+												<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
+												<span>{{album.likes}}</span>
+											</a>
+											<a (click)="showAlbum(album.id)" class="  full-block"></a>
+										</div>
+
+										<div class="content">
+											<a href="#" class="title h5">{{album.name}}</a>
+											<span class="sub-title">{{album.lastAdded}}</span>
+
+											<div class="swiper-container" swiper>
+												<div class="swiper-wrapper">
+													<div class="swiper-slide">
+														<ul class="friends-harmonic">
+															<li *ngFor="let likedBy of album.likedBy">
+																<a href="#" placement="right" ngbTooltip="{{likedBy.name}}">
+																	<img [src]="likedBy.img" alt="friend">
+																</a>
+															</li>
+														</ul>
+													</div>
+
+													<div class="swiper-slide">
+														<div class="friend-count" data-swiper-parallax="-500">
+															<a href="#" class="friend-count-item">
+																<div class="h6">{{album.counts.photos}}</div>
+																<div class="title">Photos</div>
+															</a>
+															<a href="#" class="friend-count-item">
+																<div class="h6">{{album.counts.comments}}</div>
+																<div class="title">Comments</div>
+															</a>
+															<a href="#" class="friend-count-item">
+																<div class="h6">{{album.counts.share}}</div>
+																<div class="title">Share</div>
+															</a>
+														</div>
+													</div>
+												</div>
+
+												<!-- If we need pagination -->
+												<div class="swiper-pagination"></div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<a (click)="getMoreAlbums()" class="btn btn-control btn-more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+							</div>
+						</div>
+					</ng-template>
+  				</ngb-tab>
+  			</ngb-tabset>
+
+		</div>
+	</div>
+</div>

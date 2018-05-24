@@ -6,6 +6,9 @@ import { UserResolver } from '../../../../shared/resolvers/user.resolver';
 import { ProfileComponent } from './pages/profile/profile.page';
 import { TimelineComponent } from './pages/timeline/timeline.page';
 import { AboutComponent } from './pages/about/about.page';
+import { FriendsComponent } from './pages/friends/friends.page';
+import { PhotosComponent } from './pages/photos/photos.page';
+import { VideosComponent } from './pages/videos/videos.page';
 
 const routes: Routes = [
 	{
@@ -20,6 +23,18 @@ const routes: Routes = [
 	    	{
 	    		path: 'about',
 	    		component: AboutComponent,
+	    	},
+	    	{
+	    		path: 'friends',
+	    		component: FriendsComponent,
+	    	},
+	    	{
+	    		path: 'photos',
+	    		component: PhotosComponent,
+	    	},
+	    	{
+	    		path: 'videos',
+	    		component: VideosComponent,
 	    	}
 	    ],
 	}

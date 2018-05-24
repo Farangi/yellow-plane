@@ -1,0 +1,89 @@
+<!-- Friends -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let friend of friends">
+			<div class="ui-block">
+				<div class="friend-item">
+					<div class="friend-header-thumb">
+						<img src="/assets/img/friend1.jpg" alt="friend">
+					</div>
+
+					<div class="friend-item-content">
+
+						<div class="more">
+							<svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
+							<ul class="more-dropdown">
+								<li>
+									<a href="#">Report Profile</a>
+								</li>
+								<li>
+									<a href="#">Block Profile</a>
+								</li>
+								<li>
+									<a href="#">Turn Off Notifications</a>
+								</li>
+							</ul>
+						</div>
+						<div class="friend-avatar">
+							<div class="author-thumb">
+								<img src="/assets/img/avatar1.jpg" alt="author">
+							</div>
+							<div class="author-content">
+								<a href="#" class="h5 author-name">{{friend.name}}</a>
+								<div class="country">{{friend.location}}</div>
+							</div>
+						</div>
+
+						<div class="swiper-container" swiper>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="friend-count">
+										<a href="#" class="friend-count-item">
+											<div class="h6">{{friend.counts.friends}}</div>
+											<div class="title">Friends</div>
+										</a>
+										<a href="#" class="friend-count-item">
+											<div class="h6">{{friend.counts.photos}}</div>
+											<div class="title">Photos</div>
+										</a>
+										<a href="#" class="friend-count-item">
+											<div class="h6">{{friend.counts.videos}}</div>
+											<div class="title">Videos</div>
+										</a>
+									</div>
+									<div class="control-block-button">
+										<a href="#" class="btn btn-control bg-blue">
+											<svg class="olymp-happy-face-icon"><use xlink:href="/assets/icons/icons.svg#olymp-happy-face-icon"></use></svg>
+										</a>
+
+										<a href="#" class="btn btn-control bg-purple">
+											<svg class="olymp-chat---messages-icon"><use xlink:href="/assets/icons/icons.svg#olymp-chat---messages-icon"></use></svg>
+										</a>
+
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<p class="friend-about">
+										{{friend.bio}}
+									</p>
+
+									<div class="friend-since">
+										<span>Friends Since:</span>
+										<div class="h6">{{friend.friendsSince}}</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- If we need pagination -->
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ... end Friends -->
