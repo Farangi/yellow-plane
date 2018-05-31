@@ -1,6 +1,7 @@
 /*------------- #FORMS --------------*/
 .form-control:focus {
   box-shadow: none;
+  border-color: $primary-color;
 }
 
 label.control-label {
@@ -11,8 +12,16 @@ textarea {
   min-height: 132px;
 }
 
-.form-group.label-floating textarea {
-  padding: 1.3rem 1.1rem .2rem;
+.error-text {
+  float: right;
+  margin-bottom: 1rem;
+  color: #f92552;
+}
+
+.form-group.label-floating {
+  textarea {
+    padding: 1.3rem 1.1rem .2rem;
+  }
 }
 
 input, .form-control {
@@ -21,22 +30,33 @@ input, .form-control {
   font-size: .875rem;
 }
 
-.label-floating.has-success:after {
-  content: '\f00c';
-  font-family: FontAwesome;
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  border-radius: 100%;
-  font-size: 9px;
-  background-color: #08ddc1;
-  color: $white-color;
-  text-align: center;
-  right: 20px;
-  top: 50%;
-  margin-top: -10px;
+.label-floating.has-success {
+
+  .error-text { 
+    color: #08ddc1;
+  }
+
+  .form-control {
+    border-color: #08ddc1;
+  }
+
+  // &:after {
+  //   content: '\f00c';
+  //   font-family: FontAwesome;
+  //   position: absolute;
+  //   display: block;
+  //   width: 20px;
+  //   height: 20px;
+  //   line-height: 20px;
+  //   border-radius: 100%;
+  //   font-size: 9px;
+  //   background-color: #08ddc1;
+  //   color: $white-color;
+  //   text-align: center;
+  //   right: 20px;
+  //   top: 50%;
+  //   margin-top: -10px;
+  // }
 }
 
 .has-success .form-control-success,
@@ -70,22 +90,33 @@ input, .form-control {
   }
 }
 
-.label-floating.has-danger:after {
-  content: '\f00d';
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  border-radius: 100%;
-  background-color: #f92552;
-  color: $white-color;
-  font-size: 9px;
-  right: 20px;
-  top: 50%;
-  margin-top: -10px;
-  font-family: FontAwesome;
+.label-floating.has-danger {
+
+  .form-control {
+    border-color: #f92552;
+  }
+
+  .error-text {
+    color: #f92552;
+  }
+
+  // &:after {
+  //   content: '\f00d';
+  //   position: absolute;
+  //   display: block;
+  //   width: 20px;
+  //   height: 20px;
+  //   line-height: 20px;
+  //   text-align: center;
+  //   border-radius: 100%;
+  //   background-color: #f92552;
+  //   color: $white-color;
+  //   font-size: 9px;
+  //   right: 20px;
+  //   top: 50%;
+  //   margin-top: -10px;
+  //   font-family: FontAwesome;
+  // }
 }
 
 select.form-control {

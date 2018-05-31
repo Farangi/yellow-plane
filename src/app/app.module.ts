@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+//import { SelectSharedModules } from './shared/modules/select';
 //import { FileHelpersModule } from 'ngx-file-helpers';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { UserResolver } from './shared/resolvers/user.resolver';
     BrowserModule,
     NgbModule.forRoot(),
     ScrollToModule.forRoot(),
+    //SelectSharedModules,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,

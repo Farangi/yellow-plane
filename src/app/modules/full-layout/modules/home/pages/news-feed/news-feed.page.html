@@ -66,7 +66,7 @@
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active inline-items" data-toggle="tab" href="#home-1" role="tab" aria-expanded="true">
+							<a class="nav-link active inline-items" data-toggle="tab" href="#status" role="tab" aria-expanded="true">
 
 								<svg class="olymp-status-icon"><use xlink:href="/assets/icons/icons.svg#olymp-status-icon"></use></svg>
 
@@ -74,11 +74,27 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link inline-items" data-toggle="tab" href="#profile-1" role="tab" aria-expanded="false">
+							<a class="nav-link inline-items" data-toggle="tab" href="#photo" role="tab" aria-expanded="false">
 
 								<svg class="olymp-multimedia-icon"><use xlink:href="/assets/icons/icons.svg#olymp-multimedia-icon"></use></svg>
 
 								<span>Photo</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link inline-items" data-toggle="tab" href="#video" role="tab" aria-expanded="false">
+
+								<svg class="olymp-multimedia-icon"><use xlink:href="/assets/icons/icons.svg#olymp-play-icon"></use></svg>
+
+								<span>Video</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link inline-items" data-toggle="tab" href="#quick-post" role="tab" aria-expanded="false">
+
+								<svg class="olymp-multimedia-icon"><use xlink:href="/assets/icons/icons.svg#olymp-cupcake-icon"></use></svg>
+
+								<span>Quick Post</span>
 							</a>
 						</li>
 
@@ -86,7 +102,7 @@
 
 					<!-- Tab panes -->
 					<div class="tab-content">
-						<div class="tab-pane active" id="home-1" role="tabpanel" aria-expanded="true">
+						<div class="tab-pane active" id="status" role="tabpanel" aria-expanded="true">
 							<form>
 								<div class="author-thumb">
 									<img src="/assets/img/author-page.jpg" alt="author">
@@ -104,7 +120,7 @@
 								    </figcaption>
 								</figure>
 								<div class="add-options-message">
-									<a (click)="openPostPhoto(postPhoto)" class="options-message" placement="top" ngbTooltip="ADD PHOTOS">
+									<a (click)="openPostPhoto(postPhoto)" class="options-message" placement="auto" ngbTooltip="ADD PHOTOS">
 										<svg class="olymp-camera-icon"><use xlink:href="/assets/icons/icons.svg#olymp-camera-icon"></use></svg>
 									</a>
 									<a href="#" class="options-message" placement="top" ngbTooltip="TAG YOUR FRIENDS">
@@ -115,15 +131,29 @@
 										<svg class="olymp-small-pin-icon"><use xlink:href="/assets/icons/icons.svg#olymp-small-pin-icon"></use></svg>
 									</a>
 
-									<button class="btn btn-primary btn-md-2">Post Status</button>
-									<button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
+									<div class="action-buttons">
+										<ng-select class="action-btn" [items]="privacyOptions" [(ngModel)]="privacy" name="privacy" bindLabel="name" bindValue="value" [clearable]="false">
+								  			<ng-template ng-label-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										    <ng-template ng-option-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										</ng-select>
+
+										<button class="btn action-btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
+
+										<button class="btn action-btn btn-primary btn-md-2">Post</button>
+									</div>
 
 								</div>
 
 							</form>
 						</div>
 
-						<div class="tab-pane" id="profile-1" role="tabpanel" aria-expanded="true">
+						<div class="tab-pane" id="photo" role="tabpanel" aria-expanded="true">
 							<form>
 								<div class="author-thumb">
 									<img src="/assets/img/author-page.jpg" alt="author">
@@ -152,8 +182,124 @@
 										<svg class="olymp-small-pin-icon"><use xlink:href="/assets/icons/icons.svg#olymp-small-pin-icon"></use></svg>
 									</a>
 
-									<button class="btn btn-primary btn-md-2">Post Status</button>
-									<button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
+									<div class="action-buttons">
+										<ng-select class="action-btn" [items]="privacyOptions" [(ngModel)]="privacy" name="privacy" bindLabel="name" bindValue="value" [clearable]="false">
+								  			<ng-template ng-label-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										    <ng-template ng-option-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										</ng-select>
+
+										<button class="btn action-btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
+
+										<button class="btn action-btn btn-primary btn-md-2">Post</button>
+									</div>
+
+								</div>
+
+							</form>
+						</div>
+
+						<div class="tab-pane" id="video" role="tabpanel" aria-expanded="true">
+							<form>
+								<div class="author-thumb">
+									<img src="/assets/img/author-page.jpg" alt="author">
+								</div>
+								<div class="form-group with-icon label-floating is-empty">
+									<label class="control-label">Share what you are thinking here...</label>
+									<textarea class="form-control" placeholder=""  ></textarea>
+								</div>
+								<figure *ngIf="picked">
+								    <img style="width:300px;height:300px;margin-left: auto;margin-right: auto" [src]="picked.content">
+
+								    <figcaption>
+								      File:
+								      <strong>{{picked.name}}</strong>
+								    </figcaption>
+								</figure>
+								<div class="add-options-message">
+									<a (click)="open(postPhoto)" class="options-message" placement="top"   ngbTooltip="ADD PHOTOS">
+										<svg class="olymp-camera-icon"><use xlink:href="/assets/icons/icons.svg#olymp-camera-icon"></use></svg>
+									</a>
+									<a href="#" class="options-message" placement="top" ngbTooltip="TAG YOUR FRIENDS">
+										<svg class="olymp-computer-icon"><use xlink:href="/assets/icons/icons.svg#olymp-computer-icon"></use></svg>
+									</a>
+
+									<a href="#" class="options-message" placement="top" ngbTooltip="ADD LOCATION">
+										<svg class="olymp-small-pin-icon"><use xlink:href="/assets/icons/icons.svg#olymp-small-pin-icon"></use></svg>
+									</a>
+
+									<div class="action-buttons">
+										<ng-select class="action-btn" [items]="privacyOptions" [(ngModel)]="privacy" name="privacy" bindLabel="name" bindValue="value" [clearable]="false">
+								  			<ng-template ng-label-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										    <ng-template ng-option-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										</ng-select>
+
+										<button class="btn action-btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
+
+										<button class="btn action-btn btn-primary btn-md-2">Post</button>
+									</div>
+
+								</div>
+
+							</form>
+						</div>
+
+						<div class="tab-pane" id="quick-post" role="tabpanel" aria-expanded="true">
+							<form>
+								<div class="author-thumb">
+									<img src="/assets/img/author-page.jpg" alt="author">
+								</div>
+								<div class="form-group with-icon label-floating is-empty">
+									<label class="control-label">Share what you are thinking here...</label>
+									<textarea class="form-control" placeholder=""  ></textarea>
+								</div>
+								<figure *ngIf="picked">
+								    <img style="width:300px;height:300px;margin-left: auto;margin-right: auto" [src]="picked.content">
+
+								    <figcaption>
+								      File:
+								      <strong>{{picked.name}}</strong>
+								    </figcaption>
+								</figure>
+								<div class="add-options-message">
+									<a (click)="open(postPhoto)" class="options-message" placement="top"   ngbTooltip="ADD PHOTOS">
+										<svg class="olymp-camera-icon"><use xlink:href="/assets/icons/icons.svg#olymp-camera-icon"></use></svg>
+									</a>
+									<a href="#" class="options-message" placement="top" ngbTooltip="TAG YOUR FRIENDS">
+										<svg class="olymp-computer-icon"><use xlink:href="/assets/icons/icons.svg#olymp-computer-icon"></use></svg>
+									</a>
+
+									<a href="#" class="options-message" placement="top" ngbTooltip="ADD LOCATION">
+										<svg class="olymp-small-pin-icon"><use xlink:href="/assets/icons/icons.svg#olymp-small-pin-icon"></use></svg>
+									</a>
+
+									<div class="action-buttons">
+										<ng-select class="action-btn" [items]="privacyOptions" [(ngModel)]="privacy" name="privacy" bindLabel="name" bindValue="value" [clearable]="false">
+								  			<ng-template ng-label-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										    <ng-template ng-option-tmp let-item="item">
+										        <i class="fa {{item.icon}}"></i>
+										        {{item.name}}
+										    </ng-template>
+										</ng-select>
+
+										<button class="btn action-btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
+
+										<button class="btn action-btn btn-primary btn-md-2">Post</button>
+									</div>
 
 								</div>
 
