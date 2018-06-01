@@ -59,7 +59,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"common":"common","modules-account-account-module":"modules-account-account-module","modules-auth-auth-module":"modules-auth-auth-module","modules-full-layout-full-layout-module":"modules-full-layout-full-layout-module","modules-profile-profile-module":"modules-profile-profile-module","modules-blank-layout-blank-layout-module":"modules-blank-layout-blank-layout-module","modules-home-home-module":"modules-home-home-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"common":"common","modules-account-account-module":"modules-account-account-module","modules-auth-auth-module":"modules-auth-auth-module","modules-full-layout-full-layout-module":"modules-full-layout-full-layout-module","modules-blank-layout-blank-layout-module":"modules-blank-layout-blank-layout-module","modules-home-home-module~modules-profile-profile-module":"modules-home-home-module~modules-profile-profile-module","modules-home-home-module":"modules-home-home-module","modules-profile-profile-module":"modules-profile-profile-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	var deferredModules = [];
