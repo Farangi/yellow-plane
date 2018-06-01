@@ -9,8 +9,8 @@
 			<div class="col-xl-12 col-lg-12 col-md-12">
 				<div id="site-header-landing" class="header-landing">
 					<a href="" class="logo">
-						<img src="/assets/img/logo.png" alt="Yellow Post">
-						<h5 class="logo-title">yellow post</h5>
+						<img src="/assets/img/logo.png" alt="YelloPlane">
+						<h5 class="logo-title">yelloplane</h5>
 					</a>
 				</div>
 			</div>
@@ -25,11 +25,9 @@
 		<div class="row display-flex">
 			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
 				<div class="landing-content">
-					<h1>Welcome to the Biggest Social Network in the World</h1>
-					<p>We are the best and biggest social network with 5 billion active users all around the world. Share you
-						thoughts, write blog posts, show your favourite music and much more!
+					<h1>Connect, Expand, Share Ideas</h1>
+					<p>We take your privacy very serious. We don’t use what you like, follow or search for to serve up advertisements. Nor do we collect that data. The data we use is very basic data. The list of what we keep can be found on our privacy page. In addition, if you choose use our paid version, there will not be any advertisements served up to you. Please understand that advertising or paid versions of our site is the only way we are able to provide this social media platform free of charge.
 					</p>
-					<a href="#" class="btn btn-md btn-border c-white">Register Now!</a>
 				</div>
 			</div>
 
@@ -52,53 +50,87 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div class="tab-pane active" id="home" role="tabpanel" data-mh="log-tab">
-							<div class="title h6">Register to YellowPlane</div>
+							<div class="title h6">Register to YelloPlane</div>
 							<form class="content" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)">
 								<div class="row">
 									<div class="col-lg-6 col-md-6">
-										<div class="form-group label-floating is-empty">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.firstName.valid && registerForm.controls.firstName.touched,'has-success': registerForm.controls.firstName.valid && registerForm.controls.firstName.touched}">
 											<label class="control-label">First Name</label>
-											<input class="form-control" formControlName="firstName" placeholder="" type="text">
+											<input class="form-control" formControlName="firstName" type="text">
+
+											<p class="error-text" *ngIf="registerForm.controls.firstName.hasError('required') && registerForm.controls.firstName.touched">This field is required!</p>
+											<p class="error-text" *ngIf="registerForm.controls.firstName.hasError('pattern') && registerForm.controls.firstName.touched">Only Alphabets are allowed!</p>
+			  								<p class="error-text" *ngIf="registerForm.controls.firstName.hasError('minlength') && registerForm.controls.firstName.touched">Must have minimum 3 characters!</p>
+			  								<p class="error-text" *ngIf="registerForm.controls.firstName.hasError('maxlength') && registerForm.controls.firstName.touched">Maximum characters can be 50!</p>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-6">
-										<div class="form-group label-floating is-empty">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.lastName.valid && registerForm.controls.lastName.touched, 'has-success': registerForm.controls.lastName.valid && registerForm.controls.lastName.touched}">
 											<label class="control-label">Last Name</label>
 											<input class="form-control" formControlName="lastName" placeholder="" type="text">
+
+											<p class="error-text" *ngIf="registerForm.controls.lastName.hasError('required') && registerForm.controls.lastName.touched">This field is required!</p>
+											<p class="error-text" *ngIf="registerForm.controls.lastName.hasError('pattern') && registerForm.controls.lastName.touched">Only Alphabets are allowed!</p>
+			  								<p class="error-text" *ngIf="registerForm.controls.lastName.hasError('minlength') && registerForm.controls.lastName.touched">Must have minimum 3 characters!</p>
+			  								<p class="error-text" *ngIf="registerForm.controls.lastName.hasError('maxlength') && registerForm.controls.lastName.touched">Maximum characters can be 50!</p>
 										</div>
 									</div>
 									<div class="col-xl-12 col-lg-12 col-md-12">
-										<div class="form-group label-floating is-empty">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.email.valid && registerForm.controls.email.touched, 'has-success': registerForm.controls.email.valid && registerForm.controls.email.touched}">
 											<label class="control-label">Your Email</label>
 											<input class="form-control" formControlName="email" placeholder="" type="text">
-										</div>
 
-										<div class="form-group label-floating is-empty">
+											<p class="error-text" *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.touched">This field is required!</p>
+			  							<p class="error-text" *ngIf="registerForm.controls.email.hasError('pattern') && registerForm.controls.email.touched">Email is not valid!</p>
+										</div>
+									</div>
+
+									<div class="col-xl-12 col-lg-12 col-md-12">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.password.valid && registerForm.controls.password.touched, 'has-success': registerForm.controls.password.valid && registerForm.controls.password.touched}">
 											<label class="control-label">Your Password</label>
 											<input class="form-control" formControlName="password" placeholder="" type="password">
-										</div>
 
-										<div class="form-group label-floating is-empty">
+											<p class="error-text" *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.touched">This field is required!</p>
+										  	<p class="error-text" *ngIf="registerForm.controls.password.hasError('pattern') && registerForm.controls.password.touched">Must have at least 1 character and 1 number!</p>
+										  	<p class="error-text" *ngIf="registerForm.controls.password.hasError('minlength') && registerForm.controls.password.touched">Must have minimum 6 characters!</p>
+										  	<p class="error-text" *ngIf="registerForm.controls.password.hasError('maxlength') && registerForm.controls.password.touched">Maximum characters can be 100!</p>
+										</div>
+									</div>
+
+									<div class="col-xl-12 col-lg-12 col-md-12">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.age.valid && registerForm.controls.age.touched, 'has-success': registerForm.controls.age.valid && registerForm.controls.age.touched}">
 											<label class="control-label">Age</label>
 											<input class="form-control" formControlName="age" placeholder="" type="text">
-										</div>
 
-										<div class="form-group label-floating is-empty">
+											<p class="error-text" *ngIf="registerForm.controls.age.hasError('required') && registerForm.controls.age.touched">This field is required!</p>
+											<p class="error-text" *ngIf="registerForm.controls.age.hasError('pattern') && registerForm.controls.age.touched">Only numbers are alllowed!</p>
+											<p class="error-text" *ngIf="registerForm.controls.age.hasError('ageLimit') && registerForm.controls.age.touched">You must be over 13 years of age!</p>
+										</div>
+									</div>
+
+									<div class="col-xl-12 col-lg-12 col-md-12">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.gender.valid && registerForm.controls.gender.touched, 'has-success': registerForm.controls.gender.valid && registerForm.controls.gender.touched}">
 											<label class="control-label">Your Gender</label>
 											<select class="form-control" formControlName="gender" size="auto">
 												<option value="MA">Male</option>
 												<option value="FE">Female</option>
 											</select>
-										</div>
 
+											<p class="error-text" *ngIf="registerForm.controls.gender.hasError('required') && registerForm.controls.gender.touched">This field is required!</p>
+										</div>
+									</div>
+
+									<div class="col-xl-12 col-lg-12 col-md-12">
 										<div class="remember">
 											<div class="checkbox">
 												<label>
-													<input name="termsCheckbox" type="checkbox">
+													<input formControlName="acceptTerms" type="checkbox">
 													<span class="checkbox-material"><span class="check"></span></span>
 													I accept the <a href="#">Terms and Conditions</a> of the website
 												</label>
 											</div>
+
+											<p class="error-text" *ngIf="registerForm.controls.acceptTerms.hasError('required') && registerForm.controls.acceptTerms.touched">This field is required!</p>
 										</div>
 
 										<button type="submit" class="btn btn-purple btn-lg full-width">Complete Registration!</button>
@@ -109,23 +141,31 @@
 
 						<div class="tab-pane" id="profile" role="tabpanel" data-mh="log-tab">
 							<div class="title h6">Login to your Account</div>
-							<form class="content" [formGroup]="loginForm">
+							<form class="content" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
 								<div class="row">
 									<div class="col-xl-12 col-lg-12 col-md-12">
-										<div class="form-group label-floating is-empty">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !loginForm.controls.email.valid && loginForm.controls.email.touched, 'has-success': loginForm.controls.email.valid && loginForm.controls.email.touched}">
 											<label class="control-label">Your Email</label>
 											<input class="form-control" formControlName="email" placeholder="" type="email">
+
+											<p class="error-text" *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.touched">This field is required!</p>
+			  							<p class="error-text" *ngIf="loginForm.controls.email.hasError('pattern') && loginForm.controls.email.touched">Email is not valid!</p>
 										</div>
+									</div>
+
+									<div class="col-xl-12 col-lg-12 col-md-12">
 										<div class="form-group label-floating is-empty">
 											<label class="control-label">Your Password</label>
 											<input class="form-control" formControlName="password" placeholder="" type="password">
 										</div>
+									</div>
 
+									<div class="col-xl-12 col-lg-12 col-md-12">
 										<div class="remember">
 
 											<div class="checkbox">
 												<label>
-													<input name="rememberCheckbox" type="checkbox">
+													<input name="rememberCheckbox" formControlName="rememberMe" type="checkbox">
 													<span class="checkbox-material"><span class="check"></span></span>
 													Remember Me
 												</label>
@@ -133,11 +173,11 @@
 											<a href="#" class="forgot">Forgot my Password</a>
 										</div>
 
-										<button (click)="tryLogin(loginForm.value)" class="btn btn-lg btn-primary full-width">Login</button>
+										<button type="submit" class="btn btn-lg btn-primary full-width">Login</button>
 
 										<div class="or"></div>
 
-										<button (click)="tryGoogleLogin()" class="btn btn-lg bg-google full-width btn-icon-left btn-social"><i class="fa fa-google" aria-hidden="true"></i>Login with Google</button>
+										<button type="button" (click)="tryGoogleLogin()" class="btn btn-lg bg-google full-width btn-icon-left btn-social"><i class="fa fa-google" aria-hidden="true"></i>Login with Google</button>
 
 
 										<p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>

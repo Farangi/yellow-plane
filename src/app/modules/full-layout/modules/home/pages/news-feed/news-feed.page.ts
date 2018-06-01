@@ -13,6 +13,11 @@ export class NewsFeedComponent implements OnInit {
   postPhotoModal: any ;
   chooseFromPcModal: any ;
 
+  privacyOptions = [{name: 'Everyone', value:'EVERYONE', icon:'fa-globe'}, 
+                    {name: 'Friends', value:'FRIENDS', icon:'fa-users'},
+                    {name: 'Only me', value:'ONLYME', icon:'fa-lock'}];
+  privacy = this.privacyOptions[0].value;
+
   constructor(
     private modalService: NgbModal) { }
 

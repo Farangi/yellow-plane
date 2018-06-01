@@ -1,10 +1,27 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
 $primary:       #ff5e3a;
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $gray-600,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+);
+
+$nav-pills-link-active-bg:    theme-color("primary");
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   #edf2f6;
+$body-bg:                   #dce6ed;
+$body-color:    						#888da8;
 
 // Typography
 //

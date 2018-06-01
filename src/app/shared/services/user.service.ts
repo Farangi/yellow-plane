@@ -3,7 +3,6 @@ import 'rxjs/add/operator/toPromise';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { User } from '@firebase/auth-types';
 
 interface UserData {
   uid: string;
