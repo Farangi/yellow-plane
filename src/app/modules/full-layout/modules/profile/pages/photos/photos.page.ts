@@ -71,38 +71,38 @@ export class PhotosComponent implements OnInit {
   	//Albums Tab
 
   	private getAlbums(){
-  		this.albums.push({id: 1, name:'South America Vacations', lastAdded:'2 hours ago', coverImg:'/assets/img/photo-album1.jpg', likes:324, counts:{photos: 240, comments:52, share: 16}, 
-  		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic8.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
-  		this.albums.push({id: 2, name:'Photoshoot Summer', lastAdded:'5 weeks ago', coverImg:'/assets/img/photo-album1.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
-  		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic8.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
-  		this.albums.push({id: 3, name:'Amazing Street Food', lastAdded:'6 mins ago', coverImg:'/assets/img/photo-album1.jpg',
-  		likes:324, counts:{photos: 24, comments:86, share: 16}, 
-  		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'}]});
-  		this.albums.push({id: 4, name:'Graffiti and Street Art', lastAdded:'6 hours ago', coverImg:'/assets/img/photo-album1.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
-  		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
-  		this.albums.push({id: 5, name:'Amazing Landscapes', lastAdded:'13 mins ago', coverImg:'/assets/img/photo-album1.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
-  		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
-  		this.albums.push({id: 6, name:'The Majstic Canyon', lastAdded:'57 mins ago', coverImg:'/assets/img/photo-album1.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
-  		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
-  		this.albums.push({id: 7, name:'Winter 2015 Portraits', lastAdded:'1 year ago', coverImg:'/assets/img/photo-album1.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
-  		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
-				{name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
-  	}
+		this.albums.push({id: 1, name:'South America Vacations', lastAdded:'2 hours ago', coverImg:'/assets/img/photo-item2.jpg', likes:324, counts:{photos: 240, comments:52, share: 16}, 
+		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic8.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
+		this.albums.push({id: 2, name:'Photoshoot Summer', lastAdded:'5 weeks ago', coverImg:'/assets/img/photo-album1.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
+		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic8.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
+		this.albums.push({id: 3, name:'Amazing Street Food', lastAdded:'6 mins ago', coverImg:'/assets/img/photo-album2.jpg',
+		likes:324, counts:{photos: 24, comments:86, share: 16}, 
+		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'}]});
+		this.albums.push({id: 4, name:'Graffiti and Street Art', lastAdded:'6 hours ago', coverImg:'/assets/img/photo-album3.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
+		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
+		this.albums.push({id: 5, name:'Amazing Landscapes', lastAdded:'13 mins ago', coverImg:'/assets/img/photo-album4.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
+		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic10.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
+		this.albums.push({id: 6, name:'The Majstic Canyon', lastAdded:'57 mins ago', coverImg:'/assets/img/photo-item6.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
+		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
+		this.albums.push({id: 7, name:'Winter 2015 Portraits', lastAdded:'1 year ago', coverImg:'/assets/img/photo-album5.jpg', likes:324, counts:{photos: 24, comments:86, share: 16}, 
+		likedBy:[{name:'Wakas Ali', img:'/assets/img/friend-harmonic5.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic7.jpg'},
+			  {name:'Wakas Ali', img:'/assets/img/friend-harmonic2.jpg'}]});
+	}
 
   	getMoreAlbums() {
   		this.getAlbums();

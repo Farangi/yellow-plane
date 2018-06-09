@@ -1,0 +1,174 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xl-9 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-xs-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">Raock Band’s Followers (5630)</div>
+					<form class="w-search">
+						<div class="form-group with-button">
+							<input class="form-control" type="text" placeholder="Search Followers...">
+							<button>
+								<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+							</button>
+						</div>
+					</form>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let friend of friends">
+					<div class="ui-block">
+						<div class="friend-item">
+							<div class="friend-header-thumb">
+								<img [src]="friend.coverImg" alt="friend">
+							</div>
+
+							<div class="friend-item-content">
+
+								<div class="more">
+									<svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
+									<ul class="more-dropdown">
+										<li>
+											<a href="#">Report Profile</a>
+										</li>
+										<li>
+											<a href="#">Block Profile</a>
+										</li>
+										<li>
+											<a href="#">Turn Off Notifications</a>
+										</li>
+									</ul>
+								</div>
+								<div class="friend-avatar">
+									<div class="author-thumb">
+										<img [src]="friend.img" alt="author">
+									</div>
+									<div class="author-content">
+										<a href="#" class="h5 author-name">{{friend.name}}</a>
+										<div class="country">{{friend.location}}</div>
+									</div>
+								</div>
+
+								<div class="swiper-container" swiper>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="friend-count">
+												<a href="#" class="friend-count-item">
+													<div class="h6">{{friend.counts.friends}}</div>
+													<div class="title">Friends</div>
+												</a>
+												<a href="#" class="friend-count-item">
+													<div class="h6">{{friend.counts.photos}}</div>
+													<div class="title">Photos</div>
+												</a>
+												<a href="#" class="friend-count-item">
+													<div class="h6">{{friend.counts.videos}}</div>
+													<div class="title">Videos</div>
+												</a>
+											</div>
+											<div class="control-block-button">
+												<a href="#" class="btn btn-control bg-blue">
+													<svg class="olymp-happy-face-icon"><use xlink:href="/assets/icons/icons.svg#olymp-happy-face-icon"></use></svg>
+												</a>
+
+												<a href="#" class="btn btn-control bg-purple">
+													<svg class="olymp-chat---messages-icon"><use xlink:href="/assets/icons/icons.svg#olymp-chat---messages-icon"></use></svg>
+												</a>
+
+											</div>
+										</div>
+
+										<div class="swiper-slide">
+											<p class="friend-about">
+												{{friend.bio}}
+											</p>
+
+											<div class="friend-since">
+												<span>Friends Since:</span>
+												<div class="h6">{{friend.friendsSince}}</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- If we need pagination -->
+									<div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<li class="page-item disabled">
+						<a class="page-link" href="#" tabindex="-1">Previous</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">...</a></li>
+					<li class="page-item"><a class="page-link" href="#">12</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#">Next</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="col-xl-3 order-xl-1 col-lg-12 order-lg-2 col-md-12 col-sm-12 col-xs-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">About Rock Band</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+				<div class="ui-block-content">
+					<ul class="widget w-personal-info item-block">
+						<li>
+							<span class="text">We are Rock Band from Lahore, now based in Islamabad, come and listen to us play!</span>
+						</li>
+						<li>
+							<span class="title">Contact:</span>
+							<span class="text">rockband@youmail.com</span>
+						</li>
+						<li>
+							<span class="title">Website:</span>
+							<a href="#" class="text">www.rockband.com</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Additional Info</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+				<div class="ui-block-content">
+					<ul class="widget w-personal-info item-block">
+						<li>
+							<span class="title">Additional Info:</span>
+							<span class="text">We are open for gigs all over the country. If you are interested,
+								please contact us via our website or send us an email to rockband@yourmail.com
+							</span>
+						</li>
+						<li>
+							<span class="title">Since:</span>
+							<span class="text">Founded in 1996</span>
+						</li>
+						<li>
+							<span class="title">Joined Olympus:</span>
+							<span class="text">September 14th, 2012</span>
+						</li>
+						<li>
+							<span class="title">Phone Number:</span>
+							<span class="text">(+92) 555 - 6943 - 5789</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

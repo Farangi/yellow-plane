@@ -7,10 +7,8 @@ import { FormsSharedModules } from '../../../../shared/modules/forms';
 import { SelectSharedModules } from '../../../../shared/modules/select';
 import { FilePickerModules } from '../../../../shared/modules/file-picker';
 import { SwiperSharedModules } from '../../../../shared/modules/swiper';
+import { PhotoPostViewerSharedModules } from '../../../../shared/modules/photo-post-viewer';
 import { DirectivesModule } from '../../../../shared/directives/directives.module';
-
-import { PhotoPostViewerContentComponent } from '../../../../shared/components/photo-post-viewer-content/photo-post-viewer-content.component';
-import { PhotoPostViewerComponent } from '../../../../shared/components/photo-post-viewer/photo-post-viewer.component';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 
@@ -31,12 +29,11 @@ import { VideosComponent } from './pages/videos/videos.page';
     SelectSharedModules,
     FilePickerModules,
     SwiperSharedModules,
+    PhotoPostViewerSharedModules,
     DirectivesModule,
     ProfileRoutingModule
   ],
   declarations: [
-    PhotoPostViewerComponent,
-    PhotoPostViewerContentComponent,
   	ProfileHeaderComponent,
   	ProfileComponent,
   	TimelineComponent,
@@ -45,6 +42,6 @@ import { VideosComponent } from './pages/videos/videos.page';
   	PhotosComponent,
   	VideosComponent
   ],
-  entryComponents: [PhotoPostViewerContentComponent]
+  //entryComponents: [PhotoPostViewerContentComponent]
 })
 export class ProfileModule { }

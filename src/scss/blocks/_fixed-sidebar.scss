@@ -42,7 +42,8 @@
 
   .mCustomScrollbar {
 	max-height: calc(100vh - 70px);
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
   }
 
   .ps > .ps__scrollbar-y-rail, .ps:hover > .ps__scrollbar-y-rail {

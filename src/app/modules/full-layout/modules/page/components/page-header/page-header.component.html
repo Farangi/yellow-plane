@@ -1,0 +1,63 @@
+<!-- Top Header -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="ui-block">
+				<div class="top-header top-header-favorit">
+					<div class="top-header-thumb">
+						<img src="/assets/img/account-page-header.jpg" alt="header">
+						<div class="top-header-author">
+							<div class="author-thumb">
+								<img [src]="image" alt="author">
+							</div>
+							<div class="author-content">
+								<a href="#" class="h3 author-name">Rock Band</a>
+								<div class="country">Islamabad</div>
+							</div>
+						</div>
+					</div>
+					<div class="profile-section">
+						<div class="row">
+							<div class="col-xl-8 m-auto col-lg-8 col-md-12">
+								<ul class="profile-menu">
+									<li>
+										<a [routerLink] = "['/page']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Timeline</a>
+									</li>
+									<li>
+										<a [routerLink] = "['/page/about']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">About</a>
+									</li>
+									<li>
+										<a [routerLink] = "['/page/photos']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Photos</a>
+									</li>
+									<li>
+										<a [routerLink] = "['/page/videos']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Videos</a>
+									</li>
+									<li>
+										<a [routerLink] = "['/page/events']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Events</a>
+									</li>
+									<li>
+										<a [routerLink] = "['/page/statistics']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Statistics</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="control-block-button">
+							<a href="#" class="btn btn-control bg-primary" placement="top" ngbTooltip="Follow">
+								<svg class="olymp-star-icon"><use xlink:href="/assets/icons/icons.svg#olymp-star-icon"></use></svg>
+							</a>
+
+							<a href="#" class="btn btn-control bg-purple">
+								<svg class="olymp-chat---messages-icon"><use xlink:href="/assets/icons/icons.svg#olymp-chat---messages-icon"></use></svg>
+							</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ... end Top Header -->

@@ -3,15 +3,32 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AccountComponent } from './pages/account/account.page';
 import { AccountPersonalInfoComponent } from './pages/account-personal-info/account-personal-info.page';
+import { AccountPageComponent } from './pages/account-page/account-page.page';
+import { AccountPagePersonalInfoComponent } from './pages/account-page-personal-info/account-page-personal-info.page';
+import { AccountPageSettingsComponent } from './pages/account-page-settings/account-page-settings.page';
 
 const routes: Routes = [
 	{
-	    path: '',
+	    path: 'profile',
 	    component: AccountComponent,
 	    children: [
 	    	{
 	    		path: '',
 	    		component: AccountPersonalInfoComponent,
+	    	}
+	    ],
+	},
+	{
+	    path: 'page',
+	    component: AccountPageComponent,
+	    children: [
+	    	{
+	    		path: '',
+	    		component: AccountPagePersonalInfoComponent,
+			},
+			{
+	    		path: 'settings',
+	    		component: AccountPageSettingsComponent,
 	    	}
 	    ],
 	}

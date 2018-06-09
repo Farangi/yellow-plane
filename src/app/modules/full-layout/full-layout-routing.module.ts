@@ -19,9 +19,13 @@ const routes: Routes = [
 			    loadChildren: './modules/profile/profile.module#ProfileModule'
 			},
 			{
+			    path: 'page',
+			    loadChildren: './modules/page/page.module#PageModule'
+			},
+			{
 			    path: 'account',
 			    loadChildren: './modules/account/account.module#AccountModule'
-			}
+			},
 		]
 	}
 ];

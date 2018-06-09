@@ -1,0 +1,239 @@
+
+<!-- Your Account Personal Information -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">Raock Band’s Admins (3)</div>
+					<form class="w-search">
+						<div class="form-group with-button">
+							<input class="form-control" type="text" placeholder="Add Admin...">
+							<button>
+								Add
+							</button>
+						</div>
+					</form>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+			</div>
+	
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let admin of admins">
+					<div class="ui-block">
+						<div class="friend-item">
+							<div class="friend-header-thumb">
+								<img [src]="admin.coverImg" alt="friend">
+							</div>
+
+							<div class="friend-item-content">
+
+								<div class="more">
+									<svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
+									<ul class="more-dropdown">
+										<li>
+											<a href="#">Remove Admin</a>
+										</li>
+									</ul>
+								</div>
+								<div class="friend-avatar">
+									<div class="author-thumb">
+										<img [src]="admin.img" alt="author">
+									</div>
+									<div class="author-content">
+										<a href="#" class="h5 author-name">{{admin.name}}</a>
+										<div class="country">{{admin.location}}</div>
+									</div>
+								</div>
+
+								<div class="swiper-container" swiper>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="friend-count">
+												<a href="#" class="friend-count-item">
+													<div class="h6">{{admin.counts.friends}}</div>
+													<div class="title">Friends</div>
+												</a>
+												<a href="#" class="friend-count-item">
+													<div class="h6">{{admin.counts.photos}}</div>
+													<div class="title">Photos</div>
+												</a>
+												<a href="#" class="friend-count-item">
+													<div class="h6">{{admin.counts.videos}}</div>
+													<div class="title">Videos</div>
+												</a>
+											</div>
+											<div class="control-block-button">
+												<a href="#" class="btn btn-control bg-blue">
+													<svg class="olymp-happy-face-icon"><use xlink:href="/assets/icons/icons.svg#olymp-happy-face-icon"></use></svg>
+												</a>
+
+												<a href="#" class="btn btn-control bg-purple">
+													<svg class="olymp-chat---messages-icon"><use xlink:href="/assets/icons/icons.svg#olymp-chat---messages-icon"></use></svg>
+												</a>
+
+											</div>
+										</div>
+
+										<div class="swiper-slide">
+											<p class="friend-about">
+												{{admin.bio}}
+											</p>
+
+											<div class="friend-since">
+												<span>Friends Since:</span>
+												<div class="h6">{{admin.friendsSince}}</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- If we need pagination -->
+									<div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Settings</h6>
+				</div>
+				<div class="ui-block-content">
+					<form>
+						<div class="row">
+
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form-group label-floating is-select">
+									<label class="control-label">Who Can Follow You?</label>
+									<select class="selectpicker form-control" size="auto">
+										<option value="EO">Everyone</option>
+										<option value="NO">No One</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form-group label-floating is-select">
+									<label class="control-label">Who Can View Your Posts</label>
+									<select class="selectpicker form-control" size="auto">
+										<option value="US">Followers Only</option>
+										<option value="EO">Everyone</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="description-toggle">
+									<div class="description-toggle-content">
+										<div class="h6">Notifications Sound</div>
+										<p>A sound will be played each time you receive a new activity notification</p>
+									</div>
+
+									<div class="togglebutton">
+										<label>
+											<input type="checkbox" checked="">
+											<span class="toggle"></span>
+										</label>
+									</div>
+								</div>
+								<div class="description-toggle">
+									<div class="description-toggle-content">
+										<div class="h6">Notifications Email</div>
+										<p>We’ll send you an email to your account each time you receive a new activity notification</p>
+									</div>
+
+									<div class="togglebutton">
+										<label>
+											<input type="checkbox" checked="">
+											<span class="toggle"></span>
+										</label>
+									</div>
+								</div>
+								<div class="description-toggle">
+									<div class="description-toggle-content">
+										<div class="h6">Chat Message Sound</div>
+										<p>A sound will be played each time you receive a new message on an inactive chat window</p>
+									</div>
+
+									<div class="togglebutton">
+										<label>
+											<input type="checkbox" checked="">
+											<span class="toggle"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<a href="#" class="btn btn-secondary btn-lg full-width">Restore all Attributes</a>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<a href="#" class="btn btn-primary btn-lg full-width">Save all Changes</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Account Settings Sidebar -->
+		<div class="col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none">
+				<div class="ui-block">
+					<div class="your-profile">
+						<div class="ui-block-title ui-block-title-small">
+							<h6 class="title">Your Settings</h6>
+						</div>
+			
+						<div id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="card">
+								<div class="card-header" role="tab" id="headingOne">
+									<h6 class="mb-0">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											Settings
+											<svg class="olymp-dropdown-arrow-icon"><use xlink:href="/assets/icons/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+										</a>
+									</h6>
+								</div>
+			
+								<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+									<ul class="your-profile-menu">
+										<li>
+											<a [routerLink]="['/account/page']">Personal Information</a>
+										</li>
+										<li>
+											<a [routerLink]="['/account/page/settings']">Account Settings</a>
+										</li>
+										<li>
+											<a href="#">Change Password</a>
+										</li>
+										<li>
+											<a href="#">Ads Manager</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+			
+						<div class="ui-block-title">
+							<a href="#" class="h6 title">Notifications</a>
+							<a href="#" class="items-round-little bg-primary">8</a>
+						</div>
+						<div class="ui-block-title">
+							<a href="#" class="h6 title">Chat / Messages</a>
+						</div>
+						<div class="ui-block-title">
+							<a href="#" class="h6 title">Delete Account</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ... end Account Settings Sidebar -->
+			
+	</div>
+</div>
+
+<!-- ... end Your Account Personal Information -->

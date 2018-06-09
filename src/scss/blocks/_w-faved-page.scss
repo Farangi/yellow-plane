@@ -25,6 +25,10 @@
   font-size: 10px;
   font-weight: 800;
 
+  &:hover {
+    color: $white-color;
+  }
+
   a {
 	color: inherit;
 	display: block;

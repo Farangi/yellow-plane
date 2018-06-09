@@ -10,6 +10,9 @@ import { SidebarComponent } from '../../shared/components/sidebar/sidebar.compon
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { FullLayoutComponent } from './components/full-layout/full-layout.component';
 
+//import { PhotoPostViewerContentComponent } from '../../shared/components/photo-post-viewer-content/photo-post-viewer-content.component';
+//import { PhotoPostViewerComponent } from '../../shared/components/photo-post-viewer/photo-post-viewer.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,7 +23,10 @@ import { FullLayoutComponent } from './components/full-layout/full-layout.compon
   declarations: [
   	SidebarComponent,
   	HeaderComponent,
-  	FullLayoutComponent,
-  ]
+    FullLayoutComponent,
+    //PhotoPostViewerComponent,
+    //PhotoPostViewerContentComponent
+  ],
+  //entryComponents: [PhotoPostViewerContentComponent]
 })
 export class FullLayoutModule { }
