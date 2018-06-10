@@ -31,7 +31,6 @@
     "@ng-bootstrap/ng-bootstrap": "^2.0.0",
     "@ng-select/ng-select": "^2.0.3",
     "@nicky-lenaers/ngx-scroll-to": "^0.6.1",
-    "ajv": "^6.5.0",
     "angularfire2": "^5.0.0-rc.10",
     "bootstrap": "^4.0.0-beta",
     "chart.js": "^2.7.2",
@@ -47,9 +46,7 @@
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
-    "symbol-observable": "^1.2.0",
     "typescript": "~2.7.2",
-    "uri-js": "^4.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
