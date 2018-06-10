@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["modules-account-account-module~modules-full-layout-full-layout-module~modules-profile-profile-module"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca"],{
 
 /***/ "./src/app/shared/directives/account-settings.directive.ts":
 /*!*****************************************************************!*\
@@ -340,4 +340,4 @@ var SidebarOpenDirective = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-account-account-module~modules-full-layout-full-layout-module~modules-profile-profile-module.js.map
+//# sourceMappingURL=modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca.js.map

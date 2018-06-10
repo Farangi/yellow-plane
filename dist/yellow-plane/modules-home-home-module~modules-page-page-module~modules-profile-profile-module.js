@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["modules-home-home-module~modules-profile-profile-module"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["modules-home-home-module~modules-page-page-module~modules-profile-profile-module"],{
 
 /***/ "./node_modules/@ng-select/ng-select/esm5/ng-select.js":
 /*!*************************************************************!*\
@@ -1319,21 +1319,31 @@ var ItemsList = /** @class */ (function () {
         }
     };
     ItemsList.prototype._groupBy = function (items, prop) {
-        var _this = this;
         var isFn = isFunction(this._ngSelect.groupBy);
-        var groups = items.reduce(function (grouped, item) {
-            var key = isFn ? ((prop)).apply(_this, [item.value]) : item.value[(prop)];
-            key = key || undefined;
-            var group = grouped.get(key);
-            if (group) {
-                group.push(item);
+        var groups = new Map();
+        try {
+            for (var items_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__values"])(items), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
+                var item = items_1_1.value;
+                var key = isFn ? ((prop)).apply(this, [item.value]) : item.value[(prop)];
+                key = isDefined(key) ? key : undefined;
+                var group = groups.get(key);
+                if (group) {
+                    group.push(item);
+                }
+                else {
+                    groups.set(key, [item]);
+                }
             }
-            else {
-                grouped.set(key, [item]);
+        }
+        catch (e_3_1) { e_3 = { error: e_3_1 }; }
+        finally {
+            try {
+                if (items_1_1 && !items_1_1.done && (_a = items_1.return)) _a.call(items_1);
             }
-            return grouped;
-        }, new Map());
+            finally { if (e_3) throw e_3.error; }
+        }
         return groups;
+        var e_3, _a;
     };
     ItemsList.prototype._flatten = function (groups) {
         var isFn = isFunction(this._ngSelect.groupBy);
@@ -1342,7 +1352,7 @@ var ItemsList = /** @class */ (function () {
         items.push.apply(items, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(withoutGroup));
         var i = withoutGroup.length;
         var _loop_2 = function (key) {
-            if (!key) {
+            if (!isDefined(key)) {
                 return "continue";
             }
             var parent = {
@@ -1371,15 +1381,15 @@ var ItemsList = /** @class */ (function () {
                 _loop_2(key);
             }
         }
-        catch (e_3_1) { e_3 = { error: e_3_1 }; }
+        catch (e_4_1) { e_4 = { error: e_4_1 }; }
         finally {
             try {
                 if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
             }
-            finally { if (e_3) throw e_3.error; }
+            finally { if (e_4) throw e_4.error; }
         }
         return items;
-        var e_3, _c;
+        var e_4, _c;
     };
     return ItemsList;
 }());
@@ -2307,12 +2317,12 @@ var NgSelectComponent = /** @class */ (function () {
                 }
             }
         }
-        catch (e_4_1) { e_4 = { error: e_4_1 }; }
+        catch (e_5_1) { e_5 = { error: e_5_1 }; }
         finally {
             try {
                 if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
             }
-            finally { if (e_4) throw e_4.error; }
+            finally { if (e_5) throw e_5.error; }
         }
         if (this.multiple) {
             this._onChange(model);
@@ -2323,7 +2333,7 @@ var NgSelectComponent = /** @class */ (function () {
             this.changeEvent.emit(this.selectedItems[0] && this.selectedItems[0].value);
         }
         this._cd.markForCheck();
-        var e_4, _c;
+        var e_5, _c;
     };
     NgSelectComponent.prototype._clearSearch = function () {
         if (!this.filterValue) {
@@ -3084,45 +3094,6 @@ var FilePickerModules = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/shared/modules/forms.ts":
-/*!*****************************************!*\
-  !*** ./src/app/shared/modules/forms.ts ***!
-  \*****************************************/
-/*! exports provided: FormsSharedModules */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormsSharedModules", function() { return FormsSharedModules; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var FormsSharedModules = /** @class */ (function () {
-    function FormsSharedModules() {
-    }
-    FormsSharedModules = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [],
-            exports: [
-                _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
-            ],
-        })
-    ], FormsSharedModules);
-    return FormsSharedModules;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/shared/modules/select.ts":
 /*!******************************************!*\
   !*** ./src/app/shared/modules/select.ts ***!
@@ -3162,4 +3133,4 @@ var SelectSharedModules = /** @class */ (function () {
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-home-home-module~modules-profile-profile-module.js.map
+//# sourceMappingURL=modules-home-home-module~modules-page-page-module~modules-profile-profile-module.js.map

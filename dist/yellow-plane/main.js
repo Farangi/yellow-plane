@@ -10,7 +10,8 @@
 var map = {
 	"./modules/account/account.module": [
 		"./src/app/modules/full-layout/modules/account/account.module.ts",
-		"modules-account-account-module~modules-full-layout-full-layout-module~modules-profile-profile-module",
+		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
+		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-account-account-module"
 	],
 	"./modules/auth/auth.module": [
@@ -23,18 +24,28 @@ var map = {
 	],
 	"./modules/full-layout/full-layout.module": [
 		"./src/app/modules/full-layout/full-layout.module.ts",
-		"modules-account-account-module~modules-full-layout-full-layout-module~modules-profile-profile-module",
+		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-full-layout-full-layout-module"
 	],
 	"./modules/home/home.module": [
 		"./src/app/modules/full-layout/modules/home/home.module.ts",
-		"modules-home-home-module~modules-profile-profile-module",
+		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module"
+	],
+	"./modules/page/page.module": [
+		"./src/app/modules/full-layout/modules/page/page.module.ts",
+		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
+		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
+		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
+		"modules-page-page-module~modules-profile-profile-module",
+		"modules-page-page-module"
 	],
 	"./modules/profile/profile.module": [
 		"./src/app/modules/full-layout/modules/profile/profile.module.ts",
-		"modules-account-account-module~modules-full-layout-full-layout-module~modules-profile-profile-module",
-		"modules-home-home-module~modules-profile-profile-module",
+		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
+		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
+		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
+		"modules-page-page-module~modules-profile-profile-module",
 		"modules-profile-profile-module"
 	]
 };
