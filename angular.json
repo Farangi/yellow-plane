@@ -27,8 +27,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/scss/styles.scss",
-              "src/scss/fonts.scss"
+              "src/scss/fonts.scss",
+              "src/scss/lib.scss",
+              "src/scss/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
