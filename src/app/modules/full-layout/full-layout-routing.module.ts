@@ -26,6 +26,10 @@ const routes: Routes = [
 			    path: 'account',
 			    loadChildren: './modules/account/account.module#AccountModule'
 			},
+			{
+			    path: 'circles',
+			    loadChildren: './modules/circle/circle.module#CircleModule'
+			},
 		]
 	}
 ];
