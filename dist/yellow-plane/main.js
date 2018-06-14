@@ -22,6 +22,10 @@ var map = {
 		"./src/app/modules/blank-layout/blank-layout.module.ts",
 		"modules-blank-layout-blank-layout-module"
 	],
+	"./modules/circle/circle.module": [
+		"./src/app/modules/full-layout/modules/circle/circle.module.ts",
+		"modules-circle-circle-module"
+	],
 	"./modules/full-layout/full-layout.module": [
 		"./src/app/modules/full-layout/full-layout.module.ts",
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
