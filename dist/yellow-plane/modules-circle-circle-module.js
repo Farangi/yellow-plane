@@ -492,7 +492,7 @@ var CircleOpenTopicComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header-spacer header-spacer-small\"></div>\r\n\r\n<app-circle-header></app-circle-header>\r\n<!-- <app-account-sidebar></app-account-sidebar> -->\r\n<router-outlet></router-outlet>"
+module.exports = "<div class=\"header-spacer header-spacer-small\"></div>\r\n\r\n<app-circle-header></app-circle-header>\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
