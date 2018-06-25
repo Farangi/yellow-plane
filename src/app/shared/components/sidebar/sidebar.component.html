@@ -19,7 +19,7 @@
 					</a>
 				</li>
 				<li>
-					<a placement="auto" ngbTooltip="PAGES">
+					<a [routerLink]="['/page']" placement="auto" ngbTooltip="PAGES">
 						<svg class="olymp-star-icon left-menu-icon"><use xlink:href="/assets/icons/icons.svg#olymp-star-icon"></use></svg>
 					</a>
 				</li>
@@ -34,7 +34,7 @@
 					</a>
 				</li>
 				<li>
-					<a placement="auto" ngbTooltip="CIRCLES">
+					<a [routerLink]="['/circles']" placement="auto" ngbTooltip="CIRCLES">
 						<svg class="olymp-badge-icon left-menu-icon"><use xlink:href="/assets/icons/icons.svg#olymp-badge-icon"></use></svg>
 					</a>
 				</li>
@@ -83,7 +83,7 @@
 					</a>
 				</li>
 				<li>
-					<a>
+					<a [routerLink]="['/page']">
 						<svg class="olymp-star-icon left-menu-icon"><use xlink:href="/assets/icons/icons.svg#olymp-star-icon"></use></svg>
 						<span class="left-menu-title">Pages</span>
 					</a>
@@ -101,7 +101,7 @@
 					</a>
 				</li>
 				<li>
-					<a>
+					<a [routerLink]="['/circles']">
 						<svg class="olymp-badge-icon left-menu-icon"><use xlink:href="/assets/icons/icons.svg#olymp-badge-icon"></use></svg>
 						<span class="left-menu-title">Circles</span>
 					</a>
@@ -170,7 +170,7 @@
 					</a>
 				</li>
 				<li>
-					<a>
+					<a [routerLink]="['/page']">
 						<svg class="olymp-newsfeed-icon left-menu-icon" placement="auto" ngbTooltip="PAGES"><use xlink:href="/assets/icons/icons.svg#olymp-newsfeed-icon"></use></svg>
 						<span class="left-menu-title">Pages</span>
 					</a>
@@ -188,7 +188,7 @@
 					</a>
 				</li>
 				<li>
-					<a>
+					<a [routerLink]="['/circles']">
 						<svg class="olymp-badge-icon left-menu-icon" placement="auto" ngbTooltip="CIRCLES"><use xlink:href="/assets/icons/icons.svg#olymp-badge-icon"></use></svg>
 						<span class="left-menu-title">Circles</span>
 					</a>
