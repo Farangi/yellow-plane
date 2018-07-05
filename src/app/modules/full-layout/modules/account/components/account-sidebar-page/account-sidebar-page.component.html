@@ -6,7 +6,7 @@
 		<i class="fa fa-angle-right" aria-hidden="true"></i>
 		<i class="fa fa-angle-left" aria-hidden="true"></i>
 	</a>
-	<div class="mCustomScrollbar" data-mcs-theme="dark">
+	<perfect-scrollbar>
 		<div class="ui-block">
 			<div class="your-profile">
 				<div class="ui-block-title ui-block-title-small">
@@ -49,14 +49,14 @@
 					<a href="#" class="items-round-little bg-primary">8</a>
 				</div>
 				<div class="ui-block-title">
-					<a href="#" class="h6 title">Chat / Messages</a>
+					<a [routerLink]="['/account/page/messages']" class="h6 title">Chat / Messages</a>
 				</div>
 				<div class="ui-block-title">
 					<a href="#" class="h6 title">Delete Account</a>
 				</div>
 			</div>
 		</div>
-	</div>
+	</perfect-scrollbar>
 </div>
 
 <!-- ... end Account Settings Page Sidebar Responsive -->

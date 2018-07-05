@@ -194,6 +194,40 @@ button.btn {
   }
 }
 
+perfect-scrollbar {
+  & > .ps.ps--scrolling-y {
+    & > .ps__rail-y {
+      background-color: transparent !important;
+    }
+  }
+
+  & > .ps.ps--active-y {
+    & > .ps__rail-y {
+      transition: none !important;
+
+      &:hover, &:focus {
+        width: 10px !important;
+        background-color: transparent;
+        transition: none !important;
+  
+        & > .ps__thumb-y, {
+          width: 6px;
+        }
+      }
+    }
+
+    /* & > .ps__rail-y:hover, .ps__rail-y:focus {
+      width: 10px !important;
+      background-color: transparent;
+      transition: none !important;
+
+      & > .ps__thumb-y, {
+        width: 6px;
+      }
+    } */
+  }
+}
+
 @media (max-width: 576px){
   .container {
       max-width: 600px;
