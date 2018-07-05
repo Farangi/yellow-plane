@@ -333,7 +333,7 @@
 	width: 24px;
   }
 
-  .mCustomScrollbar {
+  perfect-scrollbar{
 	overflow: hidden;
 	max-height: 300px;
   }
@@ -401,8 +401,8 @@
 	}
   }
 
-  .mCustomScrollbar {
-	max-height: calc(100vh - 40px);
+  perfect-scrollbar {
+	max-height: calc(100vh - 80px);
   }
 }
 
@@ -1077,7 +1077,7 @@
 	bottom: 0;
   }
 
-  .fixed-sidebar.right .mCustomScrollbar {
+  .fixed-sidebar.right perfect-scrollbar {
 	max-height: calc(100vh - 140px);
   }
 }

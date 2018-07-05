@@ -12,6 +12,7 @@ var map = {
 		"./src/app/modules/full-layout/modules/account/account.module.ts",
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
+		"modules-account-account-module~modules-full-layout-full-layout-module",
 		"modules-account-account-module"
 	],
 	"./modules/auth/auth.module": [
@@ -29,6 +30,7 @@ var map = {
 	"./modules/full-layout/full-layout.module": [
 		"./src/app/modules/full-layout/full-layout.module.ts",
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
+		"modules-account-account-module~modules-full-layout-full-layout-module",
 		"modules-full-layout-full-layout-module"
 	],
 	"./modules/home/home.module": [
@@ -228,8 +230,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-//import { SelectSharedModules } from './shared/modules/select';
-//import { FileHelpersModule } from 'ngx-file-helpers';
 
 
 
@@ -253,7 +253,6 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"].forRoot(),
                 _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_4__["ScrollToModule"].forRoot(),
-                //SelectSharedModules,
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
                 angularfire2__WEBPACK_IMPORTED_MODULE_7__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].firebase),
                 angularfire2_firestore__WEBPACK_IMPORTED_MODULE_8__["AngularFirestoreModule"],

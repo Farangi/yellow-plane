@@ -10,12 +10,22 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 	@Input('username') username;
+	selectedTab : string = '';
 
   	constructor(
   		private router: Router,
   		public authService: AuthService) { }
 
 	ngOnInit() {
+	}
+
+	selectTab(tab){
+		if(tab === this.selectedTab){
+			this.selectedTab = '';
+		}
+		else{
+			this.selectedTab = tab;
+		}
 	}
 
 	logout() {

@@ -3,9 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AccountComponent } from './pages/account/account.page';
 import { AccountPersonalInfoComponent } from './pages/account-personal-info/account-personal-info.page';
+import { AccountMessagesComponent } from './pages/account-messages/account-messages.page';
+
 import { AccountPageComponent } from './pages/account-page/account-page.page';
 import { AccountPagePersonalInfoComponent } from './pages/account-page-personal-info/account-page-personal-info.page';
 import { AccountPageSettingsComponent } from './pages/account-page-settings/account-page-settings.page';
+import { AccountPageMessagesComponent } from './pages/account-page-messages/account-page-messages.page';
 
 const routes: Routes = [
 	{
@@ -15,6 +18,10 @@ const routes: Routes = [
 	    	{
 	    		path: '',
 	    		component: AccountPersonalInfoComponent,
+			},
+			{
+	    		path: 'messages',
+	    		component: AccountMessagesComponent,
 	    	}
 	    ],
 	},
@@ -29,6 +36,10 @@ const routes: Routes = [
 			{
 	    		path: 'settings',
 	    		component: AccountPageSettingsComponent,
+			},
+			{
+	    		path: 'messages',
+	    		component: AccountPageMessagesComponent,
 	    	}
 	    ],
 	}

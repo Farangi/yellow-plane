@@ -6,7 +6,10 @@ import { FullLayoutRoutingModule } from './full-layout-routing.module';
 
 import { DirectivesModule } from '../../shared/directives/directives.module';
 
+import { ScrollbarModule } from '../../shared/modules/scrollbar';
+
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
+import { ChatSidebarComponent } from '../../shared/components/chat-sidebar/chat-sidebar.component';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { FullLayoutComponent } from './components/full-layout/full-layout.component';
 
@@ -18,15 +21,16 @@ import { FullLayoutComponent } from './components/full-layout/full-layout.compon
     CommonModule,
     NgbModule,
     FullLayoutRoutingModule,
-    DirectivesModule
+    DirectivesModule,
+    ScrollbarModule
   ],
   declarations: [
-  	SidebarComponent,
+    SidebarComponent,
+    ChatSidebarComponent,
   	HeaderComponent,
     FullLayoutComponent,
     //PhotoPostViewerComponent,
     //PhotoPostViewerContentComponent
   ],
-  //entryComponents: [PhotoPostViewerContentComponent]
 })
 export class FullLayoutModule { }

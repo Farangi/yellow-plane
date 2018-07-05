@@ -180,11 +180,17 @@
   }
 }
 
-.chat-field {
-  border-left: 1px solid $border-color;
+.chats {
+	border-right: 1px solid $border-color;
 
-  .mCustomScrollbar {
-	overflow: hidden;
+	perfect-scrollbar {
+		max-height: 738px;
+	}
+}
+
+.chat-field {
+
+  perfect-scrollbar {
 	max-height: 450px;
   }
 
@@ -192,13 +198,35 @@
 	opacity: 0;
 	z-index: -1;
 	visibility: hidden;
-  }
+	}
+	
+	.form-group {
+		&:focus .control-label {
+			top: 10px;
+			font-size: 11px;
+			line-height: 1.07143;
+		}
+	}
 
-  textarea {
-	border-radius: 0;
-	border-right: 0;
-	border-left: 0;
-  }
+	.yello-emoji-search {
+		.search-header {
+			input {
+				background-color: #fff;
+			}
+		}
+
+		&.emoji-search {
+			width: 50% !important;
+			border-radius: 0 !important;
+		}
+	}
+
+	textarea {
+		border-radius: 0;
+		border-right: 0;
+		border-left: 0;
+	}
+
 }
 
 .chat-message-field {

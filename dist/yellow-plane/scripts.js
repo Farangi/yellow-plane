@@ -723,12 +723,12 @@ var CRUMINA = {};
 	 * Toggle functions
 	 * ---------------------------*/
 
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        var target = $(e.target).attr("href"); // activated tab
-        if('#events' === target){
-            $('.fc-state-active').click();
-        }
-    });
+    // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    //     var target = $(e.target).attr("href"); // activated tab
+    //     if('#events' === target){
+    //         $('.fc-state-active').click();
+    //     }
+    // });
 
 	// Toggle aside panels
 	$(".js-sidebar-open").on('click', function () {
@@ -788,14 +788,14 @@ var CRUMINA = {};
     });
 
     // Close active tab on second click.
-    $('[data-toggle=tab]').on('click', function(){
-		/*$body.toggleClass('body--fixed');*/
-        if ($(this).hasClass('active') && $(this).closest('ul').hasClass('mobile-app-tabs')){
-            $($(this).attr("href")).toggleClass('active');
-            $(this).removeClass('active');
-            return false;
-        }
-    });
+    // $('[data-toggle=tab]').on('click', function(){
+	// 	/*$body.toggleClass('body--fixed');*/
+    //     if ($(this).hasClass('active') && $(this).closest('ul').hasClass('mobile-app-tabs')){
+    //         $($(this).attr("href")).toggleClass('active');
+    //         $(this).removeClass('active');
+    //         return false;
+    //     }
+    // });
 
 
     // Close on "X" click

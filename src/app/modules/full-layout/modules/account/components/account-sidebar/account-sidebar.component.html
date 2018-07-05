@@ -6,7 +6,7 @@
 		<i class="fa fa-angle-right" aria-hidden="true"></i>
 		<i class="fa fa-angle-left" aria-hidden="true"></i>
 	</a>
-	<div class="mCustomScrollbar" data-mcs-theme="dark">
+	<perfect-scrollbar>
 		<div class="ui-block">
 			<div class="your-profile">
 				<div class="ui-block-title ui-block-title-small">
@@ -27,7 +27,7 @@
 						<div id="collapseOne-1" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 							<ul class="your-profile-menu">
 								<li>
-									<a [routerLink]="['/account']">Personal Information</a>
+									<a [routerLink]="['/account/profile']">Personal Information</a>
 								</li>
 								<li>
 									<a href="#">Account Settings</a>
@@ -52,7 +52,7 @@
 					<a href="#" class="items-round-little bg-primary">8</a>
 				</div>
 				<div class="ui-block-title">
-					<a href="#" class="h6 title">Chat / Messages</a>
+					<a [routerLink]="['/account/messages']" class="h6 title">Chat / Messages</a>
 				</div>
 				<div class="ui-block-title">
 					<a href="#" class="h6 title">Friend Requests</a>
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</perfect-scrollbar>
 </div>
 
 <!-- ... end Account Sidebar Responsive -->
