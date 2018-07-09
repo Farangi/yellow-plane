@@ -28,15 +28,15 @@
 							<ul class="your-profile-menu">
 								<li>
 									<a [routerLink]="['/account/page']">Personal Information</a>
-								</li>
-								<li>
+									</li>
+									<li>
 									<a [routerLink]="['/account/page/settings']">Account Settings</a>
-								</li>
-								<li>
-									<a href="#">Change Password</a>
-								</li>
-								<li>
-									<a href="#">Ads Manager</a>
+									</li>
+									<li>
+									<a [routerLink]="['/account/page/passwordchange']">Change Password</a>
+									</li>
+									<li>
+									<a [routerLink]="['/account/page/ad-manager']">Ads Manager</a>
 								</li>
 							</ul>
 						</div>
@@ -45,8 +45,8 @@
 
 
 				<div class="ui-block-title">
-					<a href="#" class="h6 title">Notifications</a>
-					<a href="#" class="items-round-little bg-primary">8</a>
+					<a [routerLink]="['/account/page/notifications']" class="h6 title">Notifications</a>
+					<a [routerLink]="['/account/page/notifications']" class="items-round-little bg-primary">8</a>
 				</div>
 				<div class="ui-block-title">
 					<a [routerLink]="['/account/page/messages']" class="h6 title">Chat / Messages</a>

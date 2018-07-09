@@ -16,6 +16,7 @@ import { AuthService } from './shared/services/auth.service';
 import { UserService } from './shared/services/user.service';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UserResolver } from './shared/resolvers/user.resolver';
+
 //import { FullLayoutComponent } from './shared/components/full-layout/full-layout.component';
 
 @NgModule({

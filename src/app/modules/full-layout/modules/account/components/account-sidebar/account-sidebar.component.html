@@ -30,16 +30,16 @@
 									<a [routerLink]="['/account/profile']">Personal Information</a>
 								</li>
 								<li>
-									<a href="#">Account Settings</a>
+									<a [routerLink]="['/account/profile/settings']">Account Settings</a>
 								</li>
 								<li>
-									<a href="#">Change Password</a>
+									<a [routerLink]="['/account/profile/passwordchange']">Change Password</a>
 								</li>
 								<li>
-									<a href="#">Hobbies and Interests</a>
+									<a [routerLink]="['/account/profile/hobbies']">Hobbies and Interests</a>
 								</li>
 								<li>
-									<a href="#">Education and Employement</a>
+									<a [routerLink]="['/account/profile/education']">Education and Employement</a>
 								</li>
 							</ul>
 						</div>
@@ -48,14 +48,14 @@
 
 
 				<div class="ui-block-title">
-					<a href="#" class="h6 title">Notifications</a>
+					<a [routerLink]="['/account/profile/notifications']" class="h6 title">Notifications</a>
 					<a href="#" class="items-round-little bg-primary">8</a>
 				</div>
 				<div class="ui-block-title">
 					<a [routerLink]="['/account/messages']" class="h6 title">Chat / Messages</a>
 				</div>
 				<div class="ui-block-title">
-					<a href="#" class="h6 title">Friend Requests</a>
+					<a [routerLink]="['/account/profile/requests']" class="h6 title">Friend Requests</a>
 					<a href="#" class="items-round-little bg-blue">4</a>
 				</div>
 				<div class="ui-block-title">
