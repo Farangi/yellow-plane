@@ -1,0 +1,93 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Account Settings</h6>
+				</div>
+				<div class="ui-block-content">
+					<form>
+						<div class="row">
+
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form-group label-floating is-select">
+									<label class="control-label">Who Can Friend You?</label>
+									<select class="selectpicker form-control" size="auto">
+										<option value="EO">Everyone</option>
+										<option value="NO">No One</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form-group label-floating is-select">
+									<label class="control-label">Who Can View Your Posts</label>
+									<select class="selectpicker form-control" size="auto">
+										<option value="US">Friends Only</option>
+										<option value="EO">Everyone</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="description-toggle">
+									<div class="description-toggle-content">
+										<div class="h6">Notifications Sound</div>
+										<p>A sound will be played each time you receive a new activity notification</p>
+									</div>
+
+									<div class="togglebutton">
+										<label>
+											<input type="checkbox" checked="">
+											<span class="toggle"></span>
+										</label>
+									</div>
+								</div>
+								<div class="description-toggle">
+									<div class="description-toggle-content">
+										<div class="h6">Notifications Email</div>
+										<p>We’ll send you an email to your account each time you receive a new activity notification</p>
+									</div>
+
+									<div class="togglebutton">
+										<label>
+											<input type="checkbox" checked="">
+											<span class="toggle"></span>
+										</label>
+									</div>
+								</div>
+								<div class="description-toggle">
+									<div class="description-toggle-content">
+										<div class="h6">Chat Message Sound</div>
+										<p>A sound will be played each time you receive a new message on an inactive chat window</p>
+									</div>
+
+									<div class="togglebutton">
+										<label>
+											<input type="checkbox" checked="">
+											<span class="toggle"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<button class="btn btn-secondary btn-lg full-width">Restore all Attributes</button>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<button class="btn btn-primary btn-lg full-width">Save all Changes</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+    <!-- Account Profile Sidebar -->
+    <div class="col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none">
+      <app-account-sidebar-large></app-account-sidebar-large>
+    </div>
+    
+    <!-- ... end Account Profile Sidebar -->
+
+	</div>
+</div>

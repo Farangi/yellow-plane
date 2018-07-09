@@ -24,17 +24,25 @@ export class ToggleMobileTabDirective {
     ) { }
 
   @HostListener('click', ['$event']) 
-  onClick($event){
+  onClick($event){//console.log(this.element);
       if(this.element.nativeElement.classList.contains('active')){
-        //const hiddenTab = this.renderer.selectRootElement('.mobile-tab');
+        //const hiddenTab = this.renderer.selectRootElement('.hidden-tab');
+        //hiddenTab.click();
         //console.log(hiddenTab);
+        //console.log(this.element.nativeElement);
+        //this.renderer.removeClass(this.element.nativeElement, 'abc');
+        //this.renderer.removeClass(this.element.nativeElement, 'show');
+        //this.renderer.removeClass(this.element.nativeElement, 'active');
         //return false;
-        //this.renderer.addClass(hiddenTab.nativeElement, 'active');
         //this._ToggleHiddenMobileTabDirective.toggleActive();
         /* console.log(this.element);
         this.renderer.removeClass(this.element.nativeElement, "active");
         console.log(this.element.nativeElement); */
       }
+/*       else {
+        this.renderer.addClass(this.element.nativeElement, 'abc');
+        console.log(this.element.nativeElement);
+      } */
   }
   
 }
