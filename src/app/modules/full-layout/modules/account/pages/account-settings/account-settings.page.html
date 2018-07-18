@@ -12,7 +12,7 @@
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Who Can Friend You?</label>
-									<select class="selectpicker form-control" size="auto">
+									<select name="whoCanFriendYou" [(ngModel)]="this.accountSettings.whoCanFriendYou" class="selectpicker form-control" size="auto">
 										<option value="EO">Everyone</option>
 										<option value="NO">No One</option>
 									</select>
@@ -21,7 +21,7 @@
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Who Can View Your Posts</label>
-									<select class="selectpicker form-control" size="auto">
+									<select name="whoCanViewYourPosts" [(ngModel)]="this.accountSettings.whoCanViewYourPosts" class="selectpicker form-control" size="auto">
 										<option value="US">Friends Only</option>
 										<option value="EO">Everyone</option>
 									</select>
@@ -37,7 +37,7 @@
 
 									<div class="togglebutton">
 										<label>
-											<input type="checkbox" checked="">
+											<input type="checkbox" name="notificationSound" [(ngModel)]="this.accountSettings.notificationSound" checked="">
 											<span class="toggle"></span>
 										</label>
 									</div>
@@ -50,7 +50,7 @@
 
 									<div class="togglebutton">
 										<label>
-											<input type="checkbox" checked="">
+											<input type="checkbox" name="notificationEmail" [(ngModel)]="this.accountSettings.notificationEmail" checked="">
 											<span class="toggle"></span>
 										</label>
 									</div>
@@ -63,7 +63,7 @@
 
 									<div class="togglebutton">
 										<label>
-											<input type="checkbox" checked="">
+											<input type="checkbox" name="chatSound" [(ngModel)]="this.accountSettings.chatSound" checked="">
 											<span class="toggle"></span>
 										</label>
 									</div>
@@ -74,7 +74,7 @@
 								<button class="btn btn-secondary btn-lg full-width">Restore all Attributes</button>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<button class="btn btn-primary btn-lg full-width">Save all Changes</button>
+								<button class="btn btn-primary btn-lg full-width" (click)="updateAccountSettings()">Save all Changes</button>
 							</div>
 						</div>
 					</form>

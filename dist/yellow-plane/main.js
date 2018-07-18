@@ -13,10 +13,12 @@ var map = {
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
+		"common",
 		"modules-account-account-module"
 	],
 	"./modules/auth/auth.module": [
 		"./src/app/modules/blank-layout/modules/auth/auth.module.ts",
+		"common",
 		"modules-auth-auth-module"
 	],
 	"./modules/blank-layout/blank-layout.module": [
@@ -25,17 +27,20 @@ var map = {
 	],
 	"./modules/circle/circle.module": [
 		"./src/app/modules/full-layout/modules/circle/circle.module.ts",
+		"common",
 		"modules-circle-circle-module"
 	],
 	"./modules/full-layout/full-layout.module": [
 		"./src/app/modules/full-layout/full-layout.module.ts",
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
+		"common",
 		"modules-full-layout-full-layout-module"
 	],
 	"./modules/home/home.module": [
 		"./src/app/modules/full-layout/modules/home/home.module.ts",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
+		"common",
 		"modules-home-home-module"
 	],
 	"./modules/page/page.module": [
@@ -44,6 +49,7 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
+		"common",
 		"modules-page-page-module"
 	],
 	"./modules/profile/profile.module": [
@@ -52,6 +58,7 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
+		"common",
 		"modules-profile-profile-module"
 	]
 };
@@ -204,21 +211,24 @@ var AppComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nicky-lenaers/ngx-scroll-to */ "./node_modules/@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shared/services/scroll.service */ "./src/app/shared/services/scroll.service.ts");
-/* harmony import */ var _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./shared/services/auth.service */ "./src/app/shared/services/auth.service.ts");
-/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./shared/services/user.service */ "./src/app/shared/services/user.service.ts");
-/* harmony import */ var _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./shared/guards/auth.guard */ "./src/app/shared/guards/auth.guard.ts");
-/* harmony import */ var _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./shared/resolvers/user.resolver */ "./src/app/shared/resolvers/user.resolver.ts");
+/* harmony import */ var _shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/guards/profile.gaurd */ "./src/app/shared/guards/profile.gaurd.ts");
+/* harmony import */ var _shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/guards/page.gaurd */ "./src/app/shared/guards/page.gaurd.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @nicky-lenaers/ngx-scroll-to */ "./node_modules/@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var angularfire2_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angularfire2/storage */ "./node_modules/angularfire2/storage/index.js");
+/* harmony import */ var _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./shared/services/scroll.service */ "./src/app/shared/services/scroll.service.ts");
+/* harmony import */ var _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./shared/services/auth.service */ "./src/app/shared/services/auth.service.ts");
+/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./shared/services/user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./shared/guards/auth.guard */ "./src/app/shared/guards/auth.guard.ts");
+/* harmony import */ var _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./shared/resolvers/user.resolver */ "./src/app/shared/resolvers/user.resolver.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -240,26 +250,30 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 //import { FullLayoutComponent } from './shared/components/full-layout/full-layout.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModule"].forRoot(),
-                _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_4__["ScrollToModule"].forRoot(),
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-                angularfire2__WEBPACK_IMPORTED_MODULE_7__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].firebase),
-                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_8__["AngularFirestoreModule"],
-                angularfire2_auth__WEBPACK_IMPORTED_MODULE_9__["AngularFireAuthModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModule"].forRoot(),
+                _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_6__["ScrollToModule"].forRoot(),
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
+                angularfire2__WEBPACK_IMPORTED_MODULE_9__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].firebase),
+                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_10__["AngularFirestoreModule"],
+                angularfire2_auth__WEBPACK_IMPORTED_MODULE_11__["AngularFireAuthModule"],
+                angularfire2_storage__WEBPACK_IMPORTED_MODULE_12__["AngularFireStorageModule"]
             ],
-            providers: [_shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_10__["ScrollService"], _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_11__["AuthService"], _shared_services_user_service__WEBPACK_IMPORTED_MODULE_12__["UserService"], _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_14__["UserResolver"], _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+            providers: [_shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_13__["ScrollService"], _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_14__["AuthService"], _shared_services_user_service__WEBPACK_IMPORTED_MODULE_15__["UserService"], _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_17__["UserResolver"], _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"], _shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_1__["PageGuard"], _shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_0__["ProfileGuard"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -321,6 +335,124 @@ var AuthGuard = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], AuthGuard);
     return AuthGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/guards/page.gaurd.ts":
+/*!*********************************************!*\
+  !*** ./src/app/shared/guards/page.gaurd.ts ***!
+  \*********************************************/
+/*! exports provided: PageGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageGuard", function() { return PageGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PageGuard = /** @class */ (function () {
+    function PageGuard(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    PageGuard.prototype.canActivate = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.checkAccountType()
+                .then(function (acctype) {
+                if (acctype == 'Business') {
+                    return resolve(true);
+                }
+                else {
+                    return resolve(false);
+                }
+            })
+                .catch(function (err) {
+                return resolve(false);
+            });
+        });
+    };
+    PageGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], PageGuard);
+    return PageGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/guards/profile.gaurd.ts":
+/*!************************************************!*\
+  !*** ./src/app/shared/guards/profile.gaurd.ts ***!
+  \************************************************/
+/*! exports provided: ProfileGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileGuard", function() { return ProfileGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ProfileGuard = /** @class */ (function () {
+    function ProfileGuard(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    ProfileGuard.prototype.canActivate = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.checkAccountType()
+                .then(function (acctype) {
+                if (acctype == 'Personal') {
+                    return resolve(true);
+                }
+                else {
+                    return resolve(false);
+                }
+            })
+                .catch(function (err) {
+                return resolve(false);
+            });
+        });
+    };
+    ProfileGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], ProfileGuard);
+    return ProfileGuard;
 }());
 
 
@@ -473,11 +605,11 @@ var AuthService = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().createUserAndRetrieveDataWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
-                _this.userService.updateCurrentUser({
-                    displayName: value.firstName + ' ' + value.lastName,
-                    gender: value.gender
-                });
-                resolve(res);
+                _this.userService.updateCurrentUser(value)
+                    .then(function () {
+                    resolve(res);
+                })
+                    .catch(function (err) { return reject(err); });
             })
                 .catch(function (err) {
                 reject(err);
@@ -610,15 +742,27 @@ var UserService = /** @class */ (function () {
             });
         });
     };
+    UserService.prototype.checkAccountType = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+            _this.db.doc("users/" + user.uid).ref.get()
+                .then(function (response) {
+                resolve(response.data().accountType);
+            }).catch(function (err) {
+                reject(err);
+            });
+        });
+    };
     UserService.prototype.updateCurrentUser = function (value) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
             user.updateProfile({
-                displayName: value.displayName,
+                displayName: value.firstName + ' ' + value.lastName,
                 photoURL: user.photoURL
             }).then(function (res) {
-                _this.updateUserData(user, value.gender)
+                _this.updateUserData(user, value)
                     .then(function (data) {
                     resolve(res);
                 })
@@ -628,7 +772,7 @@ var UserService = /** @class */ (function () {
             }, function (err) { return reject(err); });
         });
     };
-    UserService.prototype.updateUserData = function (user, gender) {
+    UserService.prototype.updateUserData = function (user, userData) {
         // Sets user data to firestore on register
         var userRef = this.db.doc("users/" + user.uid);
         var data = {
@@ -636,7 +780,9 @@ var UserService = /** @class */ (function () {
             email: user.email,
             displayName: user.displayName,
             photoURL: user.photoURL,
-            gender: gender
+            gender: userData.gender,
+            age: userData.age,
+            accountType: userData.accountType
         };
         return userRef.set(data, { merge: true });
     };

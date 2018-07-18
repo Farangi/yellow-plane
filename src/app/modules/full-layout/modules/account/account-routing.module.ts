@@ -18,11 +18,14 @@ import { AccountPageMessagesComponent } from './pages/account-page-messages/acco
 import { AccountPageChangePasswordComponent } from './pages/account-page-change-password/account-page-change-password.page';
 import { AccountPageNotificationsComponent } from './pages/account-page-notifications/account-page-notifications.page';
 import { AccountPageAdManagerComponent } from './pages/account-page-ad-manager/account-page-ad-manager.page';
+import { ProfileGuard } from '../../../../shared/guards/profile.gaurd';
+import { PageGuard } from '../../../../shared/guards/page.gaurd';
 
 const routes: Routes = [
 	{
 	    path: 'profile',
-	    component: AccountComponent,
+		component: AccountComponent,
+		canActivate: [ProfileGuard],
 	    children: [
 	    	{
 	    		path: '',
@@ -60,7 +63,8 @@ const routes: Routes = [
 	},
 	{
 	    path: 'page',
-	    component: AccountPageComponent,
+		component: AccountPageComponent,
+		canActivate: [PageGuard],
 	    children: [
 	    	{
 	    		path: '',

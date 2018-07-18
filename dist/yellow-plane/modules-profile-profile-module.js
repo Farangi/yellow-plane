@@ -78,7 +78,7 @@ var ProfileHeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-8 order-xl-2 col-lg-8 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Hobbies and Interests</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Hobbies:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">I like to ride the bike to work, swimming, and working out. I also like\r\n\t\t\t\t\t\t\t\treading design magazines, go to museums, and binge watching a good tv show while it’s raining outside.\r\n\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite TV Shows:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Movies:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Idiocratic, The Scarred Wizard and the Fire Crown,  Crime Squad, Ferrum Man. </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Games:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">The First of Us, Assassin’s Squad, Dark Assylum, NMAK16, Last Cause 4, Grand Snatch Auto. </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Music Bands / Artists:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Books:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">The Crime of the Century, Egiptian Mythology 101, The Scarred Wizard, Lord of the Wings, Amongst Gods, The Oracle, A Tale of Air and Water.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Writers:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Martin T. Georgeston, Jhonathan R. Token, Ivana Rowle, Alexandria Platt, Marcus Roth. </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Other Interests:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Swimming, Surfing, Scuba Diving, Anime, Photography, Tattoos, Street Art.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Education and Employement</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">The New College of Design</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2001 - 2006</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Remrad Institute</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2008</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Five months Digital Illustration course. Professor: Ahmad Ali.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">The Digital College </span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2010</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">6 months intensive Motion Graphics course. After Effects and Premire. Professor: Naeem Rehman. </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Digital Design Intern</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2006-2008</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Digital Design Intern for the “xyz” agency. Was in charge of the communication with the clients.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">UI/UX Designer</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2008-2013</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">UI/UX Designer for the abc agency. </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Senior UI/UX Designer</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2013-Now</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Senior UI/UX Designer for the “abc” agency. I’m in charge of a ten person group, overseeing all the proyects and talking to potential clients.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Personal Info</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-personal-info\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">About Me:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">Hi, I’m Hassan, I’m 36 and I work as a Digital Designer for the\r\n\t\t\t\t\t\t\t\tabc Agency in Pier 56\r\n\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Birthday:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">December 14th, 1980</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Birthplace:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">Lahore, Pakistan</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Lives in:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">Islamabad, Pakistan</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Occupation:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">UI/UX Designer</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Joined:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">April 31st, 2014</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Gender:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">Male</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Status:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">Married</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Email:</span>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"text\">abc@yourmail.com</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Website:</span>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"text\">abc.com</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Phone Number:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">(+93) 555 - 4369 - 8957</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Religious Belifs:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">-</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Political Incline:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">Democrat</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-8 order-xl-2 col-lg-8 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Hobbies and Interests</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Hobbies:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.hobbies}}\r\n\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite TV Shows:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.favTV}}</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Movies:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.favMovies}} </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Games:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.favGames}} </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Music Bands / Artists:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.favMusic}}</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Books:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.favBooks}}</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Favourite Writers:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.favWriters}} </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Other Interests:</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">{{this.hobbiesAndInterests.otherInterests}}</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Education and Employement</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">The New College of Design</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2001 - 2006</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Remrad Institute</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2008</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Five months Digital Illustration course. Professor: Ahmad Ali.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">The Digital College </span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2010</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">6 months intensive Motion Graphics course. After Effects and Premire. Professor: Naeem Rehman. </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Digital Design Intern</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2006-2008</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Digital Design Intern for the “xyz” agency. Was in charge of the communication with the clients.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">UI/UX Designer</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2008-2013</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">UI/UX Designer for the abc agency. </span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<span class=\"title\">Senior UI/UX Designer</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"date\">2013-Now</span>\r\n\t\t\t\t\t\t\t\t\t<span class=\"text\">Senior UI/UX Designer for the “abc” agency. I’m in charge of a ten person group, overseeing all the proyects and talking to potential clients.</span>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Personal Info</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-personal-info\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">About Me:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.description}}\r\n\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Birthday:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.birthday.day}}/{{this.personalInfo.birthday.month}}/{{this.personalInfo.birthday.year}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Birthplace:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.birthplace}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Lives in:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.city}}, {{this.personalInfo.country}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Occupation:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.occupation}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Joined:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">April 31st, 2014</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Gender:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">Male</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Status:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.status}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Email:</span>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"text\">abc@yourmail.com</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Website:</span>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"text\">{{this.personalInfo.website}}</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Phone Number:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.phone}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Religious Beliefs:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.religion}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Political Incline:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\">{{this.personalInfo.politicalincline}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -103,7 +103,9 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -114,18 +116,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var AboutComponent = /** @class */ (function () {
-    function AboutComponent() {
+    function AboutComponent(hobbiesAndInterestsService, personalInfoService) {
+        this.hobbiesAndInterestsService = hobbiesAndInterestsService;
+        this.personalInfoService = personalInfoService;
     }
     AboutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.hobbiesAndInterests = {};
+        this.personalInfo = {};
+        this.hobbiesAndInterestsService.getHobbiesAndInterests()
+            .then(function (data) { return _this.hobbiesAndInterests = data; })
+            .catch(function (err) { return console.log(err); });
+        this.personalInfoService.getPersonalInfo()
+            .then(function (data) { return _this.personalInfo = data; })
+            .catch(function (err) { return console.log(err); });
     };
     AboutComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-about',
             template: __webpack_require__(/*! ./about.page.html */ "./src/app/modules/full-layout/modules/profile/pages/about/about.page.html"),
             styles: [__webpack_require__(/*! ./about.page.scss */ "./src/app/modules/full-layout/modules/profile/pages/about/about.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_1__["HobbiesAndInterestsService"],
+            _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_0__["PersonalInfoService"]])
     ], AboutComponent);
     return AboutComponent;
 }());
@@ -238,10 +254,11 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotosComponent", function() { return PhotosComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../shared/services/scroll.service */ "./src/app/shared/services/scroll.service.ts");
-/* harmony import */ var ngx_file_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-file-helpers */ "./node_modules/ngx-file-helpers/esm5/ngx-file-helpers.js");
+/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../shared/services/scroll.service */ "./src/app/shared/services/scroll.service.ts");
+/* harmony import */ var ngx_file_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-file-helpers */ "./node_modules/ngx-file-helpers/esm5/ngx-file-helpers.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -255,10 +272,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PhotosComponent = /** @class */ (function () {
-    function PhotosComponent(modalService, scrollService) {
+    function PhotosComponent(modalService, scrollService, photoServ) {
         this.modalService = modalService;
         this.scrollService = scrollService;
+        this.photoServ = photoServ;
         this.privacyOptions = [{ name: 'Everyone', value: 'EVERYONE', icon: 'fa-globe' },
             { name: 'Friends', value: 'FRIENDS', icon: 'fa-users' },
             { name: 'Only me', value: 'ONLYME', icon: 'fa-lock' }];
@@ -283,51 +302,85 @@ var PhotosComponent = /** @class */ (function () {
     };
     //Photos Tab
     PhotosComponent.prototype.getPhotos = function () {
-        this.photos.push({ id: 1, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.photos.push({ id: 2, img: '/assets/img/photo-item9.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.photos.push({ id: 3, img: '/assets/img/photo-item3.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.photos.push({ id: 4, img: '/assets/img/photo-item10.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.photos.push({ id: 5, img: '/assets/img/photo-item5.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.photos.push({ id: 6, img: '/assets/img/photo-item11.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.photos.push({ id: 7, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.photos.push({ id: 8, img: '/assets/img/photo-item8.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        var _this = this;
+        this.photos = [];
+        // this.photos.push({ id: 1, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        // this.photos.push({ id: 2, img: '/assets/img/photo-item9.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        // this.photos.push({ id: 3, img: '/assets/img/photo-item3.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        // this.photos.push({ id: 4, img: '/assets/img/photo-item10.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        // this.photos.push({ id: 5, img: '/assets/img/photo-item5.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        // this.photos.push({ id: 6, img: '/assets/img/photo-item11.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        // this.photos.push({ id: 7, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        // this.photos.push({ id: 8, img: '/assets/img/photo-item8.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        this.photoServ.getCurrentUserPhotos().then(function (uploads) {
+            if (uploads === void 0) { uploads = []; }
+            uploads.forEach(function (upload) {
+                var photoId = 1;
+                upload.photos.forEach(function (photo) {
+                    _this.photos.push({
+                        id: photoId,
+                        img: photo.photoUrl,
+                        likes: 15,
+                        albumName: upload.description,
+                        time: photo.uploadedAt
+                    });
+                    photoId++;
+                });
+            });
+        }).catch(function (err) {
+            console.log(err);
+        });
     };
     PhotosComponent.prototype.getMorePhotos = function () {
         this.getPhotos();
     };
     //Albums Tab
     PhotosComponent.prototype.getAlbums = function () {
-        this.albums.push({ id: 1, name: 'South America Vacations', lastAdded: '2 hours ago', coverImg: '/assets/img/photo-item2.jpg', likes: 324, counts: { photos: 240, comments: 52, share: 16 },
+        this.albums.push({
+            id: 1, name: 'South America Vacations', lastAdded: '2 hours ago', coverImg: '/assets/img/photo-item2.jpg', likes: 324, counts: { photos: 240, comments: 52, share: 16 },
             likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic8.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }] });
-        this.albums.push({ id: 2, name: 'Photoshoot Summer', lastAdded: '5 weeks ago', coverImg: '/assets/img/photo-album1.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
+                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+        });
+        this.albums.push({
+            id: 2, name: 'Photoshoot Summer', lastAdded: '5 weeks ago', coverImg: '/assets/img/photo-album1.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
             likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic8.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }] });
-        this.albums.push({ id: 3, name: 'Amazing Street Food', lastAdded: '6 mins ago', coverImg: '/assets/img/photo-album2.jpg',
+                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+        });
+        this.albums.push({
+            id: 3, name: 'Amazing Street Food', lastAdded: '6 mins ago', coverImg: '/assets/img/photo-album2.jpg',
             likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' }] });
-        this.albums.push({ id: 4, name: 'Graffiti and Street Art', lastAdded: '6 hours ago', coverImg: '/assets/img/photo-album3.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' }]
+        });
+        this.albums.push({
+            id: 4, name: 'Graffiti and Street Art', lastAdded: '6 hours ago', coverImg: '/assets/img/photo-album3.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
             likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }] });
-        this.albums.push({ id: 5, name: 'Amazing Landscapes', lastAdded: '13 mins ago', coverImg: '/assets/img/photo-album4.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
+                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+        });
+        this.albums.push({
+            id: 5, name: 'Amazing Landscapes', lastAdded: '13 mins ago', coverImg: '/assets/img/photo-album4.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
             likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }] });
-        this.albums.push({ id: 6, name: 'The Majstic Canyon', lastAdded: '57 mins ago', coverImg: '/assets/img/photo-item6.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }] });
-        this.albums.push({ id: 7, name: 'Winter 2015 Portraits', lastAdded: '1 year ago', coverImg: '/assets/img/photo-album5.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
+                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+        });
+        this.albums.push({
+            id: 6, name: 'The Majstic Canyon', lastAdded: '57 mins ago', coverImg: '/assets/img/photo-item6.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+        });
+        this.albums.push({
+            id: 7, name: 'Winter 2015 Portraits', lastAdded: '1 year ago', coverImg: '/assets/img/photo-album5.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
             likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
                 { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }] });
+                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+        });
     };
     PhotosComponent.prototype.getMoreAlbums = function () {
         this.getAlbums();
@@ -382,9 +435,18 @@ var PhotosComponent = /** @class */ (function () {
         this.pickedPhotos.splice(index, 1);
     };
     PhotosComponent.prototype.postPhotos = function () {
-        console.log(this.addPhotoModalForm);
-        console.log(this.pickedPhotos);
+        var _this = this;
         this.addPhotoModalRef.close();
+        this.photoServ.uploadPhotos({
+            description: this.addPhotoModalForm.description,
+            privacy: this.addPhotoModalForm.privacy,
+            photos: this.pickedPhotos
+        }).then(function (resp) {
+            //console.log(resp);
+            _this.getPhotos();
+        }).catch(function (err) {
+            console.log(err);
+        });
     };
     //Create Album Modal
     PhotosComponent.prototype.onAlbumFilePicked = function (file) {
@@ -418,33 +480,34 @@ var PhotosComponent = /** @class */ (function () {
         this.addAlbumModalRef.close();
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('photoPostVewerComp'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('photoPostVewerComp'),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "photoPostVewerComp", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('addPhoto'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('addPhoto'),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "addPhotoModal", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('addAlbum'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('addAlbum'),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "addAlbumModal", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('albumTop'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('albumTop'),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "albumTop", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ngx_file_helpers__WEBPACK_IMPORTED_MODULE_3__["FilePickerDirective"]),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(ngx_file_helpers__WEBPACK_IMPORTED_MODULE_4__["FilePickerDirective"]),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "filePicker", void 0);
     PhotosComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-photos',
             template: __webpack_require__(/*! ./photos.page.html */ "./src/app/modules/full-layout/modules/profile/pages/photos/photos.page.html"),
             styles: [__webpack_require__(/*! ./photos.page.scss */ "./src/app/modules/full-layout/modules/profile/pages/photos/photos.page.scss")]
         }),
-        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NgbModal"],
-            _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_2__["ScrollService"]])
+        __metadata("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"],
+            _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_3__["ScrollService"],
+            _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_0__["PhotoService"]])
     ], PhotosComponent);
     return PhotosComponent;
 }());
@@ -763,24 +826,27 @@ var ProfileRoutingModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileModule", function() { return ProfileModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nicky-lenaers/ngx-scroll-to */ "./node_modules/@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
-/* harmony import */ var _shared_modules_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../shared/modules/forms */ "./src/app/shared/modules/forms.ts");
-/* harmony import */ var _shared_modules_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../shared/modules/select */ "./src/app/shared/modules/select.ts");
-/* harmony import */ var _shared_modules_file_picker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../shared/modules/file-picker */ "./src/app/shared/modules/file-picker.ts");
-/* harmony import */ var _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../shared/modules/swiper */ "./src/app/shared/modules/swiper.ts");
-/* harmony import */ var _shared_modules_photo_post_viewer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../shared/modules/photo-post-viewer */ "./src/app/shared/modules/photo-post-viewer.ts");
-/* harmony import */ var _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../shared/directives/directives.module */ "./src/app/shared/directives/directives.module.ts");
-/* harmony import */ var _profile_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./profile-routing.module */ "./src/app/modules/full-layout/modules/profile/profile-routing.module.ts");
-/* harmony import */ var _components_profile_header_profile_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/profile-header/profile-header.component */ "./src/app/modules/full-layout/modules/profile/components/profile-header/profile-header.component.ts");
-/* harmony import */ var _pages_profile_profile_page__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/profile/profile.page */ "./src/app/modules/full-layout/modules/profile/pages/profile/profile.page.ts");
-/* harmony import */ var _pages_timeline_timeline_page__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/timeline/timeline.page */ "./src/app/modules/full-layout/modules/profile/pages/timeline/timeline.page.ts");
-/* harmony import */ var _pages_about_about_page__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/about/about.page */ "./src/app/modules/full-layout/modules/profile/pages/about/about.page.ts");
-/* harmony import */ var _pages_friends_friends_page__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/friends/friends.page */ "./src/app/modules/full-layout/modules/profile/pages/friends/friends.page.ts");
-/* harmony import */ var _pages_photos_photos_page__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/photos/photos.page */ "./src/app/modules/full-layout/modules/profile/pages/photos/photos.page.ts");
-/* harmony import */ var _pages_videos_videos_page__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/videos/videos.page */ "./src/app/modules/full-layout/modules/profile/pages/videos/videos.page.ts");
+/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
+/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
+/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @nicky-lenaers/ngx-scroll-to */ "./node_modules/@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
+/* harmony import */ var _shared_modules_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../shared/modules/forms */ "./src/app/shared/modules/forms.ts");
+/* harmony import */ var _shared_modules_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../shared/modules/select */ "./src/app/shared/modules/select.ts");
+/* harmony import */ var _shared_modules_file_picker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../shared/modules/file-picker */ "./src/app/shared/modules/file-picker.ts");
+/* harmony import */ var _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../shared/modules/swiper */ "./src/app/shared/modules/swiper.ts");
+/* harmony import */ var _shared_modules_photo_post_viewer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../shared/modules/photo-post-viewer */ "./src/app/shared/modules/photo-post-viewer.ts");
+/* harmony import */ var _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../shared/directives/directives.module */ "./src/app/shared/directives/directives.module.ts");
+/* harmony import */ var _profile_routing_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./profile-routing.module */ "./src/app/modules/full-layout/modules/profile/profile-routing.module.ts");
+/* harmony import */ var _components_profile_header_profile_header_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/profile-header/profile-header.component */ "./src/app/modules/full-layout/modules/profile/components/profile-header/profile-header.component.ts");
+/* harmony import */ var _pages_profile_profile_page__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/profile/profile.page */ "./src/app/modules/full-layout/modules/profile/pages/profile/profile.page.ts");
+/* harmony import */ var _pages_timeline_timeline_page__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/timeline/timeline.page */ "./src/app/modules/full-layout/modules/profile/pages/timeline/timeline.page.ts");
+/* harmony import */ var _pages_about_about_page__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/about/about.page */ "./src/app/modules/full-layout/modules/profile/pages/about/about.page.ts");
+/* harmony import */ var _pages_friends_friends_page__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/friends/friends.page */ "./src/app/modules/full-layout/modules/profile/pages/friends/friends.page.ts");
+/* harmony import */ var _pages_photos_photos_page__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/photos/photos.page */ "./src/app/modules/full-layout/modules/profile/pages/photos/photos.page.ts");
+/* harmony import */ var _pages_videos_videos_page__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/videos/videos.page */ "./src/app/modules/full-layout/modules/profile/pages/videos/videos.page.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -805,35 +871,193 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 var ProfileModule = /** @class */ (function () {
     function ProfileModule() {
     }
     ProfileModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModule"],
-                _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_3__["ScrollToModule"],
-                _shared_modules_forms__WEBPACK_IMPORTED_MODULE_4__["FormsSharedModules"],
-                _shared_modules_select__WEBPACK_IMPORTED_MODULE_5__["SelectSharedModules"],
-                _shared_modules_file_picker__WEBPACK_IMPORTED_MODULE_6__["FilePickerModules"],
-                _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_7__["SwiperSharedModules"],
-                _shared_modules_photo_post_viewer__WEBPACK_IMPORTED_MODULE_8__["PhotoPostViewerSharedModules"],
-                _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_9__["DirectivesModule"],
-                _profile_routing_module__WEBPACK_IMPORTED_MODULE_10__["ProfileRoutingModule"]
+                _angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModule"],
+                _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_6__["ScrollToModule"],
+                _shared_modules_forms__WEBPACK_IMPORTED_MODULE_7__["FormsSharedModules"],
+                _shared_modules_select__WEBPACK_IMPORTED_MODULE_8__["SelectSharedModules"],
+                _shared_modules_file_picker__WEBPACK_IMPORTED_MODULE_9__["FilePickerModules"],
+                _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_10__["SwiperSharedModules"],
+                _shared_modules_photo_post_viewer__WEBPACK_IMPORTED_MODULE_11__["PhotoPostViewerSharedModules"],
+                _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_12__["DirectivesModule"],
+                _profile_routing_module__WEBPACK_IMPORTED_MODULE_13__["ProfileRoutingModule"]
             ],
             declarations: [
-                _components_profile_header_profile_header_component__WEBPACK_IMPORTED_MODULE_11__["ProfileHeaderComponent"],
-                _pages_profile_profile_page__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"],
-                _pages_timeline_timeline_page__WEBPACK_IMPORTED_MODULE_13__["TimelineComponent"],
-                _pages_about_about_page__WEBPACK_IMPORTED_MODULE_14__["AboutComponent"],
-                _pages_friends_friends_page__WEBPACK_IMPORTED_MODULE_15__["FriendsComponent"],
-                _pages_photos_photos_page__WEBPACK_IMPORTED_MODULE_16__["PhotosComponent"],
-                _pages_videos_videos_page__WEBPACK_IMPORTED_MODULE_17__["VideosComponent"]
+                _components_profile_header_profile_header_component__WEBPACK_IMPORTED_MODULE_14__["ProfileHeaderComponent"],
+                _pages_profile_profile_page__WEBPACK_IMPORTED_MODULE_15__["ProfileComponent"],
+                _pages_timeline_timeline_page__WEBPACK_IMPORTED_MODULE_16__["TimelineComponent"],
+                _pages_about_about_page__WEBPACK_IMPORTED_MODULE_17__["AboutComponent"],
+                _pages_friends_friends_page__WEBPACK_IMPORTED_MODULE_18__["FriendsComponent"],
+                _pages_photos_photos_page__WEBPACK_IMPORTED_MODULE_19__["PhotosComponent"],
+                _pages_videos_videos_page__WEBPACK_IMPORTED_MODULE_20__["VideosComponent"]
             ],
+            providers: [_shared_services_photos_service__WEBPACK_IMPORTED_MODULE_1__["PhotoService"], _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_0__["HobbiesAndInterestsService"], _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__["PersonalInfoService"]]
+            //entryComponents: [PhotoPostViewerContentComponent]
         })
     ], ProfileModule);
     return ProfileModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/photos.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/shared/services/photos.service.ts ***!
+  \***************************************************/
+/*! exports provided: PhotoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotoService", function() { return PhotoService; });
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angularfire2/storage */ "./node_modules/angularfire2/storage/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var PhotoService = /** @class */ (function () {
+    function PhotoService(db, storage, userService) {
+        this.db = db;
+        this.storage = storage;
+        this.userService = userService;
+        // For time error
+        db.firestore.settings({ timestampsInSnapshots: true });
+    }
+    PhotoService.prototype.executeUpload = function (photosWithDetail, user) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var PHOTOS = [];
+            photosWithDetail.photos.forEach(function (photo) {
+                var file = photo.underlyingFile;
+                var path = "photos/" + user.uid + "/" + new Date().getTime() + "_" + photo.underlyingFile.name;
+                var customMetadata = { app: 'Yellow Plane' };
+                _this.storage.upload(path, file, { customMetadata: customMetadata })
+                    .then(function (resp) {
+                    resp.ref.getDownloadURL().then(function (url) {
+                        PHOTOS.push({
+                            name: photo.underlyingFile.name,
+                            photoUrl: url,
+                            uploadedAt: new Date().getTime().toString()
+                        });
+                        if (PHOTOS.length === photosWithDetail.photos.length) {
+                            _this.db.collection('uploads').add({
+                                userId: user.uid,
+                                privacy: photosWithDetail.privacy,
+                                description: photosWithDetail.description,
+                                createdAt: new Date().getTime().toString(),
+                                photos: PHOTOS
+                            })
+                                .then(function (resp) {
+                                //console.log(resp);
+                                resolve(resp);
+                            })
+                                .catch(function (err) {
+                                reject(err);
+                            });
+                        }
+                    }).catch(function (err) {
+                        reject(err);
+                    });
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+            });
+        });
+    };
+    PhotoService.prototype.uploadPhotos = function (photosWithDetail) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUser()
+                .then(function (user) {
+                _this.executeUpload(photosWithDetail, user)
+                    .then(function (resp) {
+                    //console.log(resp); 
+                    resolve('Photos Successfuly Uploaded!');
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+            })
+                .catch(function (err) {
+                reject(err);
+            });
+        });
+    };
+    PhotoService.prototype.getUploads = function (user) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var UPLOADS = [];
+            var queryResponse = _this.db.collection('uploads', function (ref) { return ref.where('userId', '==', user.uid); })
+                .valueChanges();
+            queryResponse.subscribe(function (data) {
+                console.log("data.length" + data.length);
+                console.log("UPLOADS.length" + UPLOADS.length);
+                data.forEach(function (upload) {
+                    console.log(upload);
+                    UPLOADS.push(upload);
+                    if (data.length === UPLOADS.length) {
+                        resolve(UPLOADS);
+                    }
+                });
+            }, function (err) {
+                reject(err);
+            });
+            // queryResponse.forEach(upload => {
+            //     console.log(upload);
+            //     UPLOADS.push(upload);
+            // });
+        });
+    };
+    PhotoService.prototype.getCurrentUserPhotos = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUser().then(function (user) {
+                _this.getUploads(user).then(function (resp) {
+                    resolve(resp);
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+                //resolve();
+            }).catch(function (err) {
+                reject(err);
+            });
+        });
+    };
+    PhotoService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"],
+            angularfire2_storage__WEBPACK_IMPORTED_MODULE_4__["AngularFireStorage"],
+            _user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
+    ], PhotoService);
+    return PhotoService;
 }());
 
 

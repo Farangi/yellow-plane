@@ -1,3 +1,6 @@
+import { HobbiesAndInterestsService } from './../../../../shared/services/profile/hobbiesAndInterests.service';
+import { PhotoService } from './../../../../shared/services/photos.service';
+import { PersonalInfoService } from './../../../../shared/services/profile/personalInfo.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -42,6 +45,7 @@ import { VideosComponent } from './pages/videos/videos.page';
   	PhotosComponent,
   	VideosComponent
   ],
+  providers: [PhotoService, HobbiesAndInterestsService, PersonalInfoService]
   //entryComponents: [PhotoPostViewerContentComponent]
 })
 export class ProfileModule { }

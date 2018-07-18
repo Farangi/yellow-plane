@@ -6999,6 +6999,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_account_page_change_password_account_page_change_password_page__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/account-page-change-password/account-page-change-password.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-change-password/account-page-change-password.page.ts");
 /* harmony import */ var _pages_account_page_notifications_account_page_notifications_page__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/account-page-notifications/account-page-notifications.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-notifications/account-page-notifications.page.ts");
 /* harmony import */ var _pages_account_page_ad_manager_account_page_ad_manager_page__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/account-page-ad-manager/account-page-ad-manager.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-ad-manager/account-page-ad-manager.page.ts");
+/* harmony import */ var _shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../../../shared/guards/profile.gaurd */ "./src/app/shared/guards/profile.gaurd.ts");
+/* harmony import */ var _shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../../shared/guards/page.gaurd */ "./src/app/shared/guards/page.gaurd.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7023,10 +7025,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var routes = [
     {
         path: 'profile',
         component: _pages_account_account_page__WEBPACK_IMPORTED_MODULE_2__["AccountComponent"],
+        canActivate: [_shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_18__["ProfileGuard"]],
         children: [
             {
                 path: '',
@@ -7065,6 +7070,7 @@ var routes = [
     {
         path: 'page',
         component: _pages_account_page_account_page_page__WEBPACK_IMPORTED_MODULE_11__["AccountPageComponent"],
+        canActivate: [_shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_19__["PageGuard"]],
         children: [
             {
                 path: '',
@@ -7119,37 +7125,41 @@ var AccountRoutingModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountModule", function() { return AccountModule; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../shared/directives/directives.module */ "./src/app/shared/directives/directives.module.ts");
-/* harmony import */ var _shared_modules_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../shared/modules/forms */ "./src/app/shared/modules/forms.ts");
-/* harmony import */ var _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../shared/modules/swiper */ "./src/app/shared/modules/swiper.ts");
-/* harmony import */ var _shared_modules_scrollbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../shared/modules/scrollbar */ "./src/app/shared/modules/scrollbar.ts");
-/* harmony import */ var _shared_modules_emoji__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../shared/modules/emoji */ "./src/app/shared/modules/emoji.ts");
-/* harmony import */ var _account_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account-routing.module */ "./src/app/modules/full-layout/modules/account/account-routing.module.ts");
-/* harmony import */ var _components_account_header_account_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/account-header/account-header.component */ "./src/app/modules/full-layout/modules/account/components/account-header/account-header.component.ts");
-/* harmony import */ var _components_account_sidebar_account_sidebar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/account-sidebar/account-sidebar.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar/account-sidebar.component.ts");
-/* harmony import */ var _components_account_sidebar_large_account_sidebar_large_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/account-sidebar-large/account-sidebar-large.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar-large/account-sidebar-large.component.ts");
-/* harmony import */ var _pages_account_account_page__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/account/account.page */ "./src/app/modules/full-layout/modules/account/pages/account/account.page.ts");
-/* harmony import */ var _pages_account_personal_info_account_personal_info_page__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/account-personal-info/account-personal-info.page */ "./src/app/modules/full-layout/modules/account/pages/account-personal-info/account-personal-info.page.ts");
-/* harmony import */ var _pages_account_messages_account_messages_page__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/account-messages/account-messages.page */ "./src/app/modules/full-layout/modules/account/pages/account-messages/account-messages.page.ts");
-/* harmony import */ var _pages_account_notifications_account_notifications_page__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/account-notifications/account-notifications.page */ "./src/app/modules/full-layout/modules/account/pages/account-notifications/account-notifications.page.ts");
-/* harmony import */ var _pages_account_friend_requests_account_friend_requests_page__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/account-friend-requests/account-friend-requests.page */ "./src/app/modules/full-layout/modules/account/pages/account-friend-requests/account-friend-requests.page.ts");
-/* harmony import */ var _pages_account_settings_account_settings_page__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/account-settings/account-settings.page */ "./src/app/modules/full-layout/modules/account/pages/account-settings/account-settings.page.ts");
-/* harmony import */ var _pages_account_change_password_account_change_password_page__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/account-change-password/account-change-password.page */ "./src/app/modules/full-layout/modules/account/pages/account-change-password/account-change-password.page.ts");
-/* harmony import */ var _pages_account_hobbies_account_hobbies_page__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/account-hobbies/account-hobbies.page */ "./src/app/modules/full-layout/modules/account/pages/account-hobbies/account-hobbies.page.ts");
-/* harmony import */ var _pages_account_education_account_education_page__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/account-education/account-education.page */ "./src/app/modules/full-layout/modules/account/pages/account-education/account-education.page.ts");
-/* harmony import */ var _components_account_header_page_account_header_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/account-header-page/account-header-page.component */ "./src/app/modules/full-layout/modules/account/components/account-header-page/account-header-page.component.ts");
-/* harmony import */ var _components_account_sidebar_page_account_sidebar_page_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/account-sidebar-page/account-sidebar-page.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar-page/account-sidebar-page.component.ts");
-/* harmony import */ var _components_account_sidebar_page_large_account_sidebar_page_large_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/account-sidebar-page-large/account-sidebar-page-large.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar-page-large/account-sidebar-page-large.component.ts");
-/* harmony import */ var _pages_account_page_account_page_page__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pages/account-page/account-page.page */ "./src/app/modules/full-layout/modules/account/pages/account-page/account-page.page.ts");
-/* harmony import */ var _pages_account_page_personal_info_account_page_personal_info_page__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/account-page-personal-info/account-page-personal-info.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-personal-info/account-page-personal-info.page.ts");
-/* harmony import */ var _pages_account_page_settings_account_page_settings_page__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/account-page-settings/account-page-settings.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-settings/account-page-settings.page.ts");
-/* harmony import */ var _pages_account_page_messages_account_page_messages_page__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/account-page-messages/account-page-messages.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-messages/account-page-messages.page.ts");
-/* harmony import */ var _pages_account_page_change_password_account_page_change_password_page__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pages/account-page-change-password/account-page-change-password.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-change-password/account-page-change-password.page.ts");
-/* harmony import */ var _pages_account_page_notifications_account_page_notifications_page__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pages/account-page-notifications/account-page-notifications.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-notifications/account-page-notifications.page.ts");
-/* harmony import */ var _pages_account_page_ad_manager_account_page_ad_manager_page__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pages/account-page-ad-manager/account-page-ad-manager.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-ad-manager/account-page-ad-manager.page.ts");
+/* harmony import */ var _shared_services_profile_educationsAndEmployments_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../shared/services/profile/educationsAndEmployments.service */ "./src/app/shared/services/profile/educationsAndEmployments.service.ts");
+/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../shared/directives/directives.module */ "./src/app/shared/directives/directives.module.ts");
+/* harmony import */ var _shared_modules_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../shared/modules/forms */ "./src/app/shared/modules/forms.ts");
+/* harmony import */ var _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../shared/modules/swiper */ "./src/app/shared/modules/swiper.ts");
+/* harmony import */ var _shared_modules_scrollbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../shared/modules/scrollbar */ "./src/app/shared/modules/scrollbar.ts");
+/* harmony import */ var _shared_modules_emoji__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../shared/modules/emoji */ "./src/app/shared/modules/emoji.ts");
+/* harmony import */ var _account_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./account-routing.module */ "./src/app/modules/full-layout/modules/account/account-routing.module.ts");
+/* harmony import */ var _components_account_header_account_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/account-header/account-header.component */ "./src/app/modules/full-layout/modules/account/components/account-header/account-header.component.ts");
+/* harmony import */ var _components_account_sidebar_account_sidebar_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/account-sidebar/account-sidebar.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar/account-sidebar.component.ts");
+/* harmony import */ var _components_account_sidebar_large_account_sidebar_large_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/account-sidebar-large/account-sidebar-large.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar-large/account-sidebar-large.component.ts");
+/* harmony import */ var _pages_account_account_page__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/account/account.page */ "./src/app/modules/full-layout/modules/account/pages/account/account.page.ts");
+/* harmony import */ var _pages_account_personal_info_account_personal_info_page__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/account-personal-info/account-personal-info.page */ "./src/app/modules/full-layout/modules/account/pages/account-personal-info/account-personal-info.page.ts");
+/* harmony import */ var _pages_account_messages_account_messages_page__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/account-messages/account-messages.page */ "./src/app/modules/full-layout/modules/account/pages/account-messages/account-messages.page.ts");
+/* harmony import */ var _pages_account_notifications_account_notifications_page__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/account-notifications/account-notifications.page */ "./src/app/modules/full-layout/modules/account/pages/account-notifications/account-notifications.page.ts");
+/* harmony import */ var _pages_account_friend_requests_account_friend_requests_page__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/account-friend-requests/account-friend-requests.page */ "./src/app/modules/full-layout/modules/account/pages/account-friend-requests/account-friend-requests.page.ts");
+/* harmony import */ var _pages_account_settings_account_settings_page__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/account-settings/account-settings.page */ "./src/app/modules/full-layout/modules/account/pages/account-settings/account-settings.page.ts");
+/* harmony import */ var _pages_account_change_password_account_change_password_page__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/account-change-password/account-change-password.page */ "./src/app/modules/full-layout/modules/account/pages/account-change-password/account-change-password.page.ts");
+/* harmony import */ var _pages_account_hobbies_account_hobbies_page__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pages/account-hobbies/account-hobbies.page */ "./src/app/modules/full-layout/modules/account/pages/account-hobbies/account-hobbies.page.ts");
+/* harmony import */ var _pages_account_education_account_education_page__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pages/account-education/account-education.page */ "./src/app/modules/full-layout/modules/account/pages/account-education/account-education.page.ts");
+/* harmony import */ var _components_account_header_page_account_header_page_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/account-header-page/account-header-page.component */ "./src/app/modules/full-layout/modules/account/components/account-header-page/account-header-page.component.ts");
+/* harmony import */ var _components_account_sidebar_page_account_sidebar_page_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/account-sidebar-page/account-sidebar-page.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar-page/account-sidebar-page.component.ts");
+/* harmony import */ var _components_account_sidebar_page_large_account_sidebar_page_large_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/account-sidebar-page-large/account-sidebar-page-large.component */ "./src/app/modules/full-layout/modules/account/components/account-sidebar-page-large/account-sidebar-page-large.component.ts");
+/* harmony import */ var _pages_account_page_account_page_page__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/account-page/account-page.page */ "./src/app/modules/full-layout/modules/account/pages/account-page/account-page.page.ts");
+/* harmony import */ var _pages_account_page_personal_info_account_page_personal_info_page__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/account-page-personal-info/account-page-personal-info.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-personal-info/account-page-personal-info.page.ts");
+/* harmony import */ var _pages_account_page_settings_account_page_settings_page__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pages/account-page-settings/account-page-settings.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-settings/account-page-settings.page.ts");
+/* harmony import */ var _pages_account_page_messages_account_page_messages_page__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pages/account-page-messages/account-page-messages.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-messages/account-page-messages.page.ts");
+/* harmony import */ var _pages_account_page_change_password_account_page_change_password_page__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pages/account-page-change-password/account-page-change-password.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-change-password/account-page-change-password.page.ts");
+/* harmony import */ var _pages_account_page_notifications_account_page_notifications_page__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pages/account-page-notifications/account-page-notifications.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-notifications/account-page-notifications.page.ts");
+/* harmony import */ var _pages_account_page_ad_manager_account_page_ad_manager_page__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./pages/account-page-ad-manager/account-page-ad-manager.page */ "./src/app/modules/full-layout/modules/account/pages/account-page-ad-manager/account-page-ad-manager.page.ts");
+/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _shared_services_profile_accountSettings_service__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../../../shared/services/profile/accountSettings.service */ "./src/app/shared/services/profile/accountSettings.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7187,45 +7197,50 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
 var AccountModule = /** @class */ (function () {
     function AccountModule() {
     }
     AccountModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModule"],
-                _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_3__["DirectivesModule"],
-                _shared_modules_forms__WEBPACK_IMPORTED_MODULE_4__["FormsSharedModules"],
-                _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_5__["SwiperSharedModules"],
-                _shared_modules_scrollbar__WEBPACK_IMPORTED_MODULE_6__["ScrollbarModule"],
-                _shared_modules_emoji__WEBPACK_IMPORTED_MODULE_7__["EmojiModules"],
-                _account_routing_module__WEBPACK_IMPORTED_MODULE_8__["AccountRoutingModule"]
+                _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbModule"],
+                _shared_directives_directives_module__WEBPACK_IMPORTED_MODULE_5__["DirectivesModule"],
+                _shared_modules_forms__WEBPACK_IMPORTED_MODULE_6__["FormsSharedModules"],
+                _shared_modules_swiper__WEBPACK_IMPORTED_MODULE_7__["SwiperSharedModules"],
+                _shared_modules_scrollbar__WEBPACK_IMPORTED_MODULE_8__["ScrollbarModule"],
+                _shared_modules_emoji__WEBPACK_IMPORTED_MODULE_9__["EmojiModules"],
+                _account_routing_module__WEBPACK_IMPORTED_MODULE_10__["AccountRoutingModule"]
             ],
             declarations: [
-                _components_account_header_account_header_component__WEBPACK_IMPORTED_MODULE_9__["AccountHeaderComponent"],
-                _components_account_sidebar_account_sidebar_component__WEBPACK_IMPORTED_MODULE_10__["AccountSidebarComponent"],
-                _components_account_sidebar_large_account_sidebar_large_component__WEBPACK_IMPORTED_MODULE_11__["AccountSidebarLargeComponent"],
-                _pages_account_account_page__WEBPACK_IMPORTED_MODULE_12__["AccountComponent"],
-                _pages_account_personal_info_account_personal_info_page__WEBPACK_IMPORTED_MODULE_13__["AccountPersonalInfoComponent"],
-                _pages_account_messages_account_messages_page__WEBPACK_IMPORTED_MODULE_14__["AccountMessagesComponent"],
-                _pages_account_notifications_account_notifications_page__WEBPACK_IMPORTED_MODULE_15__["AccountNotificationsComponent"],
-                _pages_account_friend_requests_account_friend_requests_page__WEBPACK_IMPORTED_MODULE_16__["AccountFriendRequestsComponent"],
-                _pages_account_settings_account_settings_page__WEBPACK_IMPORTED_MODULE_17__["AccountSettingsComponent"],
-                _pages_account_change_password_account_change_password_page__WEBPACK_IMPORTED_MODULE_18__["AccountChangePasswordComponent"],
-                _pages_account_hobbies_account_hobbies_page__WEBPACK_IMPORTED_MODULE_19__["AccountHobbiesComponent"],
-                _pages_account_education_account_education_page__WEBPACK_IMPORTED_MODULE_20__["AccountEducationComponent"],
-                _components_account_header_page_account_header_page_component__WEBPACK_IMPORTED_MODULE_21__["AccountHeaderPageComponent"],
-                _components_account_sidebar_page_account_sidebar_page_component__WEBPACK_IMPORTED_MODULE_22__["AccountSidebarPageComponent"],
-                _components_account_sidebar_page_large_account_sidebar_page_large_component__WEBPACK_IMPORTED_MODULE_23__["AccountSidebarPageLargeComponent"],
-                _pages_account_page_messages_account_page_messages_page__WEBPACK_IMPORTED_MODULE_27__["AccountPageMessagesComponent"],
-                _pages_account_page_account_page_page__WEBPACK_IMPORTED_MODULE_24__["AccountPageComponent"],
-                _pages_account_page_personal_info_account_page_personal_info_page__WEBPACK_IMPORTED_MODULE_25__["AccountPagePersonalInfoComponent"],
-                _pages_account_page_settings_account_page_settings_page__WEBPACK_IMPORTED_MODULE_26__["AccountPageSettingsComponent"],
-                _pages_account_page_change_password_account_page_change_password_page__WEBPACK_IMPORTED_MODULE_28__["AccountPageChangePasswordComponent"],
-                _pages_account_page_notifications_account_page_notifications_page__WEBPACK_IMPORTED_MODULE_29__["AccountPageNotificationsComponent"],
-                _pages_account_page_ad_manager_account_page_ad_manager_page__WEBPACK_IMPORTED_MODULE_30__["AccountPageAdManagerComponent"],
-            ]
+                _components_account_header_account_header_component__WEBPACK_IMPORTED_MODULE_11__["AccountHeaderComponent"],
+                _components_account_sidebar_account_sidebar_component__WEBPACK_IMPORTED_MODULE_12__["AccountSidebarComponent"],
+                _components_account_sidebar_large_account_sidebar_large_component__WEBPACK_IMPORTED_MODULE_13__["AccountSidebarLargeComponent"],
+                _pages_account_account_page__WEBPACK_IMPORTED_MODULE_14__["AccountComponent"],
+                _pages_account_personal_info_account_personal_info_page__WEBPACK_IMPORTED_MODULE_15__["AccountPersonalInfoComponent"],
+                _pages_account_messages_account_messages_page__WEBPACK_IMPORTED_MODULE_16__["AccountMessagesComponent"],
+                _pages_account_notifications_account_notifications_page__WEBPACK_IMPORTED_MODULE_17__["AccountNotificationsComponent"],
+                _pages_account_friend_requests_account_friend_requests_page__WEBPACK_IMPORTED_MODULE_18__["AccountFriendRequestsComponent"],
+                _pages_account_settings_account_settings_page__WEBPACK_IMPORTED_MODULE_19__["AccountSettingsComponent"],
+                _pages_account_change_password_account_change_password_page__WEBPACK_IMPORTED_MODULE_20__["AccountChangePasswordComponent"],
+                _pages_account_hobbies_account_hobbies_page__WEBPACK_IMPORTED_MODULE_21__["AccountHobbiesComponent"],
+                _pages_account_education_account_education_page__WEBPACK_IMPORTED_MODULE_22__["AccountEducationComponent"],
+                _components_account_header_page_account_header_page_component__WEBPACK_IMPORTED_MODULE_23__["AccountHeaderPageComponent"],
+                _components_account_sidebar_page_account_sidebar_page_component__WEBPACK_IMPORTED_MODULE_24__["AccountSidebarPageComponent"],
+                _components_account_sidebar_page_large_account_sidebar_page_large_component__WEBPACK_IMPORTED_MODULE_25__["AccountSidebarPageLargeComponent"],
+                _pages_account_page_messages_account_page_messages_page__WEBPACK_IMPORTED_MODULE_29__["AccountPageMessagesComponent"],
+                _pages_account_page_account_page_page__WEBPACK_IMPORTED_MODULE_26__["AccountPageComponent"],
+                _pages_account_page_personal_info_account_page_personal_info_page__WEBPACK_IMPORTED_MODULE_27__["AccountPagePersonalInfoComponent"],
+                _pages_account_page_settings_account_page_settings_page__WEBPACK_IMPORTED_MODULE_28__["AccountPageSettingsComponent"],
+                _pages_account_page_change_password_account_page_change_password_page__WEBPACK_IMPORTED_MODULE_30__["AccountPageChangePasswordComponent"],
+                _pages_account_page_notifications_account_page_notifications_page__WEBPACK_IMPORTED_MODULE_31__["AccountPageNotificationsComponent"],
+                _pages_account_page_ad_manager_account_page_ad_manager_page__WEBPACK_IMPORTED_MODULE_32__["AccountPageAdManagerComponent"],
+            ],
+            providers: [_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_33__["PersonalInfoService"], _shared_services_profile_accountSettings_service__WEBPACK_IMPORTED_MODULE_34__["AccountSettingsService"], _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_1__["HobbiesAndInterestsService"], _shared_services_profile_educationsAndEmployments_service__WEBPACK_IMPORTED_MODULE_0__["EducationsAndEmploymentsService"]]
         })
     ], AccountModule);
     return AccountModule;
@@ -7683,7 +7698,7 @@ var AccountChangePasswordComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Your Education History</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\" *ngFor=\"let education of educations let index = index;\">\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :education.title === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Title or Place</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"title-{{index}}\" [(ngModel)]=\"educations[index].title\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :education.time === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Period of Time</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"time-{{index}}\" [(ngModel)]=\"educations[index].time\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :education.description === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Description</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\" name=\"description-{{index}}\" [(ngModel)]=\"educations[index].description\">\r\n\t\t\t\t\t\t\t\t\t</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<a href clickStopPropagation (click)=\"addEducation()\" class=\"add-field\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-plus-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-plus-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>Add Education Field</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Cancel</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Your Employement History</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\" *ngFor=\"let employment of employments let index = index;\">\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :employment.title === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Title or Place</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"title-{{index}}\" [(ngModel)]=\"employments[index].title\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :employment.time === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Period of Time</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"time-{{index}}\" [(ngModel)]=\"employments[index].time\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :employment.description === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Description</label>\r\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\" name=\"description-{{index}}\" [(ngModel)]=\"employments[index].description\">\r\n\t\t\t\t\t\t\t\t</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<a href clickStopPropagation (click)=\"addEmployment()\" class=\"add-field\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-plus-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-plus-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>Add Employment Field</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Cancel</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n    \r\n    <!-- ... end Account Profile Sidebar -->\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Your Education History</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\" *ngFor=\"let education of educations let index = index;\">\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :education.title === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Title or Place</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"title-{{index}}\" [(ngModel)]=\"educations[index].title\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :education.time === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Period of Time</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"time-{{index}}\" [(ngModel)]=\"educations[index].time\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :education.description === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Description</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\" name=\"description-{{index}}\" [(ngModel)]=\"educations[index].description\">\r\n\t\t\t\t\t\t\t\t\t</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<a href clickStopPropagation (click)=\"addEducation()\" class=\"add-field\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-plus-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-plus-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>Add Education Field</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Your Employment History</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\" *ngFor=\"let employment of employments let index = index;\">\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :employment.title === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Title or Place</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"title-{{index}}\" [(ngModel)]=\"employments[index].title\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :employment.time === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Period of Time</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" name=\"time-{{index}}\" [(ngModel)]=\"employments[index].time\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\" [ngClass]=\"{'is-empty' :employment.description === ''}\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Description</label>\r\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\" name=\"description-{{index}}\" [(ngModel)]=\"employments[index].description\">\r\n\t\t\t\t\t\t\t\t</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<a href clickStopPropagation (click)=\"addEmployment()\" class=\"add-field\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-plus-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-plus-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>Add Employment Field</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Cancel</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\" (click)=\"updateEducationsAndEmployments()\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n    \r\n    <!-- ... end Account Profile Sidebar -->\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -7708,7 +7723,8 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountEducationComponent", function() { return AccountEducationComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_profile_educationsAndEmployments_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/profile/educationsAndEmployments.service */ "./src/app/shared/services/profile/educationsAndEmployments.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7719,25 +7735,29 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AccountEducationComponent = /** @class */ (function () {
-    function AccountEducationComponent() {
+    function AccountEducationComponent(educationsAndEmploymentsService) {
+        this.educationsAndEmploymentsService = educationsAndEmploymentsService;
         this.educations = [];
         this.employments = [];
     }
     AccountEducationComponent.prototype.ngOnInit = function () {
-        this.getEducationAndEmployment();
-        //if(this.educations.length == 0){
-        this.addEducation();
-        //}
-        //if(this.employments.length == 0){
-        this.addEmployment();
-        //}
-    };
-    AccountEducationComponent.prototype.getEducationAndEmployment = function () {
-        this.educations.push({ title: 'The Step College of Design', time: '2011 - 2015', description: 'Bachelor of Interactive Design in the New College. It was a five years intensive career. Average: A+' });
-        this.educations.push({ title: 'Quaid E Azam Institute', time: '2016', description: 'Five months Digital Illustration course. Professor: Ahmad Farooq.' });
-        this.employments.push({ title: 'Digital Design Intern', time: '2016-2017', description: 'Digital Design Intern for the “CGRC” agency. Was in charge of the communication with the clients.' });
-        this.employments.push({ title: 'UI/UX Designer', time: '2017-current', description: 'UI/UX Designer for the “Pyramid Solutions” agency.' });
+        var _this = this;
+        this.educationsAndEmploymentsService.getEducationsAndEmployments()
+            .then(function (resp) {
+            if (resp) {
+                if (resp.educations) {
+                    _this.educations = resp.educations;
+                }
+                if (resp.employments) {
+                    _this.employments = resp.employments;
+                }
+            }
+        })
+            .catch(function (err) {
+            console.log(err);
+        });
     };
     AccountEducationComponent.prototype.addEducation = function () {
         this.educations.push({ title: '', time: '', description: '' });
@@ -7745,13 +7765,23 @@ var AccountEducationComponent = /** @class */ (function () {
     AccountEducationComponent.prototype.addEmployment = function () {
         this.employments.push({ title: '', time: '', description: '' });
     };
+    AccountEducationComponent.prototype.updateEducationsAndEmployments = function () {
+        this.educationsAndEmploymentsService.updateEducationsAndEmployments({
+            educations: this.educations,
+            employments: this.employments
+        }).then(function (res) {
+            console.log(res);
+        }).catch(function (err) {
+            console.log(err);
+        });
+    };
     AccountEducationComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-account-education',
             template: __webpack_require__(/*! ./account-education.page.html */ "./src/app/modules/full-layout/modules/account/pages/account-education/account-education.page.html"),
             styles: [__webpack_require__(/*! ./account-education.page.scss */ "./src/app/modules/full-layout/modules/account/pages/account-education/account-education.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_shared_services_profile_educationsAndEmployments_service__WEBPACK_IMPORTED_MODULE_0__["EducationsAndEmploymentsService"]])
     ], AccountEducationComponent);
     return AccountEducationComponent;
 }());
@@ -7830,7 +7860,7 @@ var AccountFriendRequestsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Hobbies and Interests</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Hobbies</label>\r\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >I like to ride the bike to work, swimming, and working out. I also like reading design magazines, go to museums, and binge watching a good tv show while it’s raining outside.\r\n\t\t\t\t\t\t\t\t</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite TV Shows</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Movies</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >Idiocratic, The Scarred Wizard and the Fire Crown,  Crime Squad, Ferrum Man. </textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Games</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >The First of Us, Assassin’s Squad, Dark Assylum, NMAK16, Last Cause 4, Grand Snatch Auto. </textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Cancel</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Music Bands / Artists</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Books</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >The Crime of the Century, Egiptian Mythology 101, The Scarred Wizard, Lord of the Wings, Amongst Gods, The Oracle, A Tale of Air and Water.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Writers</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >Martin T. Georgeston, Jhonathan R. Token, Ivana Rowle, Alexandria Platt, Marcus Roth. </textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Other Interests</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  >Swimming, Surfing, Scuba Diving, Anime, Photography, Tattoos, Street Art.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n    \r\n    <!-- ... end Account Profile Sidebar -->\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Hobbies and Interests</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Hobbies</label>\r\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"hobbies\" [(ngModel)]=\"this.hobbiesAndInterests.hobbies\" placeholder=\"\"  >I like to ride the bike to work, swimming, and working out. I also like reading design magazines, go to museums, and binge watching a good tv show while it’s raining outside.\r\n\t\t\t\t\t\t\t\t</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite TV Shows</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"favTV\" [(ngModel)]=\"this.hobbiesAndInterests.favTV\" placeholder=\"\"  >Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Movies</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"favMovies\" [(ngModel)]=\"this.hobbiesAndInterests.favMovies\" placeholder=\"\"  >Idiocratic, The Scarred Wizard and the Fire Crown,  Crime Squad, Ferrum Man. </textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Games</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"favGames\" [(ngModel)]=\"this.hobbiesAndInterests.favGames\" placeholder=\"\"  >The First of Us, Assassin’s Squad, Dark Assylum, NMAK16, Last Cause 4, Grand Snatch Auto. </textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Cancel</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Music Bands / Artists</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"favMusic\" [(ngModel)]=\"this.hobbiesAndInterests.favMusic\" placeholder=\"\"  >Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Books</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"favBooks\" [(ngModel)]=\"this.hobbiesAndInterests.favBooks\" placeholder=\"\"  >The Crime of the Century, Egiptian Mythology 101, The Scarred Wizard, Lord of the Wings, Amongst Gods, The Oracle, A Tale of Air and Water.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Favourite Writers</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"favWriters\" [(ngModel)]=\"this.hobbiesAndInterests.favWriters\" placeholder=\"\"  >Martin T. Georgeston, Jhonathan R. Token, Ivana Rowle, Alexandria Platt, Marcus Roth. </textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Other Interests</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"otherInterests\" [(ngModel)]=\"this.hobbiesAndInterests.otherInterests\" placeholder=\"\"  >Swimming, Surfing, Scuba Diving, Anime, Photography, Tattoos, Street Art.</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\" (click)=\"updateHobbiesAndInterests()\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n    \r\n    <!-- ... end Account Profile Sidebar -->\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -7855,7 +7885,8 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountHobbiesComponent", function() { return AccountHobbiesComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7866,18 +7897,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AccountHobbiesComponent = /** @class */ (function () {
-    function AccountHobbiesComponent() {
+    function AccountHobbiesComponent(hobbiesAndInterestsService) {
+        this.hobbiesAndInterestsService = hobbiesAndInterestsService;
     }
     AccountHobbiesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.hobbiesAndInterests = {};
+        this.hobbiesAndInterestsService.getHobbiesAndInterests()
+            .then(function (hobbies) {
+            if (hobbies) {
+                _this.hobbiesAndInterests = hobbies;
+            }
+        })
+            .catch(function (err) {
+            console.log(err);
+        });
+    };
+    AccountHobbiesComponent.prototype.updateHobbiesAndInterests = function () {
+        this.hobbiesAndInterestsService.updateHobbiesAndInterests(this.hobbiesAndInterests)
+            .then(function (res) {
+            console.log(res);
+        }).catch(function (err) {
+            console.log(err);
+        });
     };
     AccountHobbiesComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-account-hobbies',
             template: __webpack_require__(/*! ./account-hobbies.page.html */ "./src/app/modules/full-layout/modules/account/pages/account-hobbies/account-hobbies.page.html"),
             styles: [__webpack_require__(/*! ./account-hobbies.page.scss */ "./src/app/modules/full-layout/modules/account/pages/account-hobbies/account-hobbies.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_0__["HobbiesAndInterestsService"]])
     ], AccountHobbiesComponent);
     return AccountHobbiesComponent;
 }());
@@ -8477,7 +8529,7 @@ var AccountPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!-- Your Account Personal Information -->\r\n\r\n<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Personal Information</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">First Name</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Hassan\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Email</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"email\" value=\"hassan@yourmail.com\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthday</label>\r\n\t\t\t\t\t\t\t\t\t<input name=\"birthday\" [(ngModel)]=\"model\" ngbDatepicker #birthdaypicker=\"ngbDatepicker\" [datepickerToggle]=\"birthdaypicker\" />\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Last Name</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Ahmad\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Website</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"abcagency.com\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Phone Number</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Country</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"PK\">Pakistan</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"AU\">Australia</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your State / Province</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"CA\">Cspital</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"PU\">Punjab</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your City</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"IS\">Islamabad</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"LH\">Lahore</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Write a little description about you</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\">Hi, I’m Hassan, I’m 25 and I work as a Digital Designer for the  “abc” Agency in Pier 56</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Gender</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Male</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Female</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Religious Belifs</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthplace</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Occupation</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"UI/UX Designer\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Status</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Married</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Not Married</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Political Incline</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Democrat\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Cancel</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n\t\t<div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n\t\t\t<app-account-sidebar-large></app-account-sidebar-large>\r\n\t\t</div>\r\n\t\t\r\n\t\t<!-- ... end Account Profile Sidebar -->\r\n\t\t\t\r\n\t</div>\r\n</div>\r\n\r\n<!-- ... end Your Account Personal Information -->"
+module.exports = "\r\n<!-- Your Account Personal Information -->\r\n\r\n<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Personal Information</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">First Name</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Hassan\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Email</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"email\" value=\"hassan@yourmail.com\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthday</label>\r\n\t\t\t\t\t\t\t\t\t<input name=\"birthday\" [(ngModel)]=\"model\" ngbDatepicker #birthdaypicker=\"ngbDatepicker\" [datepickerToggle]=\"birthdaypicker\" />\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Last Name</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Ahmad\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Website</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" name=\"website\" [(ngModel)]=\"this.personalInfo.website\" placeholder=\"\" type=\"text\" value=\"abcagency.com\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Phone Number</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" name=\"phone\" [(ngModel)]=\"this.personalInfo.phone\" placeholder=\"\" type=\"text\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Country</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" name=\"country\" [(ngModel)]=\"this.personalInfo.country\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"PK\">Pakistan</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"AU\">Australia</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your State / Province</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" name=\"province\" [(ngModel)]=\"this.personalInfo.province\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"CA\">Cspital</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"PU\">Punjab</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your City</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" name=\"city\" [(ngModel)]=\"this.personalInfo.city\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"IS\">Islamabad</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"LH\">Lahore</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Write a little description about you</label>\r\n\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" name=\"description\" [(ngModel)]=\"this.personalInfo.description\" placeholder=\"\">Hi, I’m Hassan, I’m 25 and I work as a Digital Designer for the  “abc” Agency in Pier 56</textarea>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Gender</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Male</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Female</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Religious Preference</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" name=\"religion\" [(ngModel)]=\"this.personalInfo.religion\" placeholder=\"\" type=\"text\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthplace</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" name=\"birthplace\" [(ngModel)]=\"this.personalInfo.birthplace\" placeholder=\"\" type=\"text\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Occupation</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" name=\"occupation\" [(ngModel)]=\"this.personalInfo.occupation\" placeholder=\"\" type=\"text\" value=\"UI/UX Designer\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Status</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"form-control\" name=\"status\" [(ngModel)]=\"this.personalInfo.status\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Married</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Not Married</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Political Preference</label>\r\n\t\t\t\t\t\t\t\t\t<input class=\"form-control\" name=\"politicalincline\" [(ngModel)]=\"this.personalInfo.politicalincline\" placeholder=\"\" type=\"text\" value=\"Democrat\">\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Cancel</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\" (click)=\"updatePersonalInfo()\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n\t\t<div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n\t\t\t<app-account-sidebar-large></app-account-sidebar-large>\r\n\t\t</div>\r\n\t\t\r\n\t\t<!-- ... end Account Profile Sidebar -->\r\n\t\t\t\r\n\t</div>\r\n</div>\r\n\r\n<!-- ... end Your Account Personal Information -->"
 
 /***/ }),
 
@@ -8502,7 +8554,8 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountPersonalInfoComponent", function() { return AccountPersonalInfoComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8513,23 +8566,46 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AccountPersonalInfoComponent = /** @class */ (function () {
-    function AccountPersonalInfoComponent() {
+    function AccountPersonalInfoComponent(personalInfoService) {
+        this.personalInfoService = personalInfoService;
     }
     AccountPersonalInfoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.personalInfo = {};
         this.model = {
             "year": 1984,
             "month": 10,
             "day": 24
         };
+        this.personalInfoService.getPersonalInfo()
+            .then(function (info) {
+            if (info) {
+                _this.personalInfo = info;
+                _this.model = _this.personalInfo.birthday;
+            }
+        })
+            .catch(function (err) {
+            console.log(err);
+        });
+    };
+    AccountPersonalInfoComponent.prototype.updatePersonalInfo = function () {
+        this.personalInfo.birthday = this.model;
+        this.personalInfoService.updatePersonalInfo(this.personalInfo)
+            .then(function (res) {
+            console.log(res);
+        }).catch(function (err) {
+            console.log(err);
+        });
     };
     AccountPersonalInfoComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-account-personal-info',
             template: __webpack_require__(/*! ./account-personal-info.page.html */ "./src/app/modules/full-layout/modules/account/pages/account-personal-info/account-personal-info.page.html"),
             styles: [__webpack_require__(/*! ./account-personal-info.page.scss */ "./src/app/modules/full-layout/modules/account/pages/account-personal-info/account-personal-info.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_0__["PersonalInfoService"]])
     ], AccountPersonalInfoComponent);
     return AccountPersonalInfoComponent;
 }());
@@ -8545,7 +8621,7 @@ var AccountPersonalInfoComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Account Settings</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Who Can Friend You?</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"EO\">Everyone</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"NO\">No One</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Who Can View Your Posts</label>\r\n\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"US\">Friends Only</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"EO\">Everyone</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"description-toggle\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"description-toggle-content\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"h6\">Notifications Sound</div>\r\n\t\t\t\t\t\t\t\t\t\t<p>A sound will be played each time you receive a new activity notification</p>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"togglebutton\">\r\n\t\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" checked=\"\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"toggle\"></span>\r\n\t\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"description-toggle\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"description-toggle-content\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"h6\">Notifications Email</div>\r\n\t\t\t\t\t\t\t\t\t\t<p>We’ll send you an email to your account each time you receive a new activity notification</p>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"togglebutton\">\r\n\t\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" checked=\"\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"toggle\"></span>\r\n\t\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"description-toggle\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"description-toggle-content\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"h6\">Chat Message Sound</div>\r\n\t\t\t\t\t\t\t\t\t\t<p>A sound will be played each time you receive a new message on an inactive chat window</p>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"togglebutton\">\r\n\t\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" checked=\"\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"toggle\"></span>\r\n\t\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Restore all Attributes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n    <!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n    \r\n    <!-- ... end Account Profile Sidebar -->\r\n\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Account Settings</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<form>\r\n\t\t\t\t\t\t<div class=\"row\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Who Can Friend You?</label>\r\n\t\t\t\t\t\t\t\t\t<select name=\"whoCanFriendYou\" [(ngModel)]=\"this.accountSettings.whoCanFriendYou\" class=\"selectpicker form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"EO\">Everyone</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"NO\">No One</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">\r\n\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Who Can View Your Posts</label>\r\n\t\t\t\t\t\t\t\t\t<select name=\"whoCanViewYourPosts\" [(ngModel)]=\"this.accountSettings.whoCanViewYourPosts\" class=\"selectpicker form-control\" size=\"auto\">\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"US\">Friends Only</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"EO\">Everyone</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<div class=\"description-toggle\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"description-toggle-content\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"h6\">Notifications Sound</div>\r\n\t\t\t\t\t\t\t\t\t\t<p>A sound will be played each time you receive a new activity notification</p>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"togglebutton\">\r\n\t\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"notificationSound\" [(ngModel)]=\"this.accountSettings.notificationSound\" checked=\"\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"toggle\"></span>\r\n\t\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"description-toggle\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"description-toggle-content\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"h6\">Notifications Email</div>\r\n\t\t\t\t\t\t\t\t\t\t<p>We’ll send you an email to your account each time you receive a new activity notification</p>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"togglebutton\">\r\n\t\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"notificationEmail\" [(ngModel)]=\"this.accountSettings.notificationEmail\" checked=\"\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"toggle\"></span>\r\n\t\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div class=\"description-toggle\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"description-toggle-content\">\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"h6\">Chat Message Sound</div>\r\n\t\t\t\t\t\t\t\t\t\t<p>A sound will be played each time you receive a new message on an inactive chat window</p>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<div class=\"togglebutton\">\r\n\t\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"chatSound\" [(ngModel)]=\"this.accountSettings.chatSound\" checked=\"\">\r\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"toggle\"></span>\r\n\t\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Restore all Attributes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\" (click)=\"updateAccountSettings()\">Save all Changes</button>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n    <!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n    \r\n    <!-- ... end Account Profile Sidebar -->\r\n\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -8571,6 +8647,7 @@ module.exports = ""
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountSettingsComponent", function() { return AccountSettingsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_profile_accountSettings_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../shared/services/profile/accountSettings.service */ "./src/app/shared/services/profile/accountSettings.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8581,10 +8658,37 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AccountSettingsComponent = /** @class */ (function () {
-    function AccountSettingsComponent() {
+    function AccountSettingsComponent(accountSettingsService) {
+        this.accountSettingsService = accountSettingsService;
+        this.accountSettings = {
+            whoCanViewYourPosts: "US",
+            whoCanFriendYou: "EO",
+            chatSound: true,
+            notificationEmail: false,
+            notificationSound: true
+        };
     }
     AccountSettingsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.accountSettingsService.getAccountSettings()
+            .then(function (settings) {
+            if (settings) {
+                _this.accountSettings = settings;
+            }
+        })
+            .catch(function (err) {
+            console.log(err);
+        });
+    };
+    AccountSettingsComponent.prototype.updateAccountSettings = function () {
+        this.accountSettingsService.updateAccountSettings(this.accountSettings)
+            .then(function (res) {
+            console.log(res);
+        }).catch(function (err) {
+            console.log(err);
+        });
     };
     AccountSettingsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -8592,7 +8696,7 @@ var AccountSettingsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./account-settings.page.html */ "./src/app/modules/full-layout/modules/account/pages/account-settings/account-settings.page.html"),
             styles: [__webpack_require__(/*! ./account-settings.page.scss */ "./src/app/modules/full-layout/modules/account/pages/account-settings/account-settings.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_shared_services_profile_accountSettings_service__WEBPACK_IMPORTED_MODULE_1__["AccountSettingsService"]])
     ], AccountSettingsComponent);
     return AccountSettingsComponent;
 }());
@@ -8697,6 +8801,164 @@ var EmojiModules = /** @class */ (function () {
         })
     ], EmojiModules);
     return EmojiModules;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/profile/accountSettings.service.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/shared/services/profile/accountSettings.service.ts ***!
+  \********************************************************************/
+/*! exports provided: AccountSettingsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountSettingsService", function() { return AccountSettingsService; });
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AccountSettingsService = /** @class */ (function () {
+    function AccountSettingsService(db, userService) {
+        this.db = db;
+        this.userService = userService;
+        // For time error
+        db.firestore.settings({ timestampsInSnapshots: true });
+    }
+    AccountSettingsService.prototype.getAccountSettings = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUser().then(function (user) {
+                _this.db.doc("account_settings/" + user.uid).ref.get()
+                    .then(function (response) {
+                    resolve(response.data());
+                }).catch(function (err) {
+                    reject(err);
+                });
+            }).catch(function (err) {
+                reject(err);
+            });
+        });
+    };
+    AccountSettingsService.prototype.updateAccountSettings = function (data) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUser().then(function (user) {
+                var accountSettingsRef = _this.db.doc("account_settings/" + user.uid);
+                accountSettingsRef.set(data, { merge: true })
+                    .then(function (res) {
+                    resolve('Settings successfully updated');
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+            }).catch(function (err) {
+                reject(err);
+            });
+        });
+    };
+    AccountSettingsService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"],
+            _user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
+    ], AccountSettingsService);
+    return AccountSettingsService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/profile/educationsAndEmployments.service.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/shared/services/profile/educationsAndEmployments.service.ts ***!
+  \*****************************************************************************/
+/*! exports provided: EducationsAndEmploymentsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EducationsAndEmploymentsService", function() { return EducationsAndEmploymentsService; });
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
+/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var EducationsAndEmploymentsService = /** @class */ (function () {
+    function EducationsAndEmploymentsService(db, userService) {
+        this.db = db;
+        this.userService = userService;
+        // For time error
+        db.firestore.settings({ timestampsInSnapshots: true });
+    }
+    EducationsAndEmploymentsService.prototype.getEducationsAndEmployments = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUser().then(function (user) {
+                _this.db.doc("educations_and_employments/" + user.uid).ref.get()
+                    .then(function (response) {
+                    resolve(response.data());
+                }).catch(function (err) {
+                    reject(err);
+                });
+            }).catch(function (err) {
+                reject(err);
+            });
+        });
+    };
+    EducationsAndEmploymentsService.prototype.updateEducationsAndEmployments = function (data) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUser().then(function (user) {
+                var educationsAndEmploymentsRef = _this.db.doc("educations_and_employments/" + user.uid);
+                educationsAndEmploymentsRef.set(data, { merge: true })
+                    .then(function (res) {
+                    resolve('Educations & Employments successfully updated');
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+            }).catch(function (err) {
+                reject(err);
+            });
+        });
+    };
+    EducationsAndEmploymentsService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"],
+            _user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
+    ], EducationsAndEmploymentsService);
+    return EducationsAndEmploymentsService;
 }());
 
 

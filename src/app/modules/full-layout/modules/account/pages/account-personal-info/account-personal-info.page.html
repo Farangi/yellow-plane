@@ -37,20 +37,20 @@
 
 								<div class="form-group label-floating">
 									<label class="control-label">Your Website</label>
-									<input class="form-control" placeholder="" type="text" value="abcagency.com">
+									<input class="form-control" name="website" [(ngModel)]="this.personalInfo.website" placeholder="" type="text" value="abcagency.com">
 								</div>
 
 
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">Your Phone Number</label>
-									<input class="form-control" placeholder="" type="text">
+									<input class="form-control" name="phone" [(ngModel)]="this.personalInfo.phone" placeholder="" type="text">
 								</div>
 							</div>
 
 							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your Country</label>
-									<select class="form-control" size="auto">
+									<select class="form-control" name="country" [(ngModel)]="this.personalInfo.country" size="auto">
 										<option value="PK">Pakistan</option>
 										<option value="AU">Australia</option>
 									</select>
@@ -59,7 +59,7 @@
 							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your State / Province</label>
-									<select class="form-control" size="auto">
+									<select class="form-control" name="province" [(ngModel)]="this.personalInfo.province" size="auto">
 										<option value="CA">Cspital</option>
 										<option value="PU">Punjab</option>
 									</select>
@@ -68,7 +68,7 @@
 							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your City</label>
-									<select class="form-control" size="auto">
+									<select class="form-control" name="city" [(ngModel)]="this.personalInfo.city" size="auto">
 										<option value="IS">Islamabad</option>
 										<option value="LH">Lahore</option>
 									</select>
@@ -77,7 +77,7 @@
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating">
 									<label class="control-label">Write a little description about you</label>
-									<textarea class="form-control" placeholder="">Hi, I’m Hassan, I’m 25 and I work as a Digital Designer for the  “abc” Agency in Pier 56</textarea>
+									<textarea class="form-control" name="description" [(ngModel)]="this.personalInfo.description" placeholder="">Hi, I’m Hassan, I’m 25 and I work as a Digital Designer for the  “abc” Agency in Pier 56</textarea>
 								</div>
 
 								<div class="form-group label-floating is-select">
@@ -89,32 +89,32 @@
 								</div>
 
 								<div class="form-group label-floating is-empty">
-									<label class="control-label">Religious Belifs</label>
-									<input class="form-control" placeholder="" type="text">
+									<label class="control-label">Religious Preference</label>
+									<input class="form-control" name="religion" [(ngModel)]="this.personalInfo.religion" placeholder="" type="text">
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">Your Birthplace</label>
-									<input class="form-control" placeholder="" type="text">
+									<input class="form-control" name="birthplace" [(ngModel)]="this.personalInfo.birthplace" placeholder="" type="text">
 								</div>
 
 								<div class="form-group label-floating">
 									<label class="control-label">Your Occupation</label>
-									<input class="form-control" placeholder="" type="text" value="UI/UX Designer">
+									<input class="form-control" name="occupation" [(ngModel)]="this.personalInfo.occupation" placeholder="" type="text" value="UI/UX Designer">
 								</div>
 
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Status</label>
-									<select class="form-control" size="auto">
+									<select class="form-control" name="status" [(ngModel)]="this.personalInfo.status" size="auto">
 										<option value="MA">Married</option>
 										<option value="FE">Not Married</option>
 									</select>
 								</div>
 
 								<div class="form-group label-floating">
-									<label class="control-label">Political Incline</label>
-									<input class="form-control" placeholder="" type="text" value="Democrat">
+									<label class="control-label">Political Preference</label>
+									<input class="form-control" name="politicalincline" [(ngModel)]="this.personalInfo.politicalincline" placeholder="" type="text" value="Democrat">
 								</div>
 							</div>
 
@@ -122,7 +122,7 @@
 								<button class="btn btn-secondary btn-lg full-width">Cancel</button>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-								<button class="btn btn-primary btn-lg full-width">Save all Changes</button>
+								<button class="btn btn-primary btn-lg full-width" (click)="updatePersonalInfo()">Save all Changes</button>
 							</div>
 
 						</div>

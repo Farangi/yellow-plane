@@ -36,6 +36,7 @@ export class LandingComponent implements OnInit {
       password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/), Validators.minLength(6), Validators.maxLength(100)])],
       age: ['', Validators.compose([Validators.required, Validators.pattern(/^([1-9]\d*|0)$/), this.validateAge])],
       gender: ['', Validators.compose([Validators.required])],
+      accountType: ['', Validators.compose([Validators.required])],
       acceptTerms: ['', Validators.compose([Validators.required])]
     });
   }
@@ -89,6 +90,7 @@ export class LandingComponent implements OnInit {
   }
 
   tryRegister(value) {
+    console.log(value);
     if(this.registerForm.valid){
       this.authService.doRegister(value)
         .then(res => {

@@ -1,3 +1,4 @@
+import { ProfileComponent } from './../../modules/full-layout/modules/profile/pages/profile/profile.page';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
@@ -10,6 +11,8 @@ interface UserData {
   photoURL?: string;
   displayName?: string;
   gender?: string;
+  age?: number;
+  accountType: string;
 }
 
 @Injectable()
@@ -36,14 +39,26 @@ export class UserService {
     });
   }
 
+  checkAccountType() {
+    return new Promise((resolve, reject) => {
+      const user = firebase.auth().currentUser;
+      this.db.doc<UserData>(`users/${user.uid}`).ref.get()
+      .then(response => {
+        resolve(response.data().accountType);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
+
   updateCurrentUser(value) {
     return new Promise((resolve, reject) => {
       const user = firebase.auth().currentUser;
       user.updateProfile({
-        displayName: value.displayName,
+        displayName: value.firstName + ' ' + value.lastName,
         photoURL: user.photoURL
       }).then(res => {
-        this.updateUserData(user, value.gender)
+        this.updateUserData(user, value)
         .then(data => {
           resolve(res);
         })
@@ -53,7 +68,7 @@ export class UserService {
       }, err => reject(err));
     });
   }
-  public updateUserData(user, gender) {
+  private updateUserData(user, userData) {
     // Sets user data to firestore on register
     const userRef: AngularFirestoreDocument<any> = this.db.doc(`users/${user.uid}`);
     const data: UserData = {
@@ -61,7 +76,9 @@ export class UserService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      gender: gender
+      gender: userData.gender,
+      age: userData.age,
+      accountType: userData.accountType
     };
     return userRef.set(data, { merge: true });
   }

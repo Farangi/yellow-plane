@@ -561,6 +561,10 @@ Apache-2.0
 Apache-2.0
 Apache-2.0
 
+@firebase/storage@0.2.3
+Apache-2.0
+Apache-2.0
+
 @firebase/util@0.2.1
 Apache-2.0
 Apache-2.0

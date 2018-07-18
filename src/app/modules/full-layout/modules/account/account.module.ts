@@ -1,3 +1,5 @@
+import { EducationsAndEmploymentsService } from './../../../../shared/services/profile/educationsAndEmployments.service';
+import { HobbiesAndInterestsService } from './../../../../shared/services/profile/hobbiesAndInterests.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,6 +34,8 @@ import { AccountPageMessagesComponent } from './pages/account-page-messages/acco
 import { AccountPageChangePasswordComponent } from './pages/account-page-change-password/account-page-change-password.page';
 import { AccountPageNotificationsComponent } from './pages/account-page-notifications/account-page-notifications.page';
 import { AccountPageAdManagerComponent } from './pages/account-page-ad-manager/account-page-ad-manager.page';
+import { PersonalInfoService } from '../../../../shared/services/profile/personalInfo.service';
+import { AccountSettingsService } from '../../../../shared/services/profile/accountSettings.service';
 
 @NgModule({
   imports: [
@@ -68,6 +72,7 @@ import { AccountPageAdManagerComponent } from './pages/account-page-ad-manager/a
     AccountPageNotificationsComponent,
     AccountPageAdManagerComponent,
 
-  ]
+  ],
+  providers: [PersonalInfoService, AccountSettingsService, HobbiesAndInterestsService, EducationsAndEmploymentsService]
 })
 export class AccountModule { }

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { FullLayoutComponent } from './components/full-layout/full-layout.component';
 import { UserResolver } from '../../shared/resolvers/user.resolver';
+import { ProfileGuard } from '../../shared/guards/profile.gaurd';
+import { PageGuard } from '../../shared/guards/page.gaurd';
 
 const routes: Routes = [
 	{
@@ -16,11 +18,13 @@ const routes: Routes = [
 			},
 			{
 			    path: 'profile',
-			    loadChildren: './modules/profile/profile.module#ProfileModule'
+				loadChildren: './modules/profile/profile.module#ProfileModule',
+				canActivate: [ProfileGuard]
 			},
 			{
 			    path: 'page',
-			    loadChildren: './modules/page/page.module#PageModule'
+				loadChildren: './modules/page/page.module#PageModule',
+				canActivate: [PageGuard]
 			},
 			{
 			    path: 'account',

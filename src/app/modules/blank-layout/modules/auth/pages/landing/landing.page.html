@@ -26,7 +26,7 @@
 			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
 				<div class="landing-content">
 					<h1>Connect, Expand, Share Ideas</h1>
-					<p>We take your privacy very serious. We don’t use what you like, follow or search for to serve up advertisements. Nor do we collect that data. The data we use is very basic data. The list of what we keep can be found on our privacy page. In addition, if you choose use our paid version, there will not be any advertisements served up to you. Please understand that advertising or paid versions of our site is the only way we are able to provide this social media platform free of charge.
+					<p>We take your privacy very serious. We don’t sell your personal information and tell the whole world what brand of cereal you ate this morning or what type of car you just purchased. We use very basic data, geography, age range and gender just simply to give you a better customized experience. Not only that, but Yelloplane is unique in the fact that here you can only see your friends and what they’re talking about if you want, verses seeing a wide open news feed from persons and businesses that you don’t know nor care about. Your personal experience on our site is fully and easily customized to your choices. So welcome to Yelloplane and enjoy.
 					</p>
 				</div>
 			</div>
@@ -117,6 +117,19 @@
 											</select>
 
 											<p class="error-text" *ngIf="registerForm.controls.gender.hasError('required') && registerForm.controls.gender.touched">This field is required!</p>
+										</div>
+									</div>
+
+									<div class="col-xl-12 col-lg-12 col-md-12">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.accountType.valid && registerForm.controls.accountType.touched, 'has-success': registerForm.controls.accountType.valid && registerForm.controls.accountType.touched}">
+											<label class="control-label">Account Type</label>
+
+											<select class="form-control" formControlName="accountType" size="auto">
+												<option value="Personal">Personal</option>
+												<option value="Business">Business</option>
+											</select>
+
+											<p class="error-text" *ngIf="registerForm.controls.accountType.hasError('required') && registerForm.controls.accountType.touched">This field is required!</p>
 										</div>
 									</div>
 

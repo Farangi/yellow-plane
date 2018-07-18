@@ -31,11 +31,11 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(value.email, value.password)
         .then(res => {
-          this.userService.updateCurrentUser({
-            displayName: value.firstName + ' ' + value.lastName,
-            gender: value.gender
-          });
-          resolve(res);
+          this.userService.updateCurrentUser(value)
+          .then(() => {
+            resolve(res);
+          })
+          .catch(err => reject(err));
         })
         .catch(err => {
           reject(err);
