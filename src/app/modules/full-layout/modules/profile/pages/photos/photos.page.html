@@ -110,7 +110,7 @@
 
 				</div>
 		  	</div>
-		  	
+
 		 </div>
 
 	  	<div class="modal-footer">
@@ -137,7 +137,7 @@
 				<div class="ui-block-title">
 					<div class="h6 title">Hassan’s Photo Gallery</div>
 
-					<div class="block-btn align-right">
+					<div class="block-btn align-right" *ngIf="showPhotoControls">
 						<button ngxFilePicker multiple accept="image/*" (filePick)="onAlbumFilePicked($event)" class="btn btn-primary btn-md-2">Create Album  +</button>
 
 						<button ngxFilePicker accept="image/*" (filePick)="onFilePicked($event)" class="btn btn-md-2 btn-border-think custom-color c-grey">Add Photos</button>

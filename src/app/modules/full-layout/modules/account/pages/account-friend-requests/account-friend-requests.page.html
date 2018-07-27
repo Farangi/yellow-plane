@@ -8,29 +8,29 @@
 				</div>
 
 				<ul class="notification-list friend-requests">
-					<li>
+					<li *ngFor="let request of friendRequests">
 						<div class="author-thumb">
 							<img src="/assets/img/avatar15-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">Maryam Khan</a>
-							<span class="chat-message-item">Mutual Friend: Huma Ali</span>
+							<a [routerLink]="['/profile', request.sender, 'about']" class="h6 notification-friend">{{request.sender}}</a>
+							<!-- <span class="chat-message-item">Mutual Friend: Huma Ali</span> -->
 						</div>
 						<span class="notification-icon">
-							<a href="#" class="accept-request">
+							<a class="accept-request" *ngIf="request.status === 'pending'" (click)="acceptFriendRequest(request)">
 								<span class="icon-add">
 									<svg class="olymp-happy-face-icon"><use xlink:href="/assets/icons/icons.svg#olymp-happy-face-icon"></use></svg>
 								</span>
 								Accept Friend Request
 							</a>
 
-							<a href="#" class="accept-request request-del">
+							<a class="accept-request request-del" *ngIf="request.status === 'pending'" (click)="declineFriendRequest(request)">
 								<span class="icon-minus">
 									<svg class="olymp-happy-face-icon"><use xlink:href="/assets/icons/icons.svg#olymp-happy-face-icon"></use></svg>
 								</span>
 							</a>
-
-						</span>
+              <svg class="olymp-happy-face-icon" *ngIf="request.status === 'accepted'"><use xlink:href="/assets/icons/icons.svg#olymp-happy-face-icon"></use></svg>
+            </span>
 
 						<div class="more">
 							<svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
@@ -38,7 +38,7 @@
 						</div>
 					</li>
 
-					<li>
+					<!-- <li>
 						<div class="author-thumb">
 							<img src="/assets/img/avatar16-sm.jpg" alt="author">
 						</div>
@@ -113,7 +113,7 @@
 							<svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 							<svg class="olymp-little-delete"><use xlink:href="/assets/icons/icons.svg#olymp-little-delete"></use></svg>
 						</div>
-					</li>
+					</li> -->
 
 				</ul>
 
@@ -125,7 +125,7 @@
     <div class="col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none">
       <app-account-sidebar-large></app-account-sidebar-large>
     </div>
-    
+
     <!-- ... end Account Profile Sidebar -->
 	</div>
 </div>

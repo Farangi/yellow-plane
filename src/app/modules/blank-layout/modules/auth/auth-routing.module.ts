@@ -8,8 +8,7 @@ import { LandingComponent } from './pages/landing/landing.page';
 const routes: Routes = [
 	{
 	    path: '',
-	    component: LandingComponent,
-	    canActivate: [AuthGuard]
+	    component: LandingComponent
 	}
 ];
 

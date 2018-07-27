@@ -7797,7 +7797,7 @@ var AccountEducationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Friend Requests</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<ul class=\"notification-list friend-requests\">\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar15-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"h6 notification-friend\">Maryam Khan</a>\r\n\t\t\t\t\t\t\t<span class=\"chat-message-item\">Mutual Friend: Huma Ali</span>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-add\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\tAccept Friend Request\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request request-del\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-minus\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar16-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"h6 notification-friend\">Haider Ali</a>\r\n\t\t\t\t\t\t\t<span class=\"chat-message-item\">4 Friends in Common</span>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-add\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\tAccept Friend Request\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request request-del\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-minus\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li class=\"accepted\">\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar17-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\tYou and <a href=\"#\" class=\"h6 notification-friend\">Mahira Khan</a> just became friends. Write on <a href=\"#\" class=\"notification-link\">his wall</a>.\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t</span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar18-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"h6 notification-friend\">Stagg Clothing</a>\r\n\t\t\t\t\t\t\t<span class=\"chat-message-item\">9 Friends in Common</span>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-add\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\tAccept Friend Request\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request request-del\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-minus\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t</ul>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n    \r\n    <!-- ... end Account Profile Sidebar -->\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Friend Requests</h6>\r\n\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<ul class=\"notification-list friend-requests\">\r\n\t\t\t\t\t<li *ngFor=\"let request of friendRequests\">\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar15-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\t<a [routerLink]=\"['/profile', request.sender, 'about']\" class=\"h6 notification-friend\">{{request.sender}}</a>\r\n\t\t\t\t\t\t\t<!-- <span class=\"chat-message-item\">Mutual Friend: Huma Ali</span> -->\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<a class=\"accept-request\" *ngIf=\"request.status === 'pending'\" (click)=\"acceptFriendRequest(request)\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-add\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\tAccept Friend Request\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a class=\"accept-request request-del\" *ngIf=\"request.status === 'pending'\" (click)=\"declineFriendRequest(request)\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-minus\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t</a>\r\n              <svg class=\"olymp-happy-face-icon\" *ngIf=\"request.status === 'accepted'\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n            </span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<!-- <li>\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar16-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"h6 notification-friend\">Haider Ali</a>\r\n\t\t\t\t\t\t\t<span class=\"chat-message-item\">4 Friends in Common</span>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-add\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\tAccept Friend Request\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request request-del\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-minus\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li class=\"accepted\">\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar17-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\tYou and <a href=\"#\" class=\"h6 notification-friend\">Mahira Khan</a> just became friends. Write on <a href=\"#\" class=\"notification-link\">his wall</a>.\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t</span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<div class=\"author-thumb\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/avatar18-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"notification-event\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"h6 notification-friend\">Stagg Clothing</a>\r\n\t\t\t\t\t\t\t<span class=\"chat-message-item\">9 Friends in Common</span>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<span class=\"notification-icon\">\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-add\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t\tAccept Friend Request\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"accept-request request-del\">\r\n\t\t\t\t\t\t\t\t<span class=\"icon-minus\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-happy-face-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-happy-face-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</span>\r\n\r\n\t\t\t\t\t\t<div class=\"more\">\r\n\t\t\t\t\t\t\t<svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t<svg class=\"olymp-little-delete\"><use xlink:href=\"/assets/icons/icons.svg#olymp-little-delete\"></use></svg>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</li> -->\r\n\r\n\t\t\t\t</ul>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\r\n\t\t<!-- Account Profile Sidebar -->\r\n    <div class=\"col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-xs-12 responsive-display-none\">\r\n      <app-account-sidebar-large></app-account-sidebar-large>\r\n    </div>\r\n\r\n    <!-- ... end Account Profile Sidebar -->\r\n\t</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -7822,7 +7822,8 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountFriendRequestsComponent", function() { return AccountFriendRequestsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7833,18 +7834,36 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AccountFriendRequestsComponent = /** @class */ (function () {
-    function AccountFriendRequestsComponent() {
+    function AccountFriendRequestsComponent(userService) {
+        this.userService = userService;
     }
     AccountFriendRequestsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userService.getCurrentUserData().then(function (user) {
+            _this.userService.getFriendRequests(user.username).subscribe(function (data) {
+                _this.friendRequests = data;
+            }, function (err) { return console.log(err); });
+        }).catch(function (err) { return console.log(err); });
+    };
+    AccountFriendRequestsComponent.prototype.acceptFriendRequest = function (request) {
+        this.userService.acceptFriendRequest(request)
+            .then(function (res) { return console.log(res); })
+            .catch(function (err) { return console.log(err); });
+    };
+    AccountFriendRequestsComponent.prototype.declineFriendRequest = function (request) {
+        this.userService.declineFriendRequest(request)
+            .then(function (res) { return console.log(res); })
+            .catch(function (err) { return console.log(err); });
     };
     AccountFriendRequestsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-account-friend-requests',
             template: __webpack_require__(/*! ./account-friend-requests.page.html */ "./src/app/modules/full-layout/modules/account/pages/account-friend-requests/account-friend-requests.page.html"),
             styles: [__webpack_require__(/*! ./account-friend-requests.page.scss */ "./src/app/modules/full-layout/modules/account/pages/account-friend-requests/account-friend-requests.page.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
     ], AccountFriendRequestsComponent);
     return AccountFriendRequestsComponent;
 }());
@@ -8880,85 +8899,6 @@ var AccountSettingsService = /** @class */ (function () {
             _user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
     ], AccountSettingsService);
     return AccountSettingsService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/shared/services/profile/educationsAndEmployments.service.ts":
-/*!*****************************************************************************!*\
-  !*** ./src/app/shared/services/profile/educationsAndEmployments.service.ts ***!
-  \*****************************************************************************/
-/*! exports provided: EducationsAndEmploymentsService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EducationsAndEmploymentsService", function() { return EducationsAndEmploymentsService; });
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../user.service */ "./src/app/shared/services/user.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
-/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var EducationsAndEmploymentsService = /** @class */ (function () {
-    function EducationsAndEmploymentsService(db, userService) {
-        this.db = db;
-        this.userService = userService;
-        // For time error
-        db.firestore.settings({ timestampsInSnapshots: true });
-    }
-    EducationsAndEmploymentsService.prototype.getEducationsAndEmployments = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.userService.getCurrentUser().then(function (user) {
-                _this.db.doc("educations_and_employments/" + user.uid).ref.get()
-                    .then(function (response) {
-                    resolve(response.data());
-                }).catch(function (err) {
-                    reject(err);
-                });
-            }).catch(function (err) {
-                reject(err);
-            });
-        });
-    };
-    EducationsAndEmploymentsService.prototype.updateEducationsAndEmployments = function (data) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.userService.getCurrentUser().then(function (user) {
-                var educationsAndEmploymentsRef = _this.db.doc("educations_and_employments/" + user.uid);
-                educationsAndEmploymentsRef.set(data, { merge: true })
-                    .then(function (res) {
-                    resolve('Educations & Employments successfully updated');
-                })
-                    .catch(function (err) {
-                    reject(err);
-                });
-            }).catch(function (err) {
-                reject(err);
-            });
-        });
-    };
-    EducationsAndEmploymentsService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"],
-            _user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
-    ], EducationsAndEmploymentsService);
-    return EducationsAndEmploymentsService;
 }());
 
 

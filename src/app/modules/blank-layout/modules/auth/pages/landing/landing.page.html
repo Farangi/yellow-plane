@@ -83,6 +83,16 @@
 											<p class="error-text" *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.touched">This field is required!</p>
 			  							<p class="error-text" *ngIf="registerForm.controls.email.hasError('pattern') && registerForm.controls.email.touched">Email is not valid!</p>
 										</div>
+                  </div>
+
+                  <div class="col-xl-12 col-lg-12 col-md-12">
+										<div class="form-group label-floating is-empty" [ngClass]="{'has-danger': !registerForm.controls.username.valid && registerForm.controls.username.touched, 'has-success': registerForm.controls.username.valid && registerForm.controls.username.touched}">
+											<label class="control-label">Your Username</label>
+											<input class="form-control" formControlName="username" placeholder="" type="text">
+
+											<p class="error-text" *ngIf="registerForm.controls.username.hasError('required') && registerForm.controls.username.touched">This field is required!</p>
+			  							<p class="error-text" *ngIf="registerForm.controls.username.hasError('pattern') && registerForm.controls.username.touched">Username is not valid!</p>
+										</div>
 									</div>
 
 									<div class="col-xl-12 col-lg-12 col-md-12">

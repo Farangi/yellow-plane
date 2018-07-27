@@ -357,7 +357,7 @@
 
 							<ul class="account-settings">
 								<li>
-									<a [routerLink]="['/profile']">
+									<a [routerLink]="['/profile',username]">
 
 										<svg class="olymp-star-icon"><use xlink:href="/assets/icons/icons.svg#olymp-star-icon"></use></svg>
 
@@ -467,11 +467,11 @@
 
 					</div>
 				</div>
-				<a [routerLink]="['/profile']" class="author-name fn">
+				<a [routerLink]="['/profile', username]" class="author-name fn">
 					<div class="author-title">
 						{{username}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="/assets/icons/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
-					<span class="author-subtitle">BULLET RIDER</span>
+					<span class="author-subtitle">{{displayName}}</span>
 				</a>
 			</div>
 

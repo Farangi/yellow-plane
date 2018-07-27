@@ -12,16 +12,17 @@ export class ProfileGuard implements CanActivate {
 
   canActivate(): Promise<boolean> {
     return new Promise((resolve, reject) => {
-        this.userService.checkAccountType()
+      this.userService.checkAccountType()
         .then(acctype => {
-            if(acctype == 'Personal') {
-                return resolve(true);
-            } else {
-                return resolve(false);
-            }
+          if (acctype == 'Personal') {
+            return resolve(true);
+          } else {
+            this.router.navigate(['/home']);
+            return resolve(false);
+          }
         })
         .catch(err => {
-            return resolve(false);
+          return reject(err);
         });
     });
   }

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { FirebaseUserModel } from '../../../../../../shared/models/user.model';
 //import { UserService } from '../../../../../../shared/services/user.service';
 
 @Component({
@@ -12,35 +9,18 @@ import { FirebaseUserModel } from '../../../../../../shared/models/user.model';
 })
 export class ProfileComponent implements OnInit {
 
-  user: FirebaseUserModel = new FirebaseUserModel();
-  profileForm: FormGroup;
+  user: UserData;
+  displayName: string;
   constructor(
     //public userService: UserService,
-    private route: ActivatedRoute,
-    private fb: FormBuilder
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(routeData => {
-      const data = routeData['data'];
-      if (data) {
-        this.user = data;
-        this.createForm(this.user.name);
-      }
+      this.user = routeData['data'];
+      this.displayName = this.user.fname + ' ' + this.user.lname;
     });
-  }
-
-  createForm(name) {
-    this.profileForm = this.fb.group({
-      name: [name, Validators.required]
-    });
-  }
-
-  save(value) {
-    // this.userService.updateCurrentUser(value)
-    //   .then(res => {
-    //     console.log(res);
-    //   }, err => console.log(err));
   }
 
 }

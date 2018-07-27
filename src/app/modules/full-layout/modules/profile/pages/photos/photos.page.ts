@@ -1,8 +1,10 @@
+import { UserService } from './../../../../../../shared/services/user.service';
 import { PhotoService } from './../../../../../../shared/services/photos.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollService } from '../../../../../../shared/services/scroll.service';
 import { FilePickerDirective, ReadFile } from 'ngx-file-helpers';
+import { ActivatedRoute } from '../../../../../../../../node_modules/@angular/router';
 
 @Component({
 	selector: 'app-photos',
@@ -37,18 +39,30 @@ export class PhotosComponent implements OnInit {
 	private addAlbumModalRef: any;
 	private addAlbumModalRefOpen: boolean = false;
 	addAlbumModalForm: any = {};
-	pickedAlbumPhotos: any = [];
+  pickedAlbumPhotos: any = [];
+  showPhotoControls: boolean;
 
 	constructor(
 		private modalService: NgbModal,
 		public scrollService: ScrollService,
-		private photoServ: PhotoService) {
+    private photoServ: PhotoService,
+    private userService: UserService,
+    private route: ActivatedRoute) {
 
 		this.addPhotoModalForm.privacy = this.privacyOptions[0].value;
 		this.addAlbumModalForm.privacy = this.privacyOptions[0].value;
 	}
 
 	ngOnInit() {
+    const username = this.route.snapshot.parent.params['username'];
+    this.userService.getCurrentUserData().then((user:UserData) => {
+      if (user.username == username) {
+        this.showPhotoControls = true;
+      }
+      else {
+        this.showPhotoControls = false;
+      }
+    }).catch(err => console.log(err));
 		this.getPhotos();
 		this.getAlbums();
 	}
@@ -57,14 +71,6 @@ export class PhotosComponent implements OnInit {
 
 	private getPhotos() {
 		this.photos = [];
-		// this.photos.push({ id: 1, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-		// this.photos.push({ id: 2, img: '/assets/img/photo-item9.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-		// this.photos.push({ id: 3, img: '/assets/img/photo-item3.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-		// this.photos.push({ id: 4, img: '/assets/img/photo-item10.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-		// this.photos.push({ id: 5, img: '/assets/img/photo-item5.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-		// this.photos.push({ id: 6, img: '/assets/img/photo-item11.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-		// this.photos.push({ id: 7, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-		// this.photos.push({ id: 8, img: '/assets/img/photo-item8.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
 		this.photoServ.getCurrentUserPhotos().then((uploads:any = []) => {
 			uploads.forEach(upload => {
 				let photoId = 1;

@@ -7,35 +7,35 @@ import { ProfileGuard } from '../../shared/guards/profile.gaurd';
 import { PageGuard } from '../../shared/guards/page.gaurd';
 
 const routes: Routes = [
-	{
-		path: '',
-		component: FullLayoutComponent,
-		resolve: { data: UserResolver},
-		children: [
-			{
-			    path: 'home',
-			    loadChildren: './modules/home/home.module#HomeModule'
-			},
-			{
-			    path: 'profile',
-				loadChildren: './modules/profile/profile.module#ProfileModule',
-				canActivate: [ProfileGuard]
-			},
-			{
-			    path: 'page',
-				loadChildren: './modules/page/page.module#PageModule',
-				canActivate: [PageGuard]
-			},
-			{
-			    path: 'account',
-			    loadChildren: './modules/account/account.module#AccountModule'
-			},
-			{
-			    path: 'circles',
-			    loadChildren: './modules/circle/circle.module#CircleModule'
-			},
-		]
-	}
+  {
+    path: '',
+    component: FullLayoutComponent,
+    resolve: { data: UserResolver },
+    children: [
+      {
+        path: 'home',
+        loadChildren: './modules/home/home.module#HomeModule'
+      },
+      {
+        path: 'profile',
+        loadChildren: './modules/profile/profile.module#ProfileModule',
+        canActivate: [ProfileGuard]
+      },
+      {
+        path: 'page',
+        loadChildren: './modules/page/page.module#PageModule',
+        canActivate: [PageGuard]
+      },
+      {
+        path: 'account',
+        loadChildren: './modules/account/account.module#AccountModule'
+      },
+      {
+        path: 'circles',
+        loadChildren: './modules/circle/circle.module#CircleModule'
+      },
+    ]
+  }
 ];
 
 @NgModule({

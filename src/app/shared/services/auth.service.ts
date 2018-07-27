@@ -14,24 +14,26 @@ export class AuthService {
 
   doGoogleLogin() {
     return new Promise<any>((resolve, reject) => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope('profile');
-      provider.addScope('email');
-      this.afAuth.auth
-        .signInWithPopup(provider)
-        .then(res => {
-          resolve(res);
-        }, err => {
-          reject(err);
-        });
+      reject('Google Temporarily Disabled'); // Google disabled
+      // const provider = new firebase.auth.GoogleAuthProvider();
+      // provider.addScope('profile');
+      // provider.addScope('email');
+      // this.afAuth.auth
+      //   .signInWithPopup(provider)
+      //   .then(res => {
+      //     console.log(res); // res.additionalUserInfo.isNewUser
+      //     resolve(res);
+      //   }, err => {
+      //     reject(err);
+      //   });
     });
   }
 
   doRegister(value) {
     return new Promise<any>((resolve, reject) => {
-      firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(value.email, value.password)
+      firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
         .then(res => {
-          this.userService.updateCurrentUser(value)
+          this.userService.registerCurrentUser(value)
           .then(() => {
             resolve(res);
           })

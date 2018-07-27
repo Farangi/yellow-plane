@@ -540,15 +540,15 @@
 					<ul class="widget w-personal-info item-block">
 						<li>
 							<span class="title">About Me:</span>
-							<span class="text">Hi, I’m Hasan, I’m 25 and I work as a Digital Designer for the  “Pyramids” Agency in Islamabad.</span>
+							<span class="text" *ngIf="this.personalInfo">{{this.personalInfo.description}}</span>
 						</li>
 						<li>
 							<span class="title">Favourite TV Shows:</span>
-							<span class="text">Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</span>
+							<span class="text" *ngIf="this.hobbiesAndInterests">{{this.hobbiesAndInterests.favTV}}</span>
 						</li>
 						<li>
 							<span class="title">Favourite Music Bands / Artists:</span>
-							<span class="text">Iron Maid, DC/AC, Vital signs, Jal, System of a Revenge.</span>
+							<span class="text" *ngIf="this.hobbiesAndInterests">{{this.hobbiesAndInterests.favMusic}}</span>
 						</li>
 					</ul>
 

@@ -1,3 +1,5 @@
+import { ViewProfileGuard } from './shared/guards/viewProfile.guard';
+import { ProfileResolver } from './shared/resolvers/profile.resolver';
 import { ProfileGuard } from './shared/guards/profile.gaurd';
 import { PageGuard } from './shared/guards/page.gaurd';
 import { environment } from '../environments/environment';
@@ -19,6 +21,7 @@ import { AuthService } from './shared/services/auth.service';
 import { UserService } from './shared/services/user.service';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UserResolver } from './shared/resolvers/user.resolver';
+import { HomeGuard } from './shared/guards/home.guard';
 
 //import { FullLayoutComponent } from './shared/components/full-layout/full-layout.component';
 
@@ -37,7 +40,17 @@ import { UserResolver } from './shared/resolvers/user.resolver';
     AngularFireAuthModule,
     AngularFireStorageModule
   ],
-  providers: [ScrollService, AuthService, UserService, UserResolver, AuthGuard, PageGuard, ProfileGuard],
+  providers: [
+    ScrollService,
+    AuthService,
+    UserService,
+    UserResolver,
+    ProfileResolver,
+    AuthGuard,
+    PageGuard,
+    ProfileGuard,
+    HomeGuard,
+    ViewProfileGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

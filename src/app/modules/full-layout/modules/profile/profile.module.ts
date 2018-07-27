@@ -22,6 +22,7 @@ import { AboutComponent } from './pages/about/about.page';
 import { FriendsComponent } from './pages/friends/friends.page';
 import { PhotosComponent } from './pages/photos/photos.page';
 import { VideosComponent } from './pages/videos/videos.page';
+import { EducationsAndEmploymentsService } from '../../../../shared/services/profile/educationsAndEmployments.service';
 
 @NgModule({
   imports: [
@@ -45,7 +46,12 @@ import { VideosComponent } from './pages/videos/videos.page';
   	PhotosComponent,
   	VideosComponent
   ],
-  providers: [PhotoService, HobbiesAndInterestsService, PersonalInfoService]
+  providers: [
+    PhotoService,
+    HobbiesAndInterestsService,
+    PersonalInfoService,
+    EducationsAndEmploymentsService
+  ]
   //entryComponents: [PhotoPostViewerContentComponent]
 })
 export class ProfileModule { }

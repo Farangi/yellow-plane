@@ -13,12 +13,11 @@ var map = {
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
-		"common",
+		"modules-account-account-module~modules-profile-profile-module",
 		"modules-account-account-module"
 	],
 	"./modules/auth/auth.module": [
 		"./src/app/modules/blank-layout/modules/auth/auth.module.ts",
-		"common",
 		"modules-auth-auth-module"
 	],
 	"./modules/blank-layout/blank-layout.module": [
@@ -27,20 +26,17 @@ var map = {
 	],
 	"./modules/circle/circle.module": [
 		"./src/app/modules/full-layout/modules/circle/circle.module.ts",
-		"common",
 		"modules-circle-circle-module"
 	],
 	"./modules/full-layout/full-layout.module": [
 		"./src/app/modules/full-layout/full-layout.module.ts",
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
-		"common",
 		"modules-full-layout-full-layout-module"
 	],
 	"./modules/home/home.module": [
 		"./src/app/modules/full-layout/modules/home/home.module.ts",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
-		"common",
 		"modules-home-home-module"
 	],
 	"./modules/page/page.module": [
@@ -49,7 +45,6 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
-		"common",
 		"modules-page-page-module"
 	],
 	"./modules/profile/profile.module": [
@@ -58,7 +53,7 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
-		"common",
+		"modules-account-account-module~modules-profile-profile-module",
 		"modules-profile-profile-module"
 	]
 };
@@ -97,6 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/guards/auth.guard */ "./src/app/shared/guards/auth.guard.ts");
+/* harmony import */ var _shared_guards_home_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/guards/home.guard */ "./src/app/shared/guards/home.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -106,25 +102,26 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     {
         path: '',
-        redirectTo: 'auth',
-        pathMatch: 'full',
-        canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
+        redirectTo: 'home',
+        pathMatch: 'full'
     },
     {
         path: '',
         loadChildren: './modules/blank-layout/blank-layout.module#BlankLayoutModule',
-        canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
+        canActivate: [_shared_guards_home_guard__WEBPACK_IMPORTED_MODULE_3__["HomeGuard"]]
     },
     {
         path: '',
-        loadChildren: './modules/full-layout/full-layout.module#FullLayoutModule'
+        loadChildren: './modules/full-layout/full-layout.module#FullLayoutModule',
+        canActivate: [_shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_2__["AuthGuard"]]
     },
     {
         path: '**',
-        redirectTo: 'auth'
+        redirectTo: 'home'
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -211,30 +208,36 @@ var AppComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/guards/profile.gaurd */ "./src/app/shared/guards/profile.gaurd.ts");
-/* harmony import */ var _shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/guards/page.gaurd */ "./src/app/shared/guards/page.gaurd.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @nicky-lenaers/ngx-scroll-to */ "./node_modules/@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var angularfire2_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angularfire2/storage */ "./node_modules/angularfire2/storage/index.js");
-/* harmony import */ var _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./shared/services/scroll.service */ "./src/app/shared/services/scroll.service.ts");
-/* harmony import */ var _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./shared/services/auth.service */ "./src/app/shared/services/auth.service.ts");
-/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./shared/services/user.service */ "./src/app/shared/services/user.service.ts");
-/* harmony import */ var _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./shared/guards/auth.guard */ "./src/app/shared/guards/auth.guard.ts");
-/* harmony import */ var _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./shared/resolvers/user.resolver */ "./src/app/shared/resolvers/user.resolver.ts");
+/* harmony import */ var _shared_guards_viewProfile_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/guards/viewProfile.guard */ "./src/app/shared/guards/viewProfile.guard.ts");
+/* harmony import */ var _shared_resolvers_profile_resolver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/resolvers/profile.resolver */ "./src/app/shared/resolvers/profile.resolver.ts");
+/* harmony import */ var _shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/guards/profile.gaurd */ "./src/app/shared/guards/profile.gaurd.ts");
+/* harmony import */ var _shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/guards/page.gaurd */ "./src/app/shared/guards/page.gaurd.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @nicky-lenaers/ngx-scroll-to */ "./node_modules/@nicky-lenaers/ngx-scroll-to/@nicky-lenaers/ngx-scroll-to.es5.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var angularfire2_storage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! angularfire2/storage */ "./node_modules/angularfire2/storage/index.js");
+/* harmony import */ var _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./shared/services/scroll.service */ "./src/app/shared/services/scroll.service.ts");
+/* harmony import */ var _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./shared/services/auth.service */ "./src/app/shared/services/auth.service.ts");
+/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./shared/services/user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./shared/guards/auth.guard */ "./src/app/shared/guards/auth.guard.ts");
+/* harmony import */ var _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./shared/resolvers/user.resolver */ "./src/app/shared/resolvers/user.resolver.ts");
+/* harmony import */ var _shared_guards_home_guard__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./shared/guards/home.guard */ "./src/app/shared/guards/home.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -258,22 +261,33 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModule"].forRoot(),
-                _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_6__["ScrollToModule"].forRoot(),
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
-                angularfire2__WEBPACK_IMPORTED_MODULE_9__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].firebase),
-                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_10__["AngularFirestoreModule"],
-                angularfire2_auth__WEBPACK_IMPORTED_MODULE_11__["AngularFireAuthModule"],
-                angularfire2_storage__WEBPACK_IMPORTED_MODULE_12__["AngularFireStorageModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_7__["NgbModule"].forRoot(),
+                _nicky_lenaers_ngx_scroll_to__WEBPACK_IMPORTED_MODULE_8__["ScrollToModule"].forRoot(),
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
+                angularfire2__WEBPACK_IMPORTED_MODULE_11__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].firebase),
+                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__["AngularFirestoreModule"],
+                angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"],
+                angularfire2_storage__WEBPACK_IMPORTED_MODULE_14__["AngularFireStorageModule"]
             ],
-            providers: [_shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_13__["ScrollService"], _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_14__["AuthService"], _shared_services_user_service__WEBPACK_IMPORTED_MODULE_15__["UserService"], _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_17__["UserResolver"], _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"], _shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_1__["PageGuard"], _shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_0__["ProfileGuard"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+            providers: [
+                _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_15__["ScrollService"],
+                _shared_services_auth_service__WEBPACK_IMPORTED_MODULE_16__["AuthService"],
+                _shared_services_user_service__WEBPACK_IMPORTED_MODULE_17__["UserService"],
+                _shared_resolvers_user_resolver__WEBPACK_IMPORTED_MODULE_19__["UserResolver"],
+                _shared_resolvers_profile_resolver__WEBPACK_IMPORTED_MODULE_1__["ProfileResolver"],
+                _shared_guards_auth_guard__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"],
+                _shared_guards_page_gaurd__WEBPACK_IMPORTED_MODULE_3__["PageGuard"],
+                _shared_guards_profile_gaurd__WEBPACK_IMPORTED_MODULE_2__["ProfileGuard"],
+                _shared_guards_home_guard__WEBPACK_IMPORTED_MODULE_20__["HomeGuard"],
+                _shared_guards_viewProfile_guard__WEBPACK_IMPORTED_MODULE_0__["ViewProfileGuard"]
+            ],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -295,8 +309,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -309,14 +322,66 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var AuthGuard = /** @class */ (function () {
-    function AuthGuard(afAuth, userService, router) {
-        this.afAuth = afAuth;
+    function AuthGuard(userService, router) {
         this.userService = userService;
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUser()
+                .then(function (user) {
+                return resolve(true);
+            }, function (err) {
+                _this.router.navigate(['/auth']);
+                return resolve(false);
+            });
+        });
+    };
+    AuthGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], AuthGuard);
+    return AuthGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/guards/home.guard.ts":
+/*!*********************************************!*\
+  !*** ./src/app/shared/guards/home.guard.ts ***!
+  \*********************************************/
+/*! exports provided: HomeGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeGuard", function() { return HomeGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var HomeGuard = /** @class */ (function () {
+    function HomeGuard(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    HomeGuard.prototype.canActivate = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             _this.userService.getCurrentUser()
@@ -328,13 +393,12 @@ var AuthGuard = /** @class */ (function () {
             });
         });
     };
-    AuthGuard = __decorate([
+    HomeGuard = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"],
-            _services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"],
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
-    ], AuthGuard);
-    return AuthGuard;
+    ], HomeGuard);
+    return HomeGuard;
 }());
 
 
@@ -380,10 +444,12 @@ var PageGuard = /** @class */ (function () {
                     return resolve(true);
                 }
                 else {
+                    _this.router.navigate(['/home']);
                     return resolve(false);
                 }
             })
                 .catch(function (err) {
+                _this.router.navigate(['/home']);
                 return resolve(false);
             });
         });
@@ -439,11 +505,12 @@ var ProfileGuard = /** @class */ (function () {
                     return resolve(true);
                 }
                 else {
+                    _this.router.navigate(['/home']);
                     return resolve(false);
                 }
             })
                 .catch(function (err) {
-                return resolve(false);
+                return reject(err);
             });
         });
     };
@@ -459,23 +526,131 @@ var ProfileGuard = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/shared/models/user.model.ts":
-/*!*********************************************!*\
-  !*** ./src/app/shared/models/user.model.ts ***!
-  \*********************************************/
-/*! exports provided: FirebaseUserModel */
+/***/ "./src/app/shared/guards/viewProfile.guard.ts":
+/*!****************************************************!*\
+  !*** ./src/app/shared/guards/viewProfile.guard.ts ***!
+  \****************************************************/
+/*! exports provided: ViewProfileGuard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirebaseUserModel", function() { return FirebaseUserModel; });
-var FirebaseUserModel = /** @class */ (function () {
-    function FirebaseUserModel() {
-        this.image = "";
-        this.name = "";
-        this.provider = "";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewProfileGuard", function() { return ViewProfileGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ViewProfileGuard = /** @class */ (function () {
+    function ViewProfileGuard(userService, router) {
+        this.userService = userService;
+        this.router = router;
     }
-    return FirebaseUserModel;
+    ViewProfileGuard.prototype.canActivate = function (route) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getCurrentUserData()
+                .then(function (user) {
+                if (route.parent.params['username'] == user.username) {
+                    resolve(true);
+                }
+                else {
+                    _this.userService.checkRelation(user.username, route.parent.params['username'])
+                        .subscribe(function (relations) {
+                        if (relations.length) {
+                            if (relations[0].status == 'accepted') {
+                                resolve(true);
+                            }
+                            else {
+                                _this.router.navigate(['profile', route.parent.params['username'], 'about']);
+                                resolve(false);
+                            }
+                        }
+                        else {
+                            _this.userService.checkRelation(route.parent.params['username'], user.username)
+                                .subscribe(function (relations) {
+                                if (relations.length) {
+                                    if (relations[0].status == 'accepted') {
+                                        resolve(true);
+                                    }
+                                    else {
+                                        _this.router.navigate(['profile', route.parent.params['username'], 'about']);
+                                        resolve(false);
+                                    }
+                                }
+                            });
+                        }
+                    });
+                }
+            }).catch(function (err) { return reject(err); });
+        });
+    };
+    ViewProfileGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], ViewProfileGuard);
+    return ViewProfileGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/resolvers/profile.resolver.ts":
+/*!******************************************************!*\
+  !*** ./src/app/shared/resolvers/profile.resolver.ts ***!
+  \******************************************************/
+/*! exports provided: ProfileResolver */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileResolver", function() { return ProfileResolver; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ProfileResolver = /** @class */ (function () {
+    function ProfileResolver(userService, router) {
+        this.userService = userService;
+        this.router = router;
+    }
+    ProfileResolver.prototype.resolve = function (route) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.userService.getUserByUsername(route.params['username'])
+                .then(function (person) {
+                return resolve(person);
+            }).catch(function (err) { return reject(err); });
+        });
+    };
+    ProfileResolver = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], ProfileResolver);
+    return ProfileResolver;
 }());
 
 
@@ -495,7 +670,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/shared/services/user.service.ts");
-/* harmony import */ var _models_user_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/user.model */ "./src/app/shared/models/user.model.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -508,7 +682,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var UserResolver = /** @class */ (function () {
     function UserResolver(userService, router) {
         this.userService = userService;
@@ -516,22 +689,10 @@ var UserResolver = /** @class */ (function () {
     }
     UserResolver.prototype.resolve = function (route) {
         var _this = this;
-        var user = new _models_user_model__WEBPACK_IMPORTED_MODULE_3__["FirebaseUserModel"]();
         return new Promise(function (resolve, reject) {
-            _this.userService.getCurrentUser()
-                .then(function (res) {
-                if (res.providerData[0].providerId === 'password') {
-                    user.image = 'http://dsi-vd.github.io/patternlab-vd/images/fpo_avatar.png';
-                    user.name = res.displayName;
-                    user.provider = res.providerData[0].providerId;
-                    return resolve(user);
-                }
-                else {
-                    user.image = res.photoURL;
-                    user.name = res.displayName;
-                    user.provider = res.providerData[0].providerId;
-                    return resolve(user);
-                }
+            _this.userService.getCurrentUserData()
+                .then(function (user) {
+                resolve(user);
             }, function (err) {
                 _this.router.navigate(['/auth']);
                 return reject(err);
@@ -586,26 +747,27 @@ var AuthService = /** @class */ (function () {
         this.userService = userService;
     }
     AuthService.prototype.doGoogleLogin = function () {
-        var _this = this;
         return new Promise(function (resolve, reject) {
-            var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"].GoogleAuthProvider();
-            provider.addScope('profile');
-            provider.addScope('email');
-            _this.afAuth.auth
-                .signInWithPopup(provider)
-                .then(function (res) {
-                resolve(res);
-            }, function (err) {
-                reject(err);
-            });
+            reject('Google Temporarily Disabled'); // Google disabled
+            // const provider = new firebase.auth.GoogleAuthProvider();
+            // provider.addScope('profile');
+            // provider.addScope('email');
+            // this.afAuth.auth
+            //   .signInWithPopup(provider)
+            //   .then(res => {
+            //     console.log(res); // res.additionalUserInfo.isNewUser
+            //     resolve(res);
+            //   }, err => {
+            //     reject(err);
+            //   });
         });
     };
     AuthService.prototype.doRegister = function (value) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().createUserAndRetrieveDataWithEmailAndPassword(value.email, value.password)
+            firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
-                _this.userService.updateCurrentUser(value)
+                _this.userService.registerCurrentUser(value)
                     .then(function () {
                     resolve(res);
                 })
@@ -732,59 +894,162 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getCurrentUser = function () {
         return new Promise(function (resolve, reject) {
             // tslint:disable-next-line:no-shadowed-variable
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().onAuthStateChanged(function (user) {
+            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().onAuthStateChanged(function (user) {
                 if (user) {
                     resolve(user);
                 }
                 else {
-                    reject('No user logged in');
+                    reject("No user logged in");
                 }
             });
+        });
+    };
+    UserService.prototype.checkRelation = function (checker, checkee) {
+        return this.db
+            .collection("relations", function (ref) {
+            return ref.where("sender", "==", checker).where("reciever", "==", checkee);
+        })
+            .valueChanges();
+    };
+    UserService.prototype.getFriendRequests = function (username) {
+        return this.db
+            .collection("relations", function (ref) { return ref.where("reciever", "==", username); })
+            .valueChanges();
+    };
+    UserService.prototype.acceptFriendRequest = function (request) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.db.doc("relations/" + request.rid).update({
+                status: 'accepted'
+            }).then(function (res) { return resolve('Acceptedd!'); }).catch(function (err) { return reject(err); });
+        });
+    };
+    UserService.prototype.declineFriendRequest = function (request) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.db.doc("relations/" + request.rid).update({
+                status: 'rejected'
+            }).then(function (res) { return resolve('Rejected!'); }).catch(function (err) { return reject(err); });
+        });
+    };
+    UserService.prototype.sendFriendRequest = function (username) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.getCurrentUserData()
+                .then(function (user) {
+                _this.db
+                    .collection("relations")
+                    .add({
+                    sender: user.username,
+                    reciever: username,
+                    status: "pending"
+                })
+                    .then(function (ref) {
+                    _this.db
+                        .collection("relations").doc(ref.id).update({
+                        rid: ref.id
+                    });
+                    resolve('Friend Request Sent');
+                })
+                    .catch(function (err) { return reject(err); });
+            })
+                .catch(function (err) { return reject(err); });
+        });
+    };
+    UserService.prototype.getUserIdByUsername = function (username) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.db
+                .collection("users", function (ref) { return ref.where("username", "==", username); })
+                .snapshotChanges()
+                .subscribe(function (data) {
+                resolve(data[0].payload.doc.id);
+            }, function (err) { return reject(err); });
+        });
+    };
+    UserService.prototype.getUserByUsername = function (username) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.db
+                .collection("users", function (ref) { return ref.where("username", "==", username); })
+                .valueChanges()
+                .subscribe(function (data) {
+                resolve(data[0]);
+            }, function (err) { return reject(err); });
         });
     };
     UserService.prototype.checkAccountType = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
-            _this.db.doc("users/" + user.uid).ref.get()
-                .then(function (response) {
-                resolve(response.data().accountType);
-            }).catch(function (err) {
-                reject(err);
-            });
-        });
-    };
-    UserService.prototype.updateCurrentUser = function (value) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
-            user.updateProfile({
-                displayName: value.firstName + ' ' + value.lastName,
-                photoURL: user.photoURL
-            }).then(function (res) {
-                _this.updateUserData(user, value)
-                    .then(function (data) {
-                    resolve(res);
+            _this.getCurrentUser()
+                .then(function (user) {
+                _this.db
+                    .doc("users/" + user.uid)
+                    .ref.get()
+                    .then(function (response) {
+                    resolve(response.data().accountType);
                 })
                     .catch(function (err) {
                     reject(err);
                 });
-            }, function (err) { return reject(err); });
+            })
+                .catch(function (err) {
+                reject(err);
+            });
         });
     };
-    UserService.prototype.updateUserData = function (user, userData) {
-        // Sets user data to firestore on register
-        var userRef = this.db.doc("users/" + user.uid);
-        var data = {
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName,
-            photoURL: user.photoURL,
-            gender: userData.gender,
-            age: userData.age,
-            accountType: userData.accountType
-        };
-        return userRef.set(data, { merge: true });
+    UserService.prototype.getCurrentUserData = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.getCurrentUser()
+                .then(function (user) {
+                _this.db
+                    .doc("users/" + user.uid)
+                    .ref.get()
+                    .then(function (response) {
+                    resolve(response.data());
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+            })
+                .catch(function (err) {
+                reject(err);
+            });
+        });
+    };
+    UserService.prototype.registerCurrentUser = function (formData) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+            var data = {
+                fname: formData.firstName,
+                lname: formData.lastName,
+                gender: formData.gender,
+                age: formData.age,
+                accountType: formData.accountType,
+                username: formData.username,
+                joinedAt: new Date().toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                })
+            };
+            user
+                .updateProfile({
+                displayName: formData.firstName + " " + formData.lastName,
+                photoURL: user.photoURL
+            })
+                .then(function (res) {
+                _this.db
+                    .doc("users/" + user.uid)
+                    .set(data, { merge: true })
+                    .then(function () { return resolve(res); })
+                    .catch(function (err) { return reject(err); });
+            })
+                .catch(function (err) { return reject(err); });
+        });
     };
     UserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),

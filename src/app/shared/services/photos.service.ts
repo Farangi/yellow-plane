@@ -33,14 +33,14 @@ export class PhotoService {
                             PHOTOS.push({
                                 name: photo.underlyingFile.name,
                                 photoUrl: url,
-                                uploadedAt: new Date().getTime().toString()
+                                uploadedAt: new Date().toLocaleDateString('en-US',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
                             });
                             if (PHOTOS.length === photosWithDetail.photos.length) {
                                 this.db.collection('uploads').add({
                                     userId: user.uid,
                                     privacy: photosWithDetail.privacy,
                                     description: photosWithDetail.description,
-                                    createdAt: new Date().getTime().toString(),
+                                    createdAt: new Date().toLocaleTimeString('en-US',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
                                     photos: PHOTOS
                                 })
                                     .then(resp => {
@@ -68,7 +68,7 @@ export class PhotoService {
                 .then(user => {
                     this.executeUpload(photosWithDetail, user)
                         .then(resp => {
-                            //console.log(resp); 
+                            //console.log(resp);
                             resolve('Photos Successfuly Uploaded!');
                         })
                         .catch(err => {
@@ -87,10 +87,7 @@ export class PhotoService {
             let queryResponse = this.db.collection('uploads', ref => ref.where('userId', '==', user.uid))
                 .valueChanges();
             queryResponse.subscribe(data => {
-                console.log("data.length" + data.length);
-                console.log("UPLOADS.length" + UPLOADS.length);
                 data.forEach(upload => {
-                    console.log(upload);
                     UPLOADS.push(upload);
                     if (data.length === UPLOADS.length) {
                         resolve(UPLOADS);
@@ -99,11 +96,6 @@ export class PhotoService {
             }, err => {
                 reject(err);
             });
-            // queryResponse.forEach(upload => {
-            //     console.log(upload);
-            //     UPLOADS.push(upload);
-                
-            // });
         });
     }
 

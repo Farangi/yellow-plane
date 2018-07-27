@@ -17,10 +17,12 @@ export class PageGuard implements CanActivate {
             if(acctype == 'Business') {
                 return resolve(true);
             } else {
+                this.router.navigate(['/home']);
                 return resolve(false);
             }
         })
         .catch(err => {
+            this.router.navigate(['/home']);
             return resolve(false);
         });
     });

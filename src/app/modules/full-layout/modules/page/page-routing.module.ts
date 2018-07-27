@@ -12,37 +12,37 @@ import { EventsComponent } from './pages/events/events.page';
 import { StatisticsComponent } from './pages/statistics/statistics.page';
 
 const routes: Routes = [
-	{
-	    path: '',
-	    component: PageComponent,
-	    resolve: { data: UserResolver},
-	    children: [
-	    	{
-	    		path: '',
-	    		component: TimelineComponent,
-	    	},
-	    	{
-	    		path: 'about',
-	    		component: AboutComponent,
-	    	},
-	    	{
-	    		path: 'photos',
-	    		component: PhotosComponent,
-	    	},
-	    	{
-	    		path: 'videos',
-	    		component: VideosComponent,
-			},
-			{
-	    		path: 'events',
-	    		component: EventsComponent,
-			},
-			{
-	    		path: 'statistics',
-	    		component: StatisticsComponent,
-			}
-	    ],
-	}
+  {
+    path: '',
+    component: PageComponent,
+    resolve: { data: UserResolver },
+    children: [
+      {
+        path: '',
+        component: TimelineComponent,
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+      },
+      {
+        path: 'photos',
+        component: PhotosComponent,
+      },
+      {
+        path: 'videos',
+        component: VideosComponent,
+      },
+      {
+        path: 'events',
+        component: EventsComponent,
+      },
+      {
+        path: 'statistics',
+        component: StatisticsComponent,
+      }
+    ],
+  }
 ];
 
 @NgModule({

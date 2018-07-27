@@ -33149,6 +33149,29 @@ var VideosComponent = /** @class */ (function () {
 
 
 
+/***/ }),
+
+/***/ "./src/app/shared/models/user.model.ts":
+/*!*********************************************!*\
+  !*** ./src/app/shared/models/user.model.ts ***!
+  \*********************************************/
+/*! exports provided: FirebaseUserModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirebaseUserModel", function() { return FirebaseUserModel; });
+var FirebaseUserModel = /** @class */ (function () {
+    function FirebaseUserModel() {
+        this.image = "";
+        this.name = "";
+        this.provider = "";
+    }
+    return FirebaseUserModel;
+}());
+
+
+
 /***/ })
 
 }]);

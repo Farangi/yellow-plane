@@ -33,6 +33,7 @@ export class LandingComponent implements OnInit {
       firstName: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(3), Validators.maxLength(50)])],
       lastName: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(3), Validators.maxLength(50)])],
       email: ['', Validators.compose([Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
+      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*'), Validators.minLength(3), Validators.maxLength(50)])],
       password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/), Validators.minLength(6), Validators.maxLength(100)])],
       age: ['', Validators.compose([Validators.required, Validators.pattern(/^([1-9]\d*|0)$/), this.validateAge])],
       gender: ['', Validators.compose([Validators.required])],
@@ -55,7 +56,7 @@ export class LandingComponent implements OnInit {
       else {
         return null;
       }
-    } 
+    }
     else {
       return null
     }
