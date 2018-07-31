@@ -5,14 +5,7 @@
 
 		<perfect-scrollbar>
 			<ul class="chat-users">
-				<li class="inline-items js-chat-open" *ngFor="let chat of chats.close">
-					<div class="author-thumb">
-						<img alt="author" [src]="chat.img" class="avatar">
-						<span class="icon-status" [ngClass]="chat.status"></span>
-					</div>
-				</li>
-
-				<li class="inline-items js-chat-open" *ngFor="let chat of chats.others">
+				<li class="inline-items js-chat-open" *ngFor="let chat of chats">
 					<div class="author-thumb">
 						<img alt="author" [src]="chat.img" class="avatar">
 						<span class="icon-status" [ngClass]="chat.status"></span>
@@ -38,12 +31,12 @@
 		<perfect-scrollbar>
 
 			<div class="ui-block-title ui-block-title-small">
-				<a href clickStopPropagation class="title">Close Friends</a>
+				<a href clickStopPropagation class="title">Friends</a>
 				<a [routerLink]="['/account/profile']">Settings</a>
 			</div>
 
 			<ul class="chat-users">
-				<li class="inline-items js-chat-open" *ngFor="let chat of chats.close">
+				<li class="inline-items js-chat-open" *ngFor="let chat of chats">
 					<div class="author-thumb">
 						<img alt="author" [src]="chat.img" class="avatar">
 						<span class="icon-status" [ngClass]="chat.status"></span>
@@ -81,54 +74,6 @@
 
 					</div>
 					
-				</li>
-
-			</ul>
-
-			<div class="ui-block-title ui-block-title-small">
-				<a href clickStopPropagation  class="title">Others</a>
-				<a [routerLink]="['/account/profile']">Settings</a>
-			</div>
-
-			<ul class="chat-users">
-				<li class="inline-items js-chat-open" *ngFor="let chat of chats.others">
-					<div class="author-thumb">
-						<img alt="author" [src]="chat.img" class="avatar">
-						<span class="icon-status online"></span>
-					</div>
-
-					<div class="author-status">
-						<a href="#" class="h6 author-name">Bruce Peterson</a>
-						<span class="status">ONLINE</span>
-					</div>
-
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
-
-						<ul class="more-icons">
-							<li placement="auto" ngbTooltip="START CONVERSATION">
-								<svg class="olymp-comments-post-icon">
-									<use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon">
-									</use>
-								</svg>
-							</li>
-
-							<li placement="auto" ngbTooltip="ADD TO CONVERSATION">
-								<svg class="olymp-add-to-conversation-icon">
-									<use xlink:href="/assets/icons/icons.svg#olymp-add-to-conversation-icon">
-									</use>
-								</svg>
-							</li>
-
-							<li placement="auto" ngbTooltip="BLOCK FROM CHAT">
-								<svg class="olymp-block-from-chat-icon">
-									<use xlink:href="/assets/icons/icons.svg#olymp-block-from-chat-icon">
-									</use>
-								</svg>
-							</li>
-						</ul>
-
-					</div>
-
 				</li>
 
 			</ul>
