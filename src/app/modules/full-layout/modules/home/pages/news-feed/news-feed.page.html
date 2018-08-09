@@ -109,20 +109,9 @@
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Share what you are thinking here...</label>
-									<textarea class="form-control" placeholder=""></textarea>
+									<textarea class="form-control" placeholder="" name="caption" [(ngModel)]="this.post.caption"></textarea>
 								</div>
-								<figure *ngIf="picked">
-								    <img style="width:300px;height:300px;margin-left: auto;margin-right: auto" [src]="picked.content">
-
-								    <figcaption>
-								      File:
-								      <strong>{{picked.name}}</strong>
-								    </figcaption>
-								</figure>
 								<div class="add-options-message">
-									<a (click)="openPostPhoto(postPhoto)" class="options-message" placement="auto" ngbTooltip="ADD PHOTOS">
-										<svg class="olymp-camera-icon"><use xlink:href="/assets/icons/icons.svg#olymp-camera-icon"></use></svg>
-									</a>
 									<a href="#" class="options-message" placement="top" ngbTooltip="TAG YOUR FRIENDS">
 										<svg class="olymp-computer-icon"><use xlink:href="/assets/icons/icons.svg#olymp-computer-icon"></use></svg>
 									</a>
@@ -145,7 +134,7 @@
 
 										<button class="btn action-btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
 
-										<button class="btn action-btn btn-primary btn-md-2">Post</button>
+										<button class="btn action-btn btn-primary btn-md-2" (click)="postStatus()">Post</button>
 									</div>
 
 								</div>
@@ -160,7 +149,7 @@
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Share what you are thinking here...</label>
-									<textarea class="form-control" placeholder=""  ></textarea>
+									<textarea class="form-control" placeholder="" name="caption" [(ngModel)]="this.post.caption" ></textarea>
 								</div>
 								<figure *ngIf="picked">
 								    <img style="width:300px;height:300px;margin-left: auto;margin-right: auto" [src]="picked.content">
@@ -171,7 +160,7 @@
 								    </figcaption>
 								</figure>
 								<div class="add-options-message">
-									<a (click)="open(postPhoto)" class="options-message" placement="top"   ngbTooltip="ADD PHOTOS">
+									<a (click)="openPostPhoto(postPhoto)" class="options-message" placement="top"   ngbTooltip="ADD PHOTOS">
 										<svg class="olymp-camera-icon"><use xlink:href="/assets/icons/icons.svg#olymp-camera-icon"></use></svg>
 									</a>
 									<a href="#" class="options-message" placement="top" ngbTooltip="TAG YOUR FRIENDS">
@@ -196,7 +185,7 @@
 
 										<button class="btn action-btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
 
-										<button class="btn action-btn btn-primary btn-md-2">Post</button>
+										<button class="btn action-btn btn-primary btn-md-2" (click)="postPhotoStatus()">Post</button>
 									</div>
 
 								</div>
@@ -211,7 +200,7 @@
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Share what you are thinking here...</label>
-									<textarea class="form-control" placeholder=""  ></textarea>
+									<textarea class="form-control" placeholder=""  name="caption" [(ngModel)]="this.post.caption"></textarea>
 								</div>
 								<figure *ngIf="picked">
 								    <img style="width:300px;height:300px;margin-left: auto;margin-right: auto" [src]="picked.content">
@@ -262,7 +251,7 @@
 								</div>
 								<div class="form-group with-icon label-floating is-empty">
 									<label class="control-label">Share what you are thinking here...</label>
-									<textarea class="form-control" placeholder=""  ></textarea>
+									<textarea class="form-control" placeholder="" name="caption" [(ngModel)]="this.post.caption" ></textarea>
 								</div>
 								<figure *ngIf="picked">
 								    <img style="width:300px;height:300px;margin-left: auto;margin-right: auto" [src]="picked.content">
@@ -273,7 +262,7 @@
 								    </figcaption>
 								</figure>
 								<div class="add-options-message">
-									<a (click)="open(postPhoto)" class="options-message" placement="top"   ngbTooltip="ADD PHOTOS">
+									<a (click)="openPostPhoto(postPhoto)" class="options-message" placement="top"   ngbTooltip="ADD PHOTOS">
 										<svg class="olymp-camera-icon"><use xlink:href="/assets/icons/icons.svg#olymp-camera-icon"></use></svg>
 									</a>
 									<a href="#" class="options-message" placement="top" ngbTooltip="TAG YOUR FRIENDS">
@@ -631,10 +620,10 @@
 
 				<div class="ui-block">
 					<article class="hentry post video">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Hassan Ahmad </a> shared a <a href="#">link</a>
 								<div class="post__date">
@@ -643,7 +632,7 @@
 									</time>
 								</div>
 							</div>
-	
+
 							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
@@ -660,11 +649,11 @@
 									</li>
 								</ul>
 							</div>
-	
+
 						</div>
-	
+
 						<p>Hey <a href="#">Ashfaq</a>! here’s the new article I was talking you about. Check it out!</p>
-	
+
 						<div class="post-video">
 							<div class="video-thumb f-none">
 								<img src="/assets/img/post-video.jpg" alt="photo">
@@ -672,7 +661,7 @@
 									<svg class="olymp-play-icon"><use xlink:href="/assets/icons/icons.svg#olymp-play-icon"></use></svg>
 								</a>
 							</div>
-	
+
 							<div class="video-content">
 								<a href="#" class="h4 title">The Secrets of the Auroris Movie Effects</a>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut
@@ -681,14 +670,14 @@
 								<a href="#" class="link-site">MOVIEMAG.COM</a> | <a href="#" class="link-site">BY DAN STEVENS</a>
 							</div>
 						</div>
-	
+
 						<div class="post-additional-info inline-items">
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>15</span>
 							</a>
-	
+
 							<ul class="friends-harmonic">
 								<li>
 									<a href="#">
@@ -716,49 +705,49 @@
 									</a>
 								</li>
 							</ul>
-	
+
 							<div class="names-people-likes">
 								<a href="#">Neeraj</a>, <a href="#">Kalu</a> and
 								<br>13 more liked this
 							</div>
-	
+
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/icons/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>1</span>
 								</a>
-	
+
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 									<span>16</span>
 								</a>
 							</div>
-	
+
 						</div>
-	
+
 						<div class="control-block-button post-control-button">
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-comments-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 							</a>
-	
+
 						</div>
-	
+
 					</article>
-	
+
 					<ul class="comments-list">
 						<li>
 							<div class="post__author author vcard inline-items">
 								<img src="/assets/img/avatar37-sm.jpg" alt="author">
-	
+
 								<div class="author-date">
 									<a class="h6 post__author-name fn" href="#">Fareeha Khan</a>
 									<div class="post__date">
@@ -767,13 +756,13 @@
 										</time>
 									</div>
 								</div>
-	
+
 								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
-	
+
 							</div>
-	
+
 							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.</p>
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>3</span>
@@ -781,12 +770,12 @@
 							<a href="#" class="reply">Reply</a>
 						</li>
 					</ul>
-	
+
 					<form class="comment-form inline-items">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="form-group with-icon-right ">
 								<textarea class="form-control" placeholder=""  ></textarea>
 								<div class="add-options-message">
@@ -796,21 +785,21 @@
 								</div>
 							</div>
 						</div>
-	
+
 						<button class="btn btn-md-2 btn-primary">Post Comment</button>
-	
+
 						<button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Cancel</button>
-	
+
 					</form>
-	
+
 				</div>
 
 				<div class="ui-block">
 					<article class="hentry post has-post-thumbnail">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Hassan Ahmad</a>
 								<div class="post__date">
@@ -819,7 +808,7 @@
 									</time>
 								</div>
 							</div>
-	
+
 							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
@@ -836,24 +825,24 @@
 									</li>
 								</ul>
 							</div>
-	
+
 						</div>
-	
+
 						<p>Today we went with all the ofice guys to <a href="#">Dan’s Burgers and Fries</a> and had some of
 							the best burgers I have ever tasted, here’s the proof:
 						</p>
-	
+
 						<div class="post-thumb">
 							<img src="/assets/img/post_thumb2.jpg" alt="photo">
 						</div>
-	
+
 						<div class="post-additional-info inline-items">
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>15</span>
 							</a>
-	
+
 							<ul class="friends-harmonic">
 								<li>
 									<a href="#">
@@ -881,53 +870,53 @@
 									</a>
 								</li>
 							</ul>
-	
+
 							<div class="names-people-likes">
 								<a href="#">Naeem</a>, <a href="#">Faryal</a> and
 								<br>47 more liked this
 							</div>
-	
-	
+
+
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/icons/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>16</span>
 								</a>
-	
+
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 									<span>0</span>
 								</a>
 							</div>
-	
-	
+
+
 						</div>
-	
+
 						<div class="control-block-button post-control-button">
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-comments-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 							</a>
-	
+
 						</div>
-	
+
 					</article>
 				</div>
 
 				<div class="ui-block">
 					<article class="hentry post">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Hassan Ahmad</a> uploaded 2 <a href="#">new photos</a>
 								<div class="post__date">
@@ -936,7 +925,7 @@
 									</time>
 								</div>
 							</div>
-	
+
 							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
@@ -953,66 +942,66 @@
 									</li>
 								</ul>
 							</div>
-	
+
 						</div>
-	
+
 						<p>Here are the pics of the incredibly beautiful landscapes of al the food that I’ve tasted while on
 							my trip. I’ve never been so full in my entire life! I recommend to everyone that has the chance
 							to travel to stop thinking and do it now!
 						</p>
-	
+
 						<div class="post-block-photo js-zoom-gallery">
 							<a href="/assets/img/post-photo1.jpg" class="half-width"><img src="/assets/img/post-photo1.jpg" alt="photo"></a>
 							<a href="/assets/img/post-photo2.jpg" class="half-width"><img src="/assets/img/post-photo2.jpg" alt="photo"></a>
 						</div>
-	
+
 						<div class="post-additional-info inline-items">
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>15</span>
 							</a>
-	
+
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/icons/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>0</span>
 								</a>
-	
+
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 									<span>16</span>
 								</a>
 							</div>
-	
-	
+
+
 						</div>
-	
+
 						<div class="control-block-button post-control-button">
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-comments-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 							</a>
-	
+
 						</div>
-	
+
 					</article>
 				</div>
 
 				<div class="ui-block">
 					<article class="hentry post">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Hassan Ahmad</a> uploaded 3 <a href="#">new photos</a>
 								<div class="post__date">
@@ -1021,7 +1010,7 @@
 									</time>
 								</div>
 							</div>
-	
+
 							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
@@ -1038,14 +1027,14 @@
 									</li>
 								</ul>
 							</div>
-	
+
 						</div>
-	
+
 						<p>Here are the pics of the incredibly beautiful landscapes of al the food that I’ve tasted while on
 							my trip. I’ve never been so full in my entire life! I recommend to everyone that has the chance
 							to travel to stop thinking and do it now!
 						</p>
-	
+
 						<div class="post-block-photo js-zoom-gallery">
 							<a href="/assets/img/post-photo1.jpg" class="half-width"><img src="/assets/img/post-photo1.jpg" alt="photo"></a>
 							<a href="/assets/img/post-photo2.jpg" class="half-width"><img src="/assets/img/post-photo2.jpg" alt="photo"></a>
@@ -1055,54 +1044,54 @@
 								<span class="h2">+24</span>
 							</a>
 						</div>
-	
+
 						<div class="post-additional-info inline-items">
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>15</span>
 							</a>
-	
+
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/icons/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>0</span>
 								</a>
-	
+
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 									<span>16</span>
 								</a>
 							</div>
-	
-	
+
+
 						</div>
-	
+
 						<div class="control-block-button post-control-button">
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-comments-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 							</a>
-	
+
 						</div>
-	
+
 					</article>
 				</div>
 
 				<div class="ui-block">
 					<article class="hentry post">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Hassan Ahmad</a> uploaded 28 <a href="#">new photos</a>
 								<div class="post__date">
@@ -1111,7 +1100,7 @@
 									</time>
 								</div>
 							</div>
-	
+
 							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
@@ -1128,14 +1117,14 @@
 									</li>
 								</ul>
 							</div>
-	
+
 						</div>
-	
+
 						<p>Here are the pics of the incredibly beautiful landscapes of al the food that I’ve tasted while on
 							my trip. I’ve never been so full in my entire life! I recommend to everyone that has the chance
 							to travel to stop thinking and do it now!
 						</p>
-	
+
 						<div class="post-block-photo js-zoom-gallery">
 							<a href="/assets/img/post-photo1.jpg" class="half-width"><img src="/assets/img/post-photo1.jpg" alt="photo"></a>
 							<a href="/assets/img/post-photo2.jpg" class="half-width"><img src="/assets/img/post-photo2.jpg" alt="photo"></a>
@@ -1146,54 +1135,54 @@
 								<span class="h2">+24</span>
 							</a>
 						</div>
-	
+
 						<div class="post-additional-info inline-items">
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>15</span>
 							</a>
-	
+
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/icons/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>0</span>
 								</a>
-	
+
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 									<span>16</span>
 								</a>
 							</div>
-	
-	
+
+
 						</div>
-	
+
 						<div class="control-block-button post-control-button">
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-comments-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 							</a>
-	
+
 						</div>
-	
+
 					</article>
 				</div>
 
 				<div class="ui-block">
 					<article class="hentry post video">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Hassan Ahmad </a> uploaded a <a href="#">video</a>
 								<div class="post__date">
@@ -1202,7 +1191,7 @@
 									</time>
 								</div>
 							</div>
-	
+
 							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
@@ -1219,11 +1208,11 @@
 									</li>
 								</ul>
 							</div>
-	
+
 						</div>
-	
+
 						<p>Last night was the best concert of my whole life! <a href="#">Sadia</a> check out the video I got from last night’s playlist!</p>
-	
+
 						<div class="video-player">
 							<a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video">
 								<svg class="olymp-play-icon"><use xlink:href="/assets/icons/icons.svg#olymp-play-icon"></use></svg>
@@ -1235,14 +1224,14 @@
 							</div>
 							<div class="overlay"></div>
 						</div>
-	
+
 						<div class="post-additional-info inline-items">
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>16</span>
 							</a>
-	
+
 							<ul class="friends-harmonic">
 								<li>
 									<a href="#">
@@ -1270,52 +1259,52 @@
 									</a>
 								</li>
 							</ul>
-	
+
 							<div class="names-people-likes">
 								<a href="#">Ahsan</a>, <a href="#">Ikhlaq</a> and
 								<br>13 more liked this
 							</div>
-	
+
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/icons/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>0</span>
 								</a>
-	
+
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 									<span>16</span>
 								</a>
 							</div>
-	
+
 						</div>
-	
+
 						<div class="control-block-button post-control-button">
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-comments-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 							</a>
-	
+
 						</div>
-	
+
 					</article>
-	
+
 				</div>
 
 				<div class="ui-block">
 					<article class="hentry post has-post-thumbnail shared-photo">
-	
+
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
-	
+
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Hassan Ahmad</a> shared <a href="#">Mahira Khan</a>’s <a href="#">photo</a>
 								<div class="post__date">
@@ -1324,7 +1313,7 @@
 									</time>
 								</div>
 							</div>
-	
+
 							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
@@ -1341,15 +1330,15 @@
 									</li>
 								</ul>
 							</div>
-	
+
 						</div>
-	
+
 						<p>Hi! Everyone should check out these amazing photographs that my friend shot the past week. Here’s one of them...leave a kind comment!</p>
-	
+
 						<div class="post-thumb">
 							<img src="/assets/img/post-photo6.jpg" alt="photo">
 						</div>
-	
+
 						<ul class="children single-children">
 							<li>
 								<div class="post__author author vcard inline-items">
@@ -1363,18 +1352,18 @@
 										</div>
 									</div>
 								</div>
-	
+
 								<p>Here’s the first photo of our incredible photoshoot from yesterday. If you like it please say so and tel me what you wanna see next!</p>
 							</li>
 						</ul>
-	
+
 						<div class="post-additional-info inline-items">
-	
+
 							<a href="#" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
 								<span>15</span>
 							</a>
-	
+
 							<ul class="friends-harmonic">
 								<li>
 									<a href="#">
@@ -1402,42 +1391,42 @@
 									</a>
 								</li>
 							</ul>
-	
+
 							<div class="names-people-likes">
 								<a href="#">Neem</a>, <a href="#">Maryam</a> and
 								<br>47 more liked this
 							</div>
-	
+
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/icons/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>0</span>
 								</a>
-	
+
 								<a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 									<span>16</span>
 								</a>
 							</div>
-	
+
 						</div>
-	
+
 						<div class="control-block-button post-control-button">
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-comments-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
-	
+
 							<a href="#" class="btn btn-control">
 								<svg class="olymp-share-icon"><use xlink:href="/assets/icons/icons.svg#olymp-share-icon"></use></svg>
 							</a>
-	
+
 						</div>
-	
+
 					</article>
 				</div>
 

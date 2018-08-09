@@ -6,17 +6,17 @@
 		<div class="col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-xs-12">
 			<div id="newsfeed-items-grid">
 
-				<div class="ui-block">
+				<div class="ui-block" *ngFor="let post of this.posts">
 					<article class="hentry post">
 
 						<div class="post__author author vcard inline-items">
 							<img src="/assets/img/author-page.jpg" alt="author">
 
 							<div class="author-date">
-								<a class="h6 post__author-name fn" href="#">Hassan Ahmad</a>
+								<a class="h6 post__author-name fn" href="#">{{post.user}}</a>
 								<div class="post__date">
 									<time class="published" datetime="2017-03-24T18:18">
-										19 hours ago
+										{{post.time}}
 									</time>
 								</div>
 							</div>
@@ -40,11 +40,11 @@
 
 						</div>
 
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-							mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-							accusantium doloremque.
-						</p>
+            <p>{{post.caption}}</p>
+
+            <div class="post-thumb" *ngIf="post.type === 'PHOTO'" >
+							<img src="{{post.photoUrl}}" alt="photo">
+						</div>
 
 						<div class="post-additional-info inline-items">
 

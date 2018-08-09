@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import "rxjs/add/operator/toPromise";
+import { combineLatest } from 'rxjs';
 import {
   AngularFirestore,
   AngularFirestoreDocument
@@ -60,6 +61,7 @@ export class UserService {
     return new Promise((resolve, reject) => {
       this.getCurrentUserData()
         .then((user: UserData) => {
+          // Implement Existing relationship check here ****
           this.db
             .collection("relations")
             .add({

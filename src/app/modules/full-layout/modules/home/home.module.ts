@@ -1,3 +1,4 @@
+import { PhotoService } from './../../../../shared/services/photos.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,6 +21,7 @@ import { NewsFeedComponent } from './pages/news-feed/news-feed.page';
     SelectSharedModules,
     FilePickerModules
   ],
-  declarations: [HomeComponent, NewsFeedComponent]
+  declarations: [HomeComponent, NewsFeedComponent],
+  providers: [PhotoService]
 })
 export class HomeModule { }

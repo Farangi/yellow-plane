@@ -14,7 +14,6 @@ export class AboutComponent implements OnInit {
 
   hobbiesAndInterests: HobbiesAndInterests;
   personalInfo: PersonalInfo;
-  userData: UserData;
   educations: any = [];
   employments: any = [];
   constructor(
@@ -26,9 +25,6 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     const username = this.route.snapshot.parent.params['username'];
-    this.userService.getUserByUsername(username)
-    .then((data: UserData) => this.userData = data)
-    .catch(err => console.log(err));
 
     this.hobbiesAndInterests = {};
     this.personalInfo = {};

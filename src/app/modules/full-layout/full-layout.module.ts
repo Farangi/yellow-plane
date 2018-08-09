@@ -12,6 +12,7 @@ import { SidebarComponent } from '../../shared/components/sidebar/sidebar.compon
 import { ChatSidebarComponent } from '../../shared/components/chat-sidebar/chat-sidebar.component';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { FullLayoutComponent } from './components/full-layout/full-layout.component';
+import { PostService } from '../../shared/services/posts.service';
 
 //import { PhotoPostViewerContentComponent } from '../../shared/components/photo-post-viewer-content/photo-post-viewer-content.component';
 //import { PhotoPostViewerComponent } from '../../shared/components/photo-post-viewer/photo-post-viewer.component';
@@ -32,5 +33,6 @@ import { FullLayoutComponent } from './components/full-layout/full-layout.compon
     //PhotoPostViewerComponent,
     //PhotoPostViewerContentComponent
   ],
+  providers: [PostService]
 })
 export class FullLayoutModule { }
