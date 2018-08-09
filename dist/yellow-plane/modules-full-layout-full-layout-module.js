@@ -166,12 +166,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_components_chat_sidebar_chat_sidebar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../shared/components/chat-sidebar/chat-sidebar.component */ "./src/app/shared/components/chat-sidebar/chat-sidebar.component.ts");
 /* harmony import */ var _shared_components_header_header_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared/components/header/header.component */ "./src/app/shared/components/header/header.component.ts");
 /* harmony import */ var _components_full_layout_full_layout_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/full-layout/full-layout.component */ "./src/app/modules/full-layout/components/full-layout/full-layout.component.ts");
+/* harmony import */ var _shared_services_posts_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../shared/services/posts.service */ "./src/app/shared/services/posts.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -202,6 +204,7 @@ var FullLayoutModule = /** @class */ (function () {
                 _shared_components_header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"],
                 _components_full_layout_full_layout_component__WEBPACK_IMPORTED_MODULE_9__["FullLayoutComponent"],
             ],
+            providers: [_shared_services_posts_service__WEBPACK_IMPORTED_MODULE_10__["PostService"]]
         })
     ], FullLayoutModule);
     return FullLayoutModule;

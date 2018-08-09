@@ -14,10 +14,12 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
 		"modules-account-account-module~modules-profile-profile-module",
+		"common",
 		"modules-account-account-module"
 	],
 	"./modules/auth/auth.module": [
 		"./src/app/modules/blank-layout/modules/auth/auth.module.ts",
+		"common",
 		"modules-auth-auth-module"
 	],
 	"./modules/blank-layout/blank-layout.module": [
@@ -26,17 +28,20 @@ var map = {
 	],
 	"./modules/circle/circle.module": [
 		"./src/app/modules/full-layout/modules/circle/circle.module.ts",
+		"common",
 		"modules-circle-circle-module"
 	],
 	"./modules/full-layout/full-layout.module": [
 		"./src/app/modules/full-layout/full-layout.module.ts",
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
+		"common",
 		"modules-full-layout-full-layout-module"
 	],
 	"./modules/home/home.module": [
 		"./src/app/modules/full-layout/modules/home/home.module.ts",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
+		"common",
 		"modules-home-home-module"
 	],
 	"./modules/page/page.module": [
@@ -45,6 +50,7 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
+		"common",
 		"modules-page-page-module"
 	],
 	"./modules/profile/profile.module": [
@@ -54,6 +60,7 @@ var map = {
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
 		"modules-account-account-module~modules-profile-profile-module",
+		"common",
 		"modules-profile-profile-module"
 	]
 };
@@ -937,6 +944,7 @@ var UserService = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.getCurrentUserData()
                 .then(function (user) {
+                // Implement Existing relationship check here ****
                 _this.db
                     .collection("relations")
                     .add({

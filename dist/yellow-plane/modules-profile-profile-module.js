@@ -174,9 +174,6 @@ var AboutComponent = /** @class */ (function () {
     AboutComponent.prototype.ngOnInit = function () {
         var _this = this;
         var username = this.route.snapshot.parent.params['username'];
-        this.userService.getUserByUsername(username)
-            .then(function (data) { return _this.userData = data; })
-            .catch(function (err) { return console.log(err); });
         this.hobbiesAndInterests = {};
         this.personalInfo = {};
         this.hobbiesAndInterestsService.getHobbiesAndInterestsByUserName(username)
@@ -353,9 +350,11 @@ var PhotosComponent = /** @class */ (function () {
         this.photoServ = photoServ;
         this.userService = userService;
         this.route = route;
-        this.privacyOptions = [{ name: 'Everyone', value: 'EVERYONE', icon: 'fa-globe' },
-            { name: 'Friends', value: 'FRIENDS', icon: 'fa-users' },
-            { name: 'Only me', value: 'ONLYME', icon: 'fa-lock' }];
+        this.privacyOptions = [
+            { name: "Everyone", value: "EVERYONE", icon: "fa-globe" },
+            { name: "Friends", value: "FRIENDS", icon: "fa-users" },
+            { name: "Only me", value: "ONLYME", icon: "fa-lock" }
+        ];
         //Photos Tab
         this.photos = [];
         //Albums Tab
@@ -373,15 +372,18 @@ var PhotosComponent = /** @class */ (function () {
     }
     PhotosComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var username = this.route.snapshot.parent.params['username'];
-        this.userService.getCurrentUserData().then(function (user) {
+        var username = this.route.snapshot.parent.params["username"];
+        this.userService
+            .getCurrentUserData()
+            .then(function (user) {
             if (user.username == username) {
                 _this.showPhotoControls = true;
             }
             else {
                 _this.showPhotoControls = false;
             }
-        }).catch(function (err) { return console.log(err); });
+        })
+            .catch(function (err) { return console.log(err); });
         this.getPhotos();
         this.getAlbums();
     };
@@ -389,7 +391,9 @@ var PhotosComponent = /** @class */ (function () {
     PhotosComponent.prototype.getPhotos = function () {
         var _this = this;
         this.photos = [];
-        this.photoServ.getCurrentUserPhotos().then(function (uploads) {
+        this.photoServ
+            .getCurrentUserPhotos()
+            .then(function (uploads) {
             if (uploads === void 0) { uploads = []; }
             uploads.forEach(function (upload) {
                 var photoId = 1;
@@ -404,7 +408,8 @@ var PhotosComponent = /** @class */ (function () {
                     photoId++;
                 });
             });
-        }).catch(function (err) {
+        })
+            .catch(function (err) {
             console.log(err);
         });
     };
@@ -414,63 +419,155 @@ var PhotosComponent = /** @class */ (function () {
     //Albums Tab
     PhotosComponent.prototype.getAlbums = function () {
         this.albums.push({
-            id: 1, name: 'South America Vacations', lastAdded: '2 hours ago', coverImg: '/assets/img/photo-item2.jpg', likes: 324, counts: { photos: 240, comments: 52, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic8.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+            id: 1,
+            name: "South America Vacations",
+            lastAdded: "2 hours ago",
+            coverImg: "/assets/img/photo-item2.jpg",
+            likes: 324,
+            counts: { photos: 240, comments: 52, share: 16 },
+            likedBy: [
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic5.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic10.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic7.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic8.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic2.jpg" }
+            ]
         });
         this.albums.push({
-            id: 2, name: 'Photoshoot Summer', lastAdded: '5 weeks ago', coverImg: '/assets/img/photo-album1.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic8.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+            id: 2,
+            name: "Photoshoot Summer",
+            lastAdded: "5 weeks ago",
+            coverImg: "/assets/img/photo-album1.jpg",
+            likes: 324,
+            counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic5.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic10.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic7.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic8.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic2.jpg" }
+            ]
         });
         this.albums.push({
-            id: 3, name: 'Amazing Street Food', lastAdded: '6 mins ago', coverImg: '/assets/img/photo-album2.jpg',
-            likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' }]
+            id: 3,
+            name: "Amazing Street Food",
+            lastAdded: "6 mins ago",
+            coverImg: "/assets/img/photo-album2.jpg",
+            likes: 324,
+            counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [{ name: "Wakas Ali", img: "/assets/img/friend-harmonic7.jpg" }]
         });
         this.albums.push({
-            id: 4, name: 'Graffiti and Street Art', lastAdded: '6 hours ago', coverImg: '/assets/img/photo-album3.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+            id: 4,
+            name: "Graffiti and Street Art",
+            lastAdded: "6 hours ago",
+            coverImg: "/assets/img/photo-album3.jpg",
+            likes: 324,
+            counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic5.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic10.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic7.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic2.jpg" }
+            ]
         });
         this.albums.push({
-            id: 5, name: 'Amazing Landscapes', lastAdded: '13 mins ago', coverImg: '/assets/img/photo-album4.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic10.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+            id: 5,
+            name: "Amazing Landscapes",
+            lastAdded: "13 mins ago",
+            coverImg: "/assets/img/photo-album4.jpg",
+            likes: 324,
+            counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic5.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic10.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic7.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic2.jpg" }
+            ]
         });
         this.albums.push({
-            id: 6, name: 'The Majstic Canyon', lastAdded: '57 mins ago', coverImg: '/assets/img/photo-item6.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+            id: 6,
+            name: "The Majstic Canyon",
+            lastAdded: "57 mins ago",
+            coverImg: "/assets/img/photo-item6.jpg",
+            likes: 324,
+            counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [{ name: "Wakas Ali", img: "/assets/img/friend-harmonic2.jpg" }]
         });
         this.albums.push({
-            id: 7, name: 'Winter 2015 Portraits', lastAdded: '1 year ago', coverImg: '/assets/img/photo-album5.jpg', likes: 324, counts: { photos: 24, comments: 86, share: 16 },
-            likedBy: [{ name: 'Wakas Ali', img: '/assets/img/friend-harmonic5.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic7.jpg' },
-                { name: 'Wakas Ali', img: '/assets/img/friend-harmonic2.jpg' }]
+            id: 7,
+            name: "Winter 2015 Portraits",
+            lastAdded: "1 year ago",
+            coverImg: "/assets/img/photo-album5.jpg",
+            likes: 324,
+            counts: { photos: 24, comments: 86, share: 16 },
+            likedBy: [
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic5.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic7.jpg" },
+                { name: "Wakas Ali", img: "/assets/img/friend-harmonic2.jpg" }
+            ]
         });
     };
     PhotosComponent.prototype.getMoreAlbums = function () {
         this.getAlbums();
     };
     PhotosComponent.prototype.getAlbumPhotos = function (id) {
-        this.selectedAlbumPhotos.push({ id: 9, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.selectedAlbumPhotos.push({ id: 10, img: '/assets/img/photo-item9.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.selectedAlbumPhotos.push({ id: 11, img: '/assets/img/photo-item3.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.selectedAlbumPhotos.push({ id: 12, img: '/assets/img/photo-item10.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.selectedAlbumPhotos.push({ id: 13, img: '/assets/img/photo-item5.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.selectedAlbumPhotos.push({ id: 14, img: '/assets/img/photo-item11.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.selectedAlbumPhotos.push({ id: 15, img: '/assets/img/photo-item7.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
-        this.selectedAlbumPhotos.push({ id: 16, img: '/assets/img/photo-item8.jpg', likes: 15, albumName: 'Header Photos', time: '1 week ago' });
+        this.selectedAlbumPhotos.push({
+            id: 9,
+            img: "/assets/img/photo-item7.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
+        this.selectedAlbumPhotos.push({
+            id: 10,
+            img: "/assets/img/photo-item9.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
+        this.selectedAlbumPhotos.push({
+            id: 11,
+            img: "/assets/img/photo-item3.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
+        this.selectedAlbumPhotos.push({
+            id: 12,
+            img: "/assets/img/photo-item10.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
+        this.selectedAlbumPhotos.push({
+            id: 13,
+            img: "/assets/img/photo-item5.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
+        this.selectedAlbumPhotos.push({
+            id: 14,
+            img: "/assets/img/photo-item11.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
+        this.selectedAlbumPhotos.push({
+            id: 15,
+            img: "/assets/img/photo-item7.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
+        this.selectedAlbumPhotos.push({
+            id: 16,
+            img: "/assets/img/photo-item8.jpg",
+            likes: 15,
+            albumName: "Header Photos",
+            time: "1 week ago"
+        });
     };
     PhotosComponent.prototype.getMoreAlbumPhotos = function () {
         this.getAlbumPhotos(this.selectedAlbumId);
@@ -494,7 +591,10 @@ var PhotosComponent = /** @class */ (function () {
     };
     PhotosComponent.prototype.openPhotoUploadModal = function () {
         var _this = this;
-        this.addPhotoModalRef = this.modalService.open(this.addPhotoModal, { backdrop: 'static', centered: true });
+        this.addPhotoModalRef = this.modalService.open(this.addPhotoModal, {
+            backdrop: "static",
+            centered: true
+        });
         this.addPhotoModalRefOpen = true;
         this.addPhotoModalRef.result.then(function (result) {
             console.log("Closed with: " + result);
@@ -514,14 +614,17 @@ var PhotosComponent = /** @class */ (function () {
     PhotosComponent.prototype.postPhotos = function () {
         var _this = this;
         this.addPhotoModalRef.close();
-        this.photoServ.uploadPhotos({
+        this.photoServ
+            .uploadPhotos({
             description: this.addPhotoModalForm.description,
             privacy: this.addPhotoModalForm.privacy,
             photos: this.pickedPhotos
-        }).then(function (resp) {
+        })
+            .then(function (resp) {
             //console.log(resp);
             _this.getPhotos();
-        }).catch(function (err) {
+        })
+            .catch(function (err) {
             console.log(err);
         });
     };
@@ -534,7 +637,12 @@ var PhotosComponent = /** @class */ (function () {
     };
     PhotosComponent.prototype.openAlbumUploadModal = function () {
         var _this = this;
-        this.addAlbumModalRef = this.modalService.open(this.addAlbumModal, { backdrop: 'static', size: 'lg', windowClass: 'create-album-modal', centered: true });
+        this.addAlbumModalRef = this.modalService.open(this.addAlbumModal, {
+            backdrop: "static",
+            size: "lg",
+            windowClass: "create-album-modal",
+            centered: true
+        });
         this.addAlbumModalRefOpen = true;
         this.addAlbumModalRef.result.then(function (result) {
             console.log("Closed with: " + result);
@@ -557,19 +665,19 @@ var PhotosComponent = /** @class */ (function () {
         this.addAlbumModalRef.close();
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('photoPostVewerComp'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])("photoPostVewerComp"),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "photoPostVewerComp", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('addPhoto'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])("addPhoto"),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "addPhotoModal", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('addAlbum'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])("addAlbum"),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "addAlbumModal", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('albumTop'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])("albumTop"),
         __metadata("design:type", Object)
     ], PhotosComponent.prototype, "albumTop", void 0);
     __decorate([
@@ -578,7 +686,7 @@ var PhotosComponent = /** @class */ (function () {
     ], PhotosComponent.prototype, "filePicker", void 0);
     PhotosComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
-            selector: 'app-photos',
+            selector: "app-photos",
             template: __webpack_require__(/*! ./photos.page.html */ "./src/app/modules/full-layout/modules/profile/pages/photos/photos.page.html"),
             styles: [__webpack_require__(/*! ./photos.page.scss */ "./src/app/modules/full-layout/modules/profile/pages/photos/photos.page.scss")]
         }),
@@ -676,7 +784,7 @@ var ProfileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\r\n\t\t<!-- Main Content -->\r\n\r\n\t\t<div class=\"col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t<div id=\"newsfeed-items-grid\">\r\n\r\n\t\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t\t<article class=\"hentry post\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Hassan Ahmad</a>\r\n\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t19 hours ago\r\n\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<ul class=\"more-dropdown\">\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Edit Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Delete Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Turn Off Notifications</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Select as Featured</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\r\n\t\t\t\t\t\t\tpariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt\r\n\t\t\t\t\t\t\tmollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem\r\n\t\t\t\t\t\t\taccusantium doloremque.\r\n\t\t\t\t\t\t</p>\r\n\r\n\t\t\t\t\t\t<div class=\"post-additional-info inline-items\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>8</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"friends-harmonic\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic7.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic8.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic9.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic10.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic11.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t\t<div class=\"names-people-likes\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\">Waqar</a>, <a href=\"#\">Asfar</a> and\r\n\t\t\t\t\t\t\t\t<br>6 more liked this\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t\t<div class=\"comments-shared\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-speech-balloon-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-speech-balloon-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>17</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>24</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"control-block-button post-control-button\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control featured-post\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-trophy-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-trophy-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-like-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-like-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-comments-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-comments-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</article>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t\t<article class=\"hentry post video\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Hasan Ahmed</a> shared a <a href=\"#\">link</a>\r\n\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t7 hours ago\r\n\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<ul class=\"more-dropdown\">\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Edit Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Delete Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Turn Off Notifications</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Select as Featured</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<p>If someone missed it, check out the new song by System of a Revenge! I thinks they are going back to their roots...</p>\r\n\r\n\t\t\t\t\t\t<div class=\"post-video\">\r\n\t\t\t\t\t\t\t<div class=\"video-thumb\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/video5.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t\t<a href=\"https://youtube.com/watch?v=excVFQ2TWig\" class=\"play-video\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-play-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-play-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"video-content\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"h4 title\">System of a Revenge - Nothing Else Matters (LIVE)</a>\r\n\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempo incididunt ut labore..</p>\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"link-site\">YOUTUBE.COM</a>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"post-additional-info inline-items\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>15</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"friends-harmonic\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic9.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic10.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic7.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic8.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic11.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t\t<div class=\"names-people-likes\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\">Jenny</a>, <a href=\"#\">Robert</a> and\r\n\t\t\t\t\t\t\t\t<br>13 more liked this\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"comments-shared\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-speech-balloon-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-speech-balloon-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>1</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>16</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"control-block-button post-control-button\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-like-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-like-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-comments-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-comments-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</article>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t\t<article class=\"hentry post\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">James Spiegel</a>\r\n\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t2 hours ago\r\n\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<ul class=\"more-dropdown\">\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Edit Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Delete Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Turn Off Notifications</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Select as Featured</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et\r\n\t\t\t\t\t\t\tdolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris consequat.\r\n\t\t\t\t\t\t</p>\r\n\r\n\t\t\t\t\t\t<div class=\"post-additional-info inline-items\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>36</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"friends-harmonic\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic7.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic8.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic9.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic10.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic11.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t\t<div class=\"names-people-likes\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\">You</a>, <a href=\"#\">Elaine</a> and\r\n\t\t\t\t\t\t\t\t<br>34 more liked this\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t\t<div class=\"comments-shared\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-speech-balloon-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-speech-balloon-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>17</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>24</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"control-block-button post-control-button\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-like-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-like-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-comments-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-comments-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</article>\r\n\r\n\t\t\t\t\t<ul class=\"comments-list\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar10-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Elaine Dreyfuss</a>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t5 mins ago\r\n\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.</p>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>8</span>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"has-children\">\r\n\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar5-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Green Goo Rock</a>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t1 hour ago\r\n\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugiten, sed quia\r\n\t\t\t\t\t\t\t\tconsequuntur magni dolores eos qui ratione voluptatem sequi en lod nesciunt. Neque porro\r\n\t\t\t\t\t\t\t\tquisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit en lorem ipsum der.\r\n\t\t\t\t\t\t\t</p>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>5</span>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"children\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar8-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Diana Jameson</a>\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t39 mins ago\r\n\t\t\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\r\n\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t\t<span>2</span>\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar2-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Nicholas Grisom</a>\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t24 mins ago\r\n\t\t\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<p>Excepteur sint occaecat cupidatat non proident.</p>\r\n\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t\t<span>0</span>\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t</li>\r\n\r\n\r\n\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar4-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Chris Greyson</a>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t1 hour ago\r\n\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>7</span>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t<a href=\"#\" class=\"more-comments\">View more comments <span>+</span></a>\r\n\t\t\t\t\t<form class=\"comment-form inline-items\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"form-group with-icon-right \">\r\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  ></textarea>\r\n\t\t\t\t\t\t\t\t<div class=\"add-options-message\">\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"options-message\" data-toggle=\"modal\" data-target=\"#update-header-photo\">\r\n\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-camera-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-camera-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- data-load-link=\"items-to-load.html\" data-container=\"newsfeed-items-grid\" -->\r\n\t\t\t<a id=\"load-more-button\" href=\"#\" class=\"btn btn-control btn-more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t</div>\r\n\r\n\t\t<!-- ... end Main Content -->\r\n\r\n\t\t<!-- Left Sidebar -->\r\n\r\n\t\t<div class=\"col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Profile Intro</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">About Me:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\" *ngIf=\"this.personalInfo\">{{this.personalInfo.description}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Favourite TV Shows:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\" *ngIf=\"this.hobbiesAndInterests\">{{this.hobbiesAndInterests.favTV}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Favourite Music Bands / Artists:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\" *ngIf=\"this.hobbiesAndInterests\">{{this.hobbiesAndInterests.favMusic}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Last Videos</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-last-video\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href clickStopPropagation class=\"play-video play-video--small\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-play-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-play-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/video8.jpg\" alt=\"video\">\r\n\t\t\t\t\t\t\t<div class=\"video-content\">\r\n\t\t\t\t\t\t\t\t<div class=\"title\">System of a Revenge - Hypnotize...</div>\r\n\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">3:25</time>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"overlay\"></div>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href clickStopPropagation class=\"play-video play-video--small\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-play-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-play-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/video7.jpg\" alt=\"video\">\r\n\t\t\t\t\t\t\t<div class=\"video-content\">\r\n\t\t\t\t\t\t\t\t<div class=\"title\">Green Goo - Live at Dan’s Arena</div>\r\n\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">5:48</time>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"overlay\"></div>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\r\n\t\t<!-- ... end Left Sidebar -->\r\n\r\n\t\t<!-- Right Sidebar -->\r\n\r\n\t\t<div class=\"col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Last Photos</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-last-photo js-zoom-gallery\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot10.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot10.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot11-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot11-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot12.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot12.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot13-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot13-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot14.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot14.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot15-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot15-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot16.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot16.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot17-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot17-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot18.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot18.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Friends (86)</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-faved-page js-zoom-gallery\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar38-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar24-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar36-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar35-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar34-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar33-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar32-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar31-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar30-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar29-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar28-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar27-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar26-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar25-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"all-users\">\r\n\t\t\t\t\t\t\t<a href=\"#\">+74</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- ... end Right Sidebar -->\r\n\r\n\t</div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n\t<div class=\"row\">\r\n\r\n\t\t<!-- Main Content -->\r\n\r\n\t\t<div class=\"col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-xs-12\">\r\n\t\t\t<div id=\"newsfeed-items-grid\">\r\n\r\n\t\t\t\t<div class=\"ui-block\" *ngFor=\"let post of this.posts\">\r\n\t\t\t\t\t<article class=\"hentry post\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">{{post.user}}</a>\r\n\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t{{post.time}}\r\n\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<ul class=\"more-dropdown\">\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Edit Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Delete Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Turn Off Notifications</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Select as Featured</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n            <p>{{post.caption}}</p>\r\n\r\n            <div class=\"post-thumb\" *ngIf=\"post.type === 'PHOTO'\" >\r\n\t\t\t\t\t\t\t<img src=\"{{post.photoUrl}}\" alt=\"photo\">\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"post-additional-info inline-items\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>8</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"friends-harmonic\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic7.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic8.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic9.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic10.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic11.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t\t<div class=\"names-people-likes\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\">Waqar</a>, <a href=\"#\">Asfar</a> and\r\n\t\t\t\t\t\t\t\t<br>6 more liked this\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t\t<div class=\"comments-shared\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-speech-balloon-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-speech-balloon-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>17</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>24</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"control-block-button post-control-button\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control featured-post\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-trophy-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-trophy-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-like-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-like-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-comments-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-comments-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</article>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t\t<article class=\"hentry post video\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Hasan Ahmed</a> shared a <a href=\"#\">link</a>\r\n\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t7 hours ago\r\n\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<ul class=\"more-dropdown\">\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Edit Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Delete Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Turn Off Notifications</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Select as Featured</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<p>If someone missed it, check out the new song by System of a Revenge! I thinks they are going back to their roots...</p>\r\n\r\n\t\t\t\t\t\t<div class=\"post-video\">\r\n\t\t\t\t\t\t\t<div class=\"video-thumb\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/video5.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t\t<a href=\"https://youtube.com/watch?v=excVFQ2TWig\" class=\"play-video\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-play-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-play-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"video-content\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"h4 title\">System of a Revenge - Nothing Else Matters (LIVE)</a>\r\n\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempo incididunt ut labore..</p>\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"link-site\">YOUTUBE.COM</a>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"post-additional-info inline-items\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>15</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"friends-harmonic\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic9.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic10.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic7.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic8.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic11.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t\t<div class=\"names-people-likes\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\">Jenny</a>, <a href=\"#\">Robert</a> and\r\n\t\t\t\t\t\t\t\t<br>13 more liked this\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"comments-shared\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-speech-balloon-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-speech-balloon-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>1</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>16</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"control-block-button post-control-button\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-like-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-like-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-comments-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-comments-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</article>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t\t<article class=\"hentry post\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">James Spiegel</a>\r\n\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t2 hours ago\r\n\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<div class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<ul class=\"more-dropdown\">\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Edit Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Delete Post</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Turn Off Notifications</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Select as Featured</a>\r\n\t\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et\r\n\t\t\t\t\t\t\tdolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris consequat.\r\n\t\t\t\t\t\t</p>\r\n\r\n\t\t\t\t\t\t<div class=\"post-additional-info inline-items\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>36</span>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"friends-harmonic\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic7.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic8.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic9.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic10.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/friend-harmonic11.jpg\" alt=\"friend\">\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t\t<div class=\"names-people-likes\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\">You</a>, <a href=\"#\">Elaine</a> and\r\n\t\t\t\t\t\t\t\t<br>34 more liked this\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t\t<div class=\"comments-shared\">\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-speech-balloon-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-speech-balloon-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>17</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t<span>24</span>\r\n\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div class=\"control-block-button post-control-button\">\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-like-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-like-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-comments-post-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-comments-post-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-control\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-share-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-share-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</article>\r\n\r\n\t\t\t\t\t<ul class=\"comments-list\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar10-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Elaine Dreyfuss</a>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t5 mins ago\r\n\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.</p>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>8</span>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"has-children\">\r\n\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar5-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Green Goo Rock</a>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t1 hour ago\r\n\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugiten, sed quia\r\n\t\t\t\t\t\t\t\tconsequuntur magni dolores eos qui ratione voluptatem sequi en lod nesciunt. Neque porro\r\n\t\t\t\t\t\t\t\tquisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit en lorem ipsum der.\r\n\t\t\t\t\t\t\t</p>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>5</span>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\r\n\t\t\t\t\t\t\t<ul class=\"children\">\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar8-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Diana Jameson</a>\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t39 mins ago\r\n\t\t\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\r\n\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t\t<span>2</span>\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar2-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Nicholas Grisom</a>\r\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t24 mins ago\r\n\t\t\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t\t<p>Excepteur sint occaecat cupidatat non proident.</p>\r\n\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t\t<span>0</span>\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t\t</li>\r\n\r\n\r\n\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar4-sm.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t\t<div class=\"author-date\">\r\n\t\t\t\t\t\t\t\t\t<a class=\"h6 post__author-name fn\" href=\"#\">Chris Greyson</a>\r\n\t\t\t\t\t\t\t\t\t<div class=\"post__date\">\r\n\t\t\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">\r\n\t\t\t\t\t\t\t\t\t\t\t1 hour ago\r\n\t\t\t\t\t\t\t\t\t\t</time>\r\n\t\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\r\n\t\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t\t<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>\r\n\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"post-add-icon inline-items\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-heart-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-heart-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t<span>7</span>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<a href=\"#\" class=\"reply\">Reply</a>\r\n\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t\t<a href=\"#\" class=\"more-comments\">View more comments <span>+</span></a>\r\n\t\t\t\t\t<form class=\"comment-form inline-items\">\r\n\r\n\t\t\t\t\t\t<div class=\"post__author author vcard inline-items\">\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/author-page.jpg\" alt=\"author\">\r\n\r\n\t\t\t\t\t\t\t<div class=\"form-group with-icon-right \">\r\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\"  ></textarea>\r\n\t\t\t\t\t\t\t\t<div class=\"add-options-message\">\r\n\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"options-message\" data-toggle=\"modal\" data-target=\"#update-header-photo\">\r\n\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-camera-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-camera-icon\"></use></svg>\r\n\t\t\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<!-- data-load-link=\"items-to-load.html\" data-container=\"newsfeed-items-grid\" -->\r\n\t\t\t<a id=\"load-more-button\" href=\"#\" class=\"btn btn-control btn-more\"><svg class=\"olymp-three-dots-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-three-dots-icon\"></use></svg></a>\r\n\t\t</div>\r\n\r\n\t\t<!-- ... end Main Content -->\r\n\r\n\t\t<!-- Left Sidebar -->\r\n\r\n\t\t<div class=\"col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Profile Intro</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-personal-info item-block\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">About Me:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\" *ngIf=\"this.personalInfo\">{{this.personalInfo.description}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Favourite TV Shows:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\" *ngIf=\"this.hobbiesAndInterests\">{{this.hobbiesAndInterests.favTV}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<span class=\"title\">Favourite Music Bands / Artists:</span>\r\n\t\t\t\t\t\t\t<span class=\"text\" *ngIf=\"this.hobbiesAndInterests\">{{this.hobbiesAndInterests.favMusic}}</span>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Last Videos</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-last-video\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href clickStopPropagation class=\"play-video play-video--small\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-play-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-play-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/video8.jpg\" alt=\"video\">\r\n\t\t\t\t\t\t\t<div class=\"video-content\">\r\n\t\t\t\t\t\t\t\t<div class=\"title\">System of a Revenge - Hypnotize...</div>\r\n\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">3:25</time>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"overlay\"></div>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href clickStopPropagation class=\"play-video play-video--small\">\r\n\t\t\t\t\t\t\t\t<svg class=\"olymp-play-icon\"><use xlink:href=\"/assets/icons/icons.svg#olymp-play-icon\"></use></svg>\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t\t<img src=\"/assets/img/video7.jpg\" alt=\"video\">\r\n\t\t\t\t\t\t\t<div class=\"video-content\">\r\n\t\t\t\t\t\t\t\t<div class=\"title\">Green Goo - Live at Dan’s Arena</div>\r\n\t\t\t\t\t\t\t\t<time class=\"published\" datetime=\"2017-03-24T18:18\">5:48</time>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"overlay\"></div>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\r\n\t\t<!-- ... end Left Sidebar -->\r\n\r\n\t\t<!-- Right Sidebar -->\r\n\r\n\t\t<div class=\"col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-xs-12\">\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Last Photos</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-last-photo js-zoom-gallery\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot10.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot10.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot11-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot11-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot12.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot12.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot13-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot13-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot14.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot14.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot15-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot15-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot16.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot16.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot17-large.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot17-large.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"/assets/img/last-phot18.jpg\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/last-phot18.jpg\" alt=\"photo\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"ui-block\">\r\n\t\t\t\t<div class=\"ui-block-title\">\r\n\t\t\t\t\t<h6 class=\"title\">Friends (86)</h6>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"ui-block-content\">\r\n\t\t\t\t\t<ul class=\"widget w-faved-page js-zoom-gallery\">\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar38-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar24-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar36-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar35-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar34-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar33-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar32-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar31-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar30-sm.jpg\" alt=\"author\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar29-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar28-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar27-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar26-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<a href=\"#\">\r\n\t\t\t\t\t\t\t\t<img src=\"/assets/img/avatar25-sm.jpg\" alt=\"user\">\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t<li class=\"all-users\">\r\n\t\t\t\t\t\t\t<a href=\"#\">+74</a>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t\t<!-- ... end Right Sidebar -->\r\n\r\n\t</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -701,9 +809,12 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimelineComponent", function() { return TimelineComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
-/* harmony import */ var src_app_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
+/* harmony import */ var _shared_services_posts_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../../../shared/services/posts.service */ "./src/app/shared/services/posts.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
+/* harmony import */ var src_app_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../../node_modules/@angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -716,30 +827,52 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var TimelineComponent = /** @class */ (function () {
-    function TimelineComponent(hobbiesAndInterestsService, personalInfoService) {
+    function TimelineComponent(hobbiesAndInterestsService, personalInfoService, route, postService, photoService) {
         this.hobbiesAndInterestsService = hobbiesAndInterestsService;
         this.personalInfoService = personalInfoService;
+        this.route = route;
+        this.postService = postService;
+        this.photoService = photoService;
+        this.posts = [];
     }
     TimelineComponent.prototype.ngOnInit = function () {
         var _this = this;
+        var username = this.route.snapshot.parent.params['username'];
         this.hobbiesAndInterests = {};
         this.personalInfo = {};
-        this.hobbiesAndInterestsService.getHobbiesAndInterests()
+        this.hobbiesAndInterestsService.getHobbiesAndInterestsByUserName(username)
             .then(function (data) { return _this.hobbiesAndInterests = data; })
             .catch(function (err) { return console.log(err); });
-        this.personalInfoService.getPersonalInfo()
+        this.personalInfoService.getPersonalInfoByUserName(username)
             .then(function (data) { return _this.personalInfo = data; })
             .catch(function (err) { return console.log(err); });
+        this.postService.getUserPostsByUsername(username).subscribe(function (posts) {
+            _this.posts = posts;
+            _this.posts.forEach(function (post, index, postsArray) {
+                if (post.type === 'PHOTO') {
+                    _this.photoService.getUpload(post.uploadId).subscribe(function (upload) {
+                        // works for single photo only
+                        postsArray[index].photoUrl = upload.photos[0].photoUrl;
+                    });
+                }
+            });
+        });
     };
     TimelineComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-timeline',
             template: __webpack_require__(/*! ./timeline.page.html */ "./src/app/modules/full-layout/modules/profile/pages/timeline/timeline.page.html"),
             styles: [__webpack_require__(/*! ./timeline.page.scss */ "./src/app/modules/full-layout/modules/profile/pages/timeline/timeline.page.scss")]
         }),
-        __metadata("design:paramtypes", [_shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_1__["HobbiesAndInterestsService"],
-            src_app_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__["PersonalInfoService"]])
+        __metadata("design:paramtypes", [_shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_3__["HobbiesAndInterestsService"],
+            src_app_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_4__["PersonalInfoService"],
+            _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
+            _shared_services_posts_service__WEBPACK_IMPORTED_MODULE_1__["PostService"],
+            _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_0__["PhotoService"]])
     ], TimelineComponent);
     return TimelineComponent;
 }());
@@ -992,152 +1125,6 @@ var ProfileModule = /** @class */ (function () {
         })
     ], ProfileModule);
     return ProfileModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/shared/services/photos.service.ts":
-/*!***************************************************!*\
-  !*** ./src/app/shared/services/photos.service.ts ***!
-  \***************************************************/
-/*! exports provided: PhotoService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotoService", function() { return PhotoService; });
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.service */ "./src/app/shared/services/user.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
-/* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var angularfire2_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angularfire2/storage */ "./node_modules/angularfire2/storage/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var PhotoService = /** @class */ (function () {
-    function PhotoService(db, storage, userService) {
-        this.db = db;
-        this.storage = storage;
-        this.userService = userService;
-        // For time error
-        db.firestore.settings({ timestampsInSnapshots: true });
-    }
-    PhotoService.prototype.executeUpload = function (photosWithDetail, user) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            var PHOTOS = [];
-            photosWithDetail.photos.forEach(function (photo) {
-                var file = photo.underlyingFile;
-                var path = "photos/" + user.uid + "/" + new Date().getTime() + "_" + photo.underlyingFile.name;
-                var customMetadata = { app: 'Yellow Plane' };
-                _this.storage.upload(path, file, { customMetadata: customMetadata })
-                    .then(function (resp) {
-                    resp.ref.getDownloadURL().then(function (url) {
-                        PHOTOS.push({
-                            name: photo.underlyingFile.name,
-                            photoUrl: url,
-                            uploadedAt: new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-                        });
-                        if (PHOTOS.length === photosWithDetail.photos.length) {
-                            _this.db.collection('uploads').add({
-                                userId: user.uid,
-                                privacy: photosWithDetail.privacy,
-                                description: photosWithDetail.description,
-                                createdAt: new Date().toLocaleTimeString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
-                                photos: PHOTOS
-                            })
-                                .then(function (resp) {
-                                //console.log(resp);
-                                resolve(resp);
-                            })
-                                .catch(function (err) {
-                                reject(err);
-                            });
-                        }
-                    }).catch(function (err) {
-                        reject(err);
-                    });
-                })
-                    .catch(function (err) {
-                    reject(err);
-                });
-            });
-        });
-    };
-    PhotoService.prototype.uploadPhotos = function (photosWithDetail) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.userService.getCurrentUser()
-                .then(function (user) {
-                _this.executeUpload(photosWithDetail, user)
-                    .then(function (resp) {
-                    //console.log(resp);
-                    resolve('Photos Successfuly Uploaded!');
-                })
-                    .catch(function (err) {
-                    reject(err);
-                });
-            })
-                .catch(function (err) {
-                reject(err);
-            });
-        });
-    };
-    PhotoService.prototype.getUploads = function (user) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            var UPLOADS = [];
-            var queryResponse = _this.db.collection('uploads', function (ref) { return ref.where('userId', '==', user.uid); })
-                .valueChanges();
-            queryResponse.subscribe(function (data) {
-                data.forEach(function (upload) {
-                    UPLOADS.push(upload);
-                    if (data.length === UPLOADS.length) {
-                        resolve(UPLOADS);
-                    }
-                });
-            }, function (err) {
-                reject(err);
-            });
-        });
-    };
-    PhotoService.prototype.getCurrentUserPhotos = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.userService.getCurrentUser().then(function (user) {
-                _this.getUploads(user).then(function (resp) {
-                    resolve(resp);
-                })
-                    .catch(function (err) {
-                    reject(err);
-                });
-                //resolve();
-            }).catch(function (err) {
-                reject(err);
-            });
-        });
-    };
-    PhotoService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"],
-            angularfire2_storage__WEBPACK_IMPORTED_MODULE_4__["AngularFireStorage"],
-            _user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
-    ], PhotoService);
-    return PhotoService;
 }());
 
 
