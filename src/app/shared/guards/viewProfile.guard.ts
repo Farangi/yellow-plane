@@ -27,17 +27,8 @@ export class ViewProfileGuard implements CanActivate {
                 resolve(false);
               }
             } else {
-              this.userService.checkRelation(route.parent.params['username'], user.username)
-              .subscribe((relations: any[]) => {
-                if(relations.length) {
-                  if(relations[0].status == 'accepted') {
-                    resolve(true);
-                  } else {
-                    this.router.navigate(['profile', route.parent.params['username'], 'about']);
-                    resolve(false);
-                  }
-                }
-              });
+              this.router.navigate(['profile', route.parent.params['username'], 'about']);
+              resolve(false);
             }
           });
         }

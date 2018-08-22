@@ -13,7 +13,8 @@
 							<img src="/assets/img/author-page.jpg" alt="author">
 
 							<div class="author-date">
-								<a class="h6 post__author-name fn" href="#">{{post.user}}</a>
+                  <!-- [attr.href]="'profile/'+post.user" -->
+								<a class="h6 post__author-name fn" [routerLink]="['/profile',post.user]" >{{post.user}}</a>
 								<div class="post__date">
 									<time class="published" datetime="2017-03-24T18:18">
 										{{post.time}}
@@ -48,9 +49,9 @@
 
 						<div class="post-additional-info inline-items">
 
-							<a href="#" class="post-add-icon inline-items">
+							<a (click)="likePost(post)" class="post-add-icon inline-items">
 								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
-								<span>8</span>
+								<span *ngIf="post.likes">{{post.likes.length}}</span>
 							</a>
 
 							<ul class="friends-harmonic">
@@ -81,9 +82,9 @@
 								</li>
 							</ul>
 
-							<div class="names-people-likes">
-								<a href="#">Waqar</a>, <a href="#">Asfar</a> and
-								<br>6 more liked this
+							<div class="names-people-likes" *ngIf="post.likes" >
+								<a [routerLink]="['/profile',post.likes[0].username]" *ngIf="post.likes.length > 0" >{{post.likes[0].username}}</a><a [routerLink]="['/profile',post.likes[1].username]" *ngIf="post.likes.length > 1">, {{post.likes[1].username}}</a><span *ngIf="post.likes.length > 2"> and</span>
+								<br><span *ngIf="post.likes.length > 2">{{(post.likes.length - 2)}} more </span>liked this
 							</div>
 
 
@@ -108,7 +109,7 @@
 								<svg class="olymp-trophy-icon"><use xlink:href="/assets/icons/icons.svg#olymp-trophy-icon"></use></svg>
 							</a>
 
-							<a href="#" class="btn btn-control">
+							<a (click)="likePost(post)" class="btn btn-control">
 								<svg class="olymp-like-post-icon"><use xlink:href="/assets/icons/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
 
@@ -122,7 +123,95 @@
 
 						</div>
 
-					</article>
+          </article>
+
+          <ul class="comments-list" *ngIf="post.comments && post.comments.length > 0">
+            <li *ngFor="let comment of post.comments" >
+							<div class="post__author author vcard inline-items">
+								<img src="/assets/img/avatar10-sm.jpg" alt="author">
+
+								<div class="author-date">
+									<a class="h6 post__author-name fn" [routerLink]="['/profile',comment.user]">{{comment.user}}</a>
+									<div class="post__date">
+										<time class="published" datetime="2017-03-24T18:18">
+											5 mins ago
+										</time>
+									</div>
+								</div>
+
+								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+							</div>
+
+							<p>{{comment.message}}</p>
+
+							<a (click)="likeComment(comment)" class="post-add-icon inline-items">
+								<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
+								<span *ngIf="comment.likes">{{comment.likes.length}}</span>
+							</a>
+              <a (click)="comment.replyToggle=true" class="reply">Reply</a>
+              <ul class="children" *ngIf="comment.replies && comment.replies.length > 0">
+                <li *ngFor="let reply of comment.replies">
+									<div class="post__author author vcard inline-items">
+										<img src="/assets/img/avatar8-sm.jpg" alt="author">
+
+										<div class="author-date">
+											<a class="h6 post__author-name fn" [routerLink]="['/profile',reply.user]">{{reply.user}}</a>
+											<div class="post__date">
+												<time class="published" datetime="2017-03-24T18:18">
+													39 mins ago
+												</time>
+											</div>
+										</div>
+
+										<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+									</div>
+
+									<p>{{reply.message}}</p>
+
+									<a (click)="likeReply(reply)" class="post-add-icon inline-items">
+										<svg class="olymp-heart-icon"><use xlink:href="/assets/icons/icons.svg#olymp-heart-icon"></use></svg>
+										<span *ngIf="reply.likes">{{reply.likes.length}}</span>
+									</a>
+									<a (click)="comment.replyToggle=true" class="reply">Reply</a>
+								</li>
+              </ul>
+              <form class="comment-form inline-items" *ngIf="comment.replyToggle">
+
+                <div class="post__author author vcard inline-items">
+                  <img src="/assets/img/author-page.jpg" alt="author">
+
+                  <div class="form-group with-icon-right ">
+                    <textarea class="form-control" #reply (keyup.enter)="commentReply(comment,reply.value);reply.value=null;comment.replyToggle=false" placeholder="Enter your reply..."  ></textarea>
+                    <div class="add-options-message">
+                      <a (click)="commentReply(comment,reply.value);reply.value=null;comment.replyToggle=false" class="options-message" >
+                        <svg class="olymp-play-icon"><use xlink:href="/assets/icons/icons.svg#olymp-play-icon"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+						</li>
+          </ul>
+
+          <form class="comment-form inline-items">
+
+						<div class="post__author author vcard inline-items">
+							<img src="/assets/img/author-page.jpg" alt="author">
+
+							<div class="form-group with-icon-right ">
+								<textarea class="form-control" #comment (keyup.enter)="postComment(post,comment.value);comment.value=null" placeholder="Enter your comment..."  ></textarea>
+								<div class="add-options-message">
+									<a (click)="postComment(post,comment.value);comment.value=null" class="options-message" >
+										<svg class="olymp-play-icon"><use xlink:href="/assets/icons/icons.svg#olymp-play-icon"></use></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</form>
 				</div>
 
 				<div class="ui-block">
@@ -247,7 +336,8 @@
 
 						</div>
 
-					</article>
+          </article>
+
 				</div>
 
 				<div class="ui-block">

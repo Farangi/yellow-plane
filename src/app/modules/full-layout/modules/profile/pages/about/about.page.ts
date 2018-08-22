@@ -24,6 +24,10 @@ export class AboutComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // Testing!!!
+    // this.userService.combinerTestingFunc('jackyboy', 'fucklogic').subscribe(data => {
+    //   console.log(data);
+    // });
     const username = this.route.snapshot.parent.params['username'];
 
     this.hobbiesAndInterests = {};

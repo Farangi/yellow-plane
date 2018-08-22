@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import "rxjs/add/operator/toPromise";
-import { combineLatest } from 'rxjs';
+import { map, switchMap } from "rxjs/operators";
+import { combineLatest } from "rxjs";
 import {
   AngularFirestore,
   AngularFirestoreDocument
@@ -29,21 +30,69 @@ export class UserService {
   }
 
   checkRelation(checker: string, checkee: string) {
-    return this.db
-      .collection("relations", ref =>
-      ref.where("sender", "==", checker).where("reciever","==",checkee))
-      .valueChanges();
+    const senderRef = this.db.collection("relations", ref =>
+    ref.where("sender", "==", checker).where("reciever","==",checkee));
+
+    const recieverRef = this.db.collection("relations", ref =>
+    ref.where("sender", "==", checkee).where("reciever","==",checker));
+
+    return combineLatest(
+      senderRef.valueChanges(),
+      recieverRef.valueChanges(),
+      (senderRelations, recieverRelations) => {
+        return senderRelations.concat(recieverRelations);
+      });
+  }
+
+  getFriendRelationsByUsername(user: string) {
+    const senderRef = this.db.collection("relations", ref =>
+    ref.where("sender", "==", user).where("status","==","accepted"));
+
+    const recieverRef = this.db.collection("relations", ref =>
+    ref.where("reciever", "==", user).where("status","==","accepted"));
+
+    return combineLatest(
+      senderRef.valueChanges(),
+      recieverRef.valueChanges(),
+      (senderRelations, recieverRelations) => {
+        return senderRelations.concat(recieverRelations);
+      });
+  }
+
+  combinerTestingFunc(checker: string, checkee: string) {
+
+    // const senderRef = this.db.collection("relations", ref =>
+    // ref.where("sender", "==", checker).where("reciever","==",checkee));
+
+    // const recieverRef = this.db.collection("relations", ref =>
+    // ref.where("sender", "==", checkee).where("reciever","==",checker));
+
+    // return combineLatest(
+    //   senderRef.valueChanges(),
+    //   recieverRef.valueChanges(),
+    //   (senderRelations, recieverRelations) => {
+    //     return senderRelations.concat(recieverRelations);
+    //   });
   }
 
   getFriendRequests(username: string): Observable<any> {
     return this.db
       .collection("relations", ref => ref.where("reciever", "==", username))
-      .valueChanges();
+      .snapshotChanges()
+      .pipe(
+        map(actions => {
+          return actions.map(a => {
+            const data: Object = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          });
+        })
+      );
   }
 
   acceptFriendRequest(request: any) {
     return new Promise((resolve, reject) => {
-      this.db.doc(`relations/${request.rid}`).update({
+      this.db.doc(`relations/${request.id}`).update({
         status: 'accepted'
       }).then(res => resolve('Acceptedd!')).catch(err => reject(err));
     });
@@ -51,7 +100,7 @@ export class UserService {
 
   declineFriendRequest(request: any) {
     return new Promise((resolve, reject) => {
-      this.db.doc(`relations/${request.rid}`).update({
+      this.db.doc(`relations/${request.id}`).update({
         status: 'rejected'
       }).then(res => resolve('Rejected!')).catch(err => reject(err));
     });
@@ -61,22 +110,20 @@ export class UserService {
     return new Promise((resolve, reject) => {
       this.getCurrentUserData()
         .then((user: UserData) => {
-          // Implement Existing relationship check here ****
-          this.db
-            .collection("relations")
-            .add({
-              sender: user.username,
-              reciever: username,
-              status: "pending"
-            })
-            .then((ref) => {
-              this.db
-                .collection("relations").doc(ref.id).update({
-                  rid: ref.id
-                });
-              resolve('Friend Request Sent');
-            })
-            .catch(err => reject(err));
+          this.checkRelation(user.username, username).subscribe((relations: any[]) => {
+            if (!relations.length) {
+              this.db.collection("relations")
+              .add({
+                sender: user.username,
+                reciever: username,
+                status: "pending"
+              })
+              .then(res => {
+                resolve('Friend Request Sent');
+              })
+              .catch(err => reject(err));
+            }
+          });
         })
         .catch(err => reject(err));
     });
