@@ -14,12 +14,10 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
 		"modules-account-account-module~modules-profile-profile-module",
-		"common",
 		"modules-account-account-module"
 	],
 	"./modules/auth/auth.module": [
 		"./src/app/modules/blank-layout/modules/auth/auth.module.ts",
-		"common",
 		"modules-auth-auth-module"
 	],
 	"./modules/blank-layout/blank-layout.module": [
@@ -28,20 +26,18 @@ var map = {
 	],
 	"./modules/circle/circle.module": [
 		"./src/app/modules/full-layout/modules/circle/circle.module.ts",
-		"common",
 		"modules-circle-circle-module"
 	],
 	"./modules/full-layout/full-layout.module": [
 		"./src/app/modules/full-layout/full-layout.module.ts",
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-full-layout-full-layout-module",
-		"common",
 		"modules-full-layout-full-layout-module"
 	],
 	"./modules/home/home.module": [
 		"./src/app/modules/full-layout/modules/home/home.module.ts",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
-		"common",
+		"modules-home-home-module~modules-profile-profile-module",
 		"modules-home-home-module"
 	],
 	"./modules/page/page.module": [
@@ -50,7 +46,6 @@ var map = {
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
-		"common",
 		"modules-page-page-module"
 	],
 	"./modules/profile/profile.module": [
@@ -58,9 +53,9 @@ var map = {
 		"modules-account-account-module~modules-full-layout-full-layout-module~modules-page-page-module~modul~9cb696ca",
 		"modules-account-account-module~modules-page-page-module~modules-profile-profile-module",
 		"modules-home-home-module~modules-page-page-module~modules-profile-profile-module",
+		"modules-home-home-module~modules-profile-profile-module",
 		"modules-page-page-module~modules-profile-profile-module",
 		"modules-account-account-module~modules-profile-profile-module",
-		"common",
 		"modules-profile-profile-module"
 	]
 };
@@ -584,18 +579,8 @@ var ViewProfileGuard = /** @class */ (function () {
                             }
                         }
                         else {
-                            _this.userService.checkRelation(route.parent.params['username'], user.username)
-                                .subscribe(function (relations) {
-                                if (relations.length) {
-                                    if (relations[0].status == 'accepted') {
-                                        resolve(true);
-                                    }
-                                    else {
-                                        _this.router.navigate(['profile', route.parent.params['username'], 'about']);
-                                        resolve(false);
-                                    }
-                                }
-                            });
+                            _this.router.navigate(['profile', route.parent.params['username'], 'about']);
+                            resolve(false);
                         }
                     });
                 }
@@ -876,9 +861,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
 /* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_5__);
+var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -892,6 +887,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var UserService = /** @class */ (function () {
     function UserService(db) {
         this.db = db;
@@ -901,7 +898,7 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getCurrentUser = function () {
         return new Promise(function (resolve, reject) {
             // tslint:disable-next-line:no-shadowed-variable
-            firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().onAuthStateChanged(function (user) {
+            firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"]().onAuthStateChanged(function (user) {
                 if (user) {
                     resolve(user);
                 }
@@ -912,21 +909,55 @@ var UserService = /** @class */ (function () {
         });
     };
     UserService.prototype.checkRelation = function (checker, checkee) {
-        return this.db
-            .collection("relations", function (ref) {
+        var senderRef = this.db.collection("relations", function (ref) {
             return ref.where("sender", "==", checker).where("reciever", "==", checkee);
-        })
-            .valueChanges();
+        });
+        var recieverRef = this.db.collection("relations", function (ref) {
+            return ref.where("sender", "==", checkee).where("reciever", "==", checker);
+        });
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["combineLatest"])(senderRef.valueChanges(), recieverRef.valueChanges(), function (senderRelations, recieverRelations) {
+            return senderRelations.concat(recieverRelations);
+        });
+    };
+    UserService.prototype.getFriendRelationsByUsername = function (user) {
+        var senderRef = this.db.collection("relations", function (ref) {
+            return ref.where("sender", "==", user).where("status", "==", "accepted");
+        });
+        var recieverRef = this.db.collection("relations", function (ref) {
+            return ref.where("reciever", "==", user).where("status", "==", "accepted");
+        });
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["combineLatest"])(senderRef.valueChanges(), recieverRef.valueChanges(), function (senderRelations, recieverRelations) {
+            return senderRelations.concat(recieverRelations);
+        });
+    };
+    UserService.prototype.combinerTestingFunc = function (checker, checkee) {
+        // const senderRef = this.db.collection("relations", ref =>
+        // ref.where("sender", "==", checker).where("reciever","==",checkee));
+        // const recieverRef = this.db.collection("relations", ref =>
+        // ref.where("sender", "==", checkee).where("reciever","==",checker));
+        // return combineLatest(
+        //   senderRef.valueChanges(),
+        //   recieverRef.valueChanges(),
+        //   (senderRelations, recieverRelations) => {
+        //     return senderRelations.concat(recieverRelations);
+        //   });
     };
     UserService.prototype.getFriendRequests = function (username) {
         return this.db
             .collection("relations", function (ref) { return ref.where("reciever", "==", username); })
-            .valueChanges();
+            .snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (actions) {
+            return actions.map(function (a) {
+                var data = a.payload.doc.data();
+                var id = a.payload.doc.id;
+                return __assign({ id: id }, data);
+            });
+        }));
     };
     UserService.prototype.acceptFriendRequest = function (request) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.db.doc("relations/" + request.rid).update({
+            _this.db.doc("relations/" + request.id).update({
                 status: 'accepted'
             }).then(function (res) { return resolve('Acceptedd!'); }).catch(function (err) { return reject(err); });
         });
@@ -934,7 +965,7 @@ var UserService = /** @class */ (function () {
     UserService.prototype.declineFriendRequest = function (request) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.db.doc("relations/" + request.rid).update({
+            _this.db.doc("relations/" + request.id).update({
                 status: 'rejected'
             }).then(function (res) { return resolve('Rejected!'); }).catch(function (err) { return reject(err); });
         });
@@ -944,22 +975,20 @@ var UserService = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.getCurrentUserData()
                 .then(function (user) {
-                // Implement Existing relationship check here ****
-                _this.db
-                    .collection("relations")
-                    .add({
-                    sender: user.username,
-                    reciever: username,
-                    status: "pending"
-                })
-                    .then(function (ref) {
-                    _this.db
-                        .collection("relations").doc(ref.id).update({
-                        rid: ref.id
-                    });
-                    resolve('Friend Request Sent');
-                })
-                    .catch(function (err) { return reject(err); });
+                _this.checkRelation(user.username, username).subscribe(function (relations) {
+                    if (!relations.length) {
+                        _this.db.collection("relations")
+                            .add({
+                            sender: user.username,
+                            reciever: username,
+                            status: "pending"
+                        })
+                            .then(function (res) {
+                            resolve('Friend Request Sent');
+                        })
+                            .catch(function (err) { return reject(err); });
+                    }
+                });
             })
                 .catch(function (err) { return reject(err); });
         });
@@ -1029,7 +1058,7 @@ var UserService = /** @class */ (function () {
     UserService.prototype.registerCurrentUser = function (formData) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"]().currentUser;
+            var user = firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"]().currentUser;
             var data = {
                 fname: formData.firstName,
                 lname: formData.lastName,
@@ -1061,7 +1090,7 @@ var UserService = /** @class */ (function () {
     };
     UserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]])
+        __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"]])
     ], UserService);
     return UserService;
 }());
