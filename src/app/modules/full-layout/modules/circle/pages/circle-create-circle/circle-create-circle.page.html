@@ -1,0 +1,67 @@
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">YelloPlane Circles</div>
+					<form class="w-search">
+						<div class="form-group with-button">
+							<input class="form-control" type="text" placeholder="Search the circles...">
+							<button>
+								<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+
+			<div class="ui-block">
+				<div class="ui-block-title bg-blue">
+					<h6 class="title c-white">Create a New Circle</h6>
+				</div>
+				<div class="ui-block-content">
+
+					<form [formGroup]="createForm">
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Circle Title</label>
+									<input class="form-control" formControlName="title" type="text" placeholder="">
+								</div>
+							</div>
+
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+								<div class="form-group label-floating">
+									<label class="control-label">Circle Description</label>
+									<textarea class="form-control" formControlName="description" rows="8"></textarea>
+								</div>
+							</div>
+
+							<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+								<a href="javascript:void(0)" (click)="cancel()" class="btn btn-secondary btn-lg full-width">Cancel</a>
+							</div>
+
+							<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+								<a href="javascript:void(0)" (click)="create()" class="btn btn-blue btn-lg full-width">Create Circle</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+			<app-circle-featured-topics></app-circle-featured-topics>
+			<app-circle-recent-topics></app-circle-recent-topics>
+		</div>
+	</div>
+</div>

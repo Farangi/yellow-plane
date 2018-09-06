@@ -6,8 +6,8 @@ import {
   AngularFirestore,
   AngularFirestoreDocument
 } from "angularfire2/firestore";
-import * as firebase from "firebase/app";
-import { Observable } from "../../../../node_modules/rxjs";
+import * as firebase from "firebase";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class UserService {
@@ -60,19 +60,6 @@ export class UserService {
   }
 
   combinerTestingFunc(checker: string, checkee: string) {
-
-    // const senderRef = this.db.collection("relations", ref =>
-    // ref.where("sender", "==", checker).where("reciever","==",checkee));
-
-    // const recieverRef = this.db.collection("relations", ref =>
-    // ref.where("sender", "==", checkee).where("reciever","==",checker));
-
-    // return combineLatest(
-    //   senderRef.valueChanges(),
-    //   recieverRef.valueChanges(),
-    //   (senderRelations, recieverRelations) => {
-    //     return senderRelations.concat(recieverRelations);
-    //   });
   }
 
   getFriendRequests(username: string): Observable<any> {

@@ -1,4 +1,4 @@
-import { HobbiesAndInterestsService } from './../../../../../../shared/services/profile/hobbiesAndInterests.service';
+import { HobbiesAndInterestsService } from '../../../../../../shared/services/profile/hobbiesAndInterests.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

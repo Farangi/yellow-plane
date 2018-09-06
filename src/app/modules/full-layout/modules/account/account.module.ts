@@ -1,5 +1,5 @@
-import { EducationsAndEmploymentsService } from './../../../../shared/services/profile/educationsAndEmployments.service';
-import { HobbiesAndInterestsService } from './../../../../shared/services/profile/hobbiesAndInterests.service';
+import { EducationsAndEmploymentsService } from '../../../../shared/services/profile/educationsAndEmployments.service';
+import { HobbiesAndInterestsService } from '../../../../shared/services/profile/hobbiesAndInterests.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -49,10 +49,10 @@ import { AccountSettingsService } from '../../../../shared/services/profile/acco
     AccountRoutingModule
   ],
   declarations: [
-    AccountHeaderComponent, 
+    AccountHeaderComponent,
     AccountSidebarComponent,
     AccountSidebarLargeComponent,
-    AccountComponent, 
+    AccountComponent,
     AccountPersonalInfoComponent,
     AccountMessagesComponent,
     AccountNotificationsComponent,
@@ -61,7 +61,7 @@ import { AccountSettingsService } from '../../../../shared/services/profile/acco
     AccountChangePasswordComponent,
     AccountHobbiesComponent,
     AccountEducationComponent,
-    AccountHeaderPageComponent, 
+    AccountHeaderPageComponent,
     AccountSidebarPageComponent,
     AccountSidebarPageLargeComponent,
     AccountPageMessagesComponent,

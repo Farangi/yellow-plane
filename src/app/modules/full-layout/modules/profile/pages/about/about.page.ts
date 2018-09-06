@@ -1,7 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from './../../../../../../shared/services/user.service';
-import { PersonalInfoService } from './../../../../../../shared/services/profile/personalInfo.service';
-import { HobbiesAndInterestsService } from './../../../../../../shared/services/profile/hobbiesAndInterests.service';
+import { UserService } from '../../../../../../shared/services/user.service';
+import { PersonalInfoService } from '../../../../../../shared/services/profile/personalInfo.service';
+import { HobbiesAndInterestsService } from '../../../../../../shared/services/profile/hobbiesAndInterests.service';
 import { Component, OnInit } from '@angular/core';
 import { EducationsAndEmploymentsService } from '../../../../../../shared/services/profile/educationsAndEmployments.service';
 

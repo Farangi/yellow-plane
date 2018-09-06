@@ -1,4 +1,4 @@
-import { UserService } from './../user.service';
+import { UserService } from '../user.service';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';

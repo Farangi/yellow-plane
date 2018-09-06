@@ -1,80 +1,81 @@
 <div class="container">
-	<div class="row">
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div class="ui-block responsive-flex">
-				<div class="ui-block-title">
-					<div class="h6 title">The Robot’s Dungeon</div>
-					<div class="align-right">
-						<form class="w-search">
-							<div class="form-group with-button">
-								<input class="form-control" type="text" placeholder="Search the circles...">
-								<button>
-									<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-								</button>
-							</div>
-						</form>
-						<button [routerLink]="['/circles/topic/create']" class="btn btn-blue btn-md">Create New Topic</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block responsive-flex">
+        <div class="ui-block-title">
+          <div class="h6 title">The Robot’s Dungeon</div>
+          <div class="align-right">
+            <form class="w-search">
+              <div class="form-group with-button">
+                <input class="form-control" type="text" placeholder="Search the circles...">
+                <button>
+                  <svg class="olymp-magnifying-glass-icon">
+                    <use xlink:href="/assets/icons/icons.svg#olymp-magnifying-glass-icon"></use>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <div class="container">
-	<div class="row">
-		<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
+  <div class="row">
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
 
-			<div class="ui-block responsive-flex">
-				<div class="ui-block-title">
-					<i class="icon fa fa-star c-yellow" aria-hidden="true"></i>
-					<div class="h6 title">This year’s ComixCon will have the best presentations</div>
-				</div>
-				<table class="open-topic-table">
+      <div class="ui-block responsive-flex">
+        <div class="ui-block-title">
+          <i class="icon fa fa-star c-yellow" aria-hidden="true"></i>
+          <div class="h6 title">This year’s ComixCon will have the best presentations</div>
+        </div>
+        <table class="open-topic-table">
 
-					<thead>
+          <thead>
 
-						<tr>
-							<th class="author">
-								Author
-							</th>
+            <tr>
+              <th class="author">
+                Author
+              </th>
 
-							<th class="posts">
-								Post
-							</th>
-						</tr>
+              <th class="posts">
+                Post
+              </th>
+            </tr>
 
-					</thead>
+          </thead>
 
-					<tbody>
+          <tbody>
+            <ng-container *ngFor="let post of this.posts">
 
-					<tr>
-						<td class="topic-date" colspan="2">
-							March 24th, 2016 at 6:42 pm
-							<a href="#" class="reply-topic">Reply</a>
-						</td>
-					</tr>
+              <tr>
+                <td class="topic-date" colspan="2">
+                  March 24th, 2016 at 6:42 pm
+                  <a href="#" class="reply-topic">Reply</a>
+                </td>
+              </tr>
 
-					<tr>
-						<td class="author">
-							<div class="author-thumb">
-								<img src="/assets/img/avatar2.jpg" alt="author">
-							</div>
-							<div class="author-content">
-								<a href="02-ProfilePage.html" class="h6 author-name">Mahira Khan</a>
-								<div class="country">Long Island, NY</div>
-							</div>
-						</td>
-						<td class="posts">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							</p>
-							<p>Duis aute irure dolor in reprehenderit.</p>
-							<p>Thanks!</p>
-						</td>
-					</tr>
+              <tr>
+                <td class="author">
+                  <div class="author-thumb">
+                    <img src="/assets/img/avatar2.jpg" alt="author">
+                  </div>
+                  <div class="author-content">
+                    <a [routerLink]="['/profile',post.user]" class="h6 author-name">{{post.user}}</a>
+                    <div class="country">Long Island, NY</div>
+                  </div>
+                </td>
+                <td class="posts">
+                  <p>{{post.text}}</p>
+                </td>
+              </tr>
+            </ng-container>
 
-					<tr>
+
+            <!-- <tr>
 						<td class="topic-date" colspan="2">
 							March 24th, 2016 at 8:05 pm
 							<a href="#" class="reply-topic">Reply</a>
@@ -163,101 +164,68 @@
 							<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
 							<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
 						</td>
-					</tr>
+					</tr> -->
 
+            <tr>
+              <td class="topic-date" colspan="2">
+                <form class="comment-form inline-items">
 
-					</tbody>
-				</table>
-			</div>
+                  <div class="post__author author vcard inline-items">
+                    <img src="/assets/img/author-page.jpg" alt="author">
 
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center">
-					<li class="page-item disabled">
-						<a class="page-link" href="#" tabindex="-1">Previous</a>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">...</a></li>
-					<li class="page-item"><a class="page-link" href="#">12</a></li>
-					<li class="page-item">
-						<a class="page-link" href="#">Next</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+                    <div class="form-group with-icon-right ">
+                      <textarea class="form-control" #post (keyup.enter)="submitPost(post.value);post.value=null" placeholder="Enter your post..."></textarea>
+                      <div class="add-options-message">
+                        <a (click)="submitPost(post.value);post.value=null" class="options-message">
+                          <svg class="olymp-play-icon">
+                            <use xlink:href="/assets/icons/icons.svg#olymp-play-icon"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
 
-		<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Featured Topics</h6>
-				</div>
-				<div class="ui-block-content">
-					<ul class="widget w-featured-topics">
-						<li>
-							<i class="icon fa fa-star" aria-hidden="true"></i>
-							<div class="content">
-								<a href="#" class="h6 title">The new Goddess of War trailer was launched at E3!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">2 hours, 16 minutes ago</time>
-							</div>
-						</li>
-						<li>
-							<i class="icon fa fa-star" aria-hidden="true"></i>
-							<div class="content">
-								<a href="#" class="h6 title">This year’s ComixCon will have the best presentations</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">14 hours, 36 minutes ago</time>
-							</div>
-						</li>
-						<li>
-							<i class="icon fa fa-star" aria-hidden="true"></i>
-							<div class="content">
-								<a href="#" class="h6 title">Here are the behind-the-scenes photos of “Vilords”</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">9 hours, 8 minutes ago</time>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
+                </form>
+              </td>
+            </tr>
 
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Recent Topics</h6>
-				</div>
-				<div class="ui-block-content">
-					<ul class="widget w-featured-topics">
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Summer is Coming! Picnic in the east boulevard park</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">26 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Kung Fighters released a new video, check it out here!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">44 minutes ago</time>
-								<div class="forums">The Boombox</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">What’s your favourite season?</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">59 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Who had the best presentation at this year’s E3? Rate them!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">1 hour, 3 minutes ago</time>
-								<div class="forums">Arcade Planet</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
+          </tbody>
+        </table>
+      </div>
 
-		</div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">...</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">12</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-	</div>
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
+      <app-circle-featured-topics></app-circle-featured-topics>
+
+      <app-circle-recent-topics></app-circle-recent-topics>
+
+    </div>
+
+  </div>
 </div>

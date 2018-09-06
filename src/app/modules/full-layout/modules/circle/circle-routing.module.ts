@@ -7,39 +7,54 @@ import { CircleCategoriesComponent } from './pages/circle-categories/circle-cate
 import { CircleOpenCircleComponent } from './pages/circle-open-circle/circle-open-circle.page';
 import { CircleOpenTopicComponent } from './pages/circle-open-topic/circle-open-topic.page';
 import { CircleCreateTopicComponent } from './pages/circle-create-topic/circle-create-topic.page';
+import { CircleCreateCircleComponent } from './pages/circle-create-circle/circle-create-circle.page';
 
 const routes: Routes = [
-	{
-	    path: '',
-	    component: CircleComponent,
-	    children: [
-	    	{
-	    		path: '',
-	    		component: CirclesComponent
-			},
-			{
-	    		path: 'categories',
-	    		component: CircleCategoriesComponent
-			},
-			{
-	    		path: 'circle',
-	    		component: CircleOpenCircleComponent
-			},
-			{
-				path: 'topic',
-				children: [
-					{
-						path: '',
-	    				component: CircleOpenTopicComponent
-					},
-					{
-						path: 'create',
-	    				component: CircleCreateTopicComponent
-					}
-				]
-			},
-	    ],
-	}
+  {
+    path: '',
+    component: CircleComponent,
+    children: [
+      {
+        path: '',
+        component: CirclesComponent
+      },
+      {
+        path: 'categories',
+        component: CircleCategoriesComponent
+      },
+      {
+        path: 'circle',
+        children: [
+          {
+            path: ':id',
+            children: [
+              {
+                path: '',
+                component: CircleOpenCircleComponent
+              },
+              {
+                path: 'topic',
+                children: [
+                  {
+                    path: ':topicId',
+                    component: CircleOpenTopicComponent
+                  },
+                  {
+                    path: 'create',
+                    component: CircleCreateTopicComponent
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            path: 'create',
+            component: CircleCreateCircleComponent
+          }
+        ]
+      }
+    ],
+  }
 ];
 
 @NgModule({

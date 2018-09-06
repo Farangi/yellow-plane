@@ -141,9 +141,9 @@ module.exports = ""
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../../../shared/services/user.service */ "./src/app/shared/services/user.service.ts");
-/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
-/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
+/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../shared/services/user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_services_profile_educationsAndEmployments_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../shared/services/profile/educationsAndEmployments.service */ "./src/app/shared/services/profile/educationsAndEmployments.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -252,9 +252,9 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FriendsComponent", function() { return FriendsComponent; });
-/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../shared/services/user.service */ "./src/app/shared/services/user.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/@angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -302,7 +302,7 @@ var FriendsComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./friends.page.scss */ "./src/app/modules/full-layout/modules/profile/pages/friends/friends.page.scss")]
         }),
         __metadata("design:paramtypes", [_shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"],
-            _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], FriendsComponent);
     return FriendsComponent;
 }());
@@ -343,13 +343,13 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhotosComponent", function() { return PhotosComponent; });
-/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/user.service */ "./src/app/shared/services/user.service.ts");
-/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
+/* harmony import */ var _shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../shared/services/user.service */ "./src/app/shared/services/user.service.ts");
+/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../shared/services/scroll.service */ "./src/app/shared/services/scroll.service.ts");
 /* harmony import */ var ngx_file_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-file-helpers */ "./node_modules/ngx-file-helpers/esm5/ngx-file-helpers.js");
-/* harmony import */ var _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../../node_modules/@angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -717,7 +717,7 @@ var PhotosComponent = /** @class */ (function () {
             _shared_services_scroll_service__WEBPACK_IMPORTED_MODULE_4__["ScrollService"],
             _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_1__["PhotoService"],
             _shared_services_user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"],
-            _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]])
     ], PhotosComponent);
     return PhotosComponent;
 }());
@@ -832,12 +832,12 @@ module.exports = ""
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimelineComponent", function() { return TimelineComponent; });
-/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
-/* harmony import */ var _shared_services_posts_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../../../shared/services/posts.service */ "./src/app/shared/services/posts.service.ts");
+/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
+/* harmony import */ var _shared_services_posts_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../shared/services/posts.service */ "./src/app/shared/services/posts.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
-/* harmony import */ var src_app_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
-/* harmony import */ var _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../../node_modules/@angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -941,11 +941,11 @@ var TimelineComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./timeline.page.scss */ "./src/app/modules/full-layout/modules/profile/pages/timeline/timeline.page.scss")]
         }),
         __metadata("design:paramtypes", [_shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_3__["HobbiesAndInterestsService"],
-            src_app_shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_4__["PersonalInfoService"],
-            _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
+            _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_4__["PersonalInfoService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
             _shared_services_posts_service__WEBPACK_IMPORTED_MODULE_1__["PostService"],
             _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_0__["PhotoService"],
-            _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], TimelineComponent);
     return TimelineComponent;
 }());
@@ -1112,9 +1112,9 @@ var ProfileRoutingModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileModule", function() { return ProfileModule; });
-/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
-/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
-/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
+/* harmony import */ var _shared_services_profile_hobbiesAndInterests_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../shared/services/profile/hobbiesAndInterests.service */ "./src/app/shared/services/profile/hobbiesAndInterests.service.ts");
+/* harmony import */ var _shared_services_photos_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../shared/services/photos.service */ "./src/app/shared/services/photos.service.ts");
+/* harmony import */ var _shared_services_profile_personalInfo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../shared/services/profile/personalInfo.service */ "./src/app/shared/services/profile/personalInfo.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/index.js");

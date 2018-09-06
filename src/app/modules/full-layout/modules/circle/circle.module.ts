@@ -17,6 +17,10 @@ import { CircleCategoriesComponent } from './pages/circle-categories/circle-cate
 import { CircleOpenCircleComponent } from './pages/circle-open-circle/circle-open-circle.page';
 import { CircleOpenTopicComponent } from './pages/circle-open-topic/circle-open-topic.page';
 import { CircleCreateTopicComponent } from './pages/circle-create-topic/circle-create-topic.page';
+import { CircleCreateCircleComponent } from './pages/circle-create-circle/circle-create-circle.page';
+import { CircleFeaturedTopicsComponent } from './components/circle-featured-topics/circle-featured-topics.component';
+import { CircleRecentTopicsComponent } from './components/circle-recent-topics/circle-recent-topics.component';
+import { CircleService } from '../../../../shared/services/circles.service';
 
 @NgModule({
   imports: [
@@ -26,16 +30,22 @@ import { CircleCreateTopicComponent } from './pages/circle-create-topic/circle-c
     CircleRoutingModule
   ],
   declarations: [
-    CircleHeaderComponent, 
-    // AccountSidebarComponent, 
-    // AccountHeaderPageComponent, 
-    // AccountSidebarPageComponent, 
-    CircleComponent, 
+    CircleHeaderComponent,
+    CircleFeaturedTopicsComponent,
+    CircleRecentTopicsComponent,
+    // AccountSidebarComponent,
+    // AccountHeaderPageComponent,
+    // AccountSidebarPageComponent,
+    CircleComponent,
     CirclesComponent,
     CircleCategoriesComponent,
     CircleOpenCircleComponent,
     CircleOpenTopicComponent,
-    CircleCreateTopicComponent
-  ]
+    CircleCreateTopicComponent,
+    CircleCreateCircleComponent,
+    CircleFeaturedTopicsComponent,
+    CircleRecentTopicsComponent
+  ],
+  providers:[CircleService]
 })
 export class CircleModule { }

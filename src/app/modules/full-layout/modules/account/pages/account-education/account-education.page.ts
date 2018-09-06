@@ -1,4 +1,4 @@
-import { EducationsAndEmploymentsService } from './../../../../../../shared/services/profile/educationsAndEmployments.service';
+import { EducationsAndEmploymentsService } from '../../../../../../shared/services/profile/educationsAndEmployments.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

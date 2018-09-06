@@ -1,5 +1,5 @@
-import { PhotoService } from "./../../../../../../shared/services/photos.service";
-import { PostService } from "./../../../../../../shared/services/posts.service";
+import { PhotoService } from "../../../../../../shared/services/photos.service";
+import { PostService } from "../../../../../../shared/services/posts.service";
 import { Component, OnInit } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ReadFile } from "ngx-file-helpers";

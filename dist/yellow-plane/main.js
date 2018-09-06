@@ -717,8 +717,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/toPromise */ "./node_modules/rxjs-compat/_esm5/add/operator/toPromise.js");
 /* harmony import */ var rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_add_operator_toPromise__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_4__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -757,7 +757,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doRegister = function (value) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
+            firebase__WEBPACK_IMPORTED_MODULE_4__["auth"]().createUserWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 _this.userService.registerCurrentUser(value)
                     .then(function () {
@@ -772,7 +772,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.doLogin = function (value) {
         return new Promise(function (resolve, reject) {
-            firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().signInWithEmailAndPassword(value.email, value.password)
+            firebase__WEBPACK_IMPORTED_MODULE_4__["auth"]().signInWithEmailAndPassword(value.email, value.password)
                 .then(function (res) {
                 resolve(res);
             }, function (err) { return reject(err); });
@@ -781,7 +781,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.doLogout = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            if (firebase_app__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser) {
+            if (firebase__WEBPACK_IMPORTED_MODULE_4__["auth"]().currentUser) {
                 _this.afAuth.auth.signOut();
                 resolve();
             }
@@ -864,8 +864,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_5__);
 var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -898,7 +898,7 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getCurrentUser = function () {
         return new Promise(function (resolve, reject) {
             // tslint:disable-next-line:no-shadowed-variable
-            firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"]().onAuthStateChanged(function (user) {
+            firebase__WEBPACK_IMPORTED_MODULE_5__["auth"]().onAuthStateChanged(function (user) {
                 if (user) {
                     resolve(user);
                 }
@@ -931,16 +931,6 @@ var UserService = /** @class */ (function () {
         });
     };
     UserService.prototype.combinerTestingFunc = function (checker, checkee) {
-        // const senderRef = this.db.collection("relations", ref =>
-        // ref.where("sender", "==", checker).where("reciever","==",checkee));
-        // const recieverRef = this.db.collection("relations", ref =>
-        // ref.where("sender", "==", checkee).where("reciever","==",checker));
-        // return combineLatest(
-        //   senderRef.valueChanges(),
-        //   recieverRef.valueChanges(),
-        //   (senderRelations, recieverRelations) => {
-        //     return senderRelations.concat(recieverRelations);
-        //   });
     };
     UserService.prototype.getFriendRequests = function (username) {
         return this.db
@@ -1058,7 +1048,7 @@ var UserService = /** @class */ (function () {
     UserService.prototype.registerCurrentUser = function (formData) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            var user = firebase_app__WEBPACK_IMPORTED_MODULE_5__["auth"]().currentUser;
+            var user = firebase__WEBPACK_IMPORTED_MODULE_5__["auth"]().currentUser;
             var data = {
                 fname: formData.firstName,
                 lname: formData.lastName,

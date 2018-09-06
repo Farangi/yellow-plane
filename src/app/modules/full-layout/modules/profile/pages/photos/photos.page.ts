@@ -1,10 +1,10 @@
-import { UserService } from "./../../../../../../shared/services/user.service";
-import { PhotoService } from "./../../../../../../shared/services/photos.service";
+import { UserService } from "../../../../../../shared/services/user.service";
+import { PhotoService } from "../../../../../../shared/services/photos.service";
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ScrollService } from "../../../../../../shared/services/scroll.service";
 import { FilePickerDirective, ReadFile } from "ngx-file-helpers";
-import { ActivatedRoute } from "../../../../../../../../node_modules/@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-photos",

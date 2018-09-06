@@ -1,9 +1,9 @@
-import { PhotoService } from './../../../../../../shared/services/photos.service';
-import { PostService } from './../../../../../../shared/services/posts.service';
+import { PhotoService } from '../../../../../../shared/services/photos.service';
+import { PostService } from '../../../../../../shared/services/posts.service';
 import { Component, OnInit } from '@angular/core';
 import { HobbiesAndInterestsService } from '../../../../../../shared/services/profile/hobbiesAndInterests.service';
-import { PersonalInfoService } from 'src/app/shared/services/profile/personalInfo.service';
-import { ActivatedRoute, Router } from '../../../../../../../../node_modules/@angular/router';
+import { PersonalInfoService } from '../../../../../../shared/services/profile/personalInfo.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-timeline',

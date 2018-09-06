@@ -1,4 +1,4 @@
-import { PhotoService } from './../../../../shared/services/photos.service';
+import { PhotoService } from '../../../../shared/services/photos.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

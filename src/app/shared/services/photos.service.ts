@@ -11,7 +11,7 @@ import {
 } from "angularfire2/storage";
 import { resolve } from "path";
 import { reject } from "q";
-import { Observable } from "../../../../node_modules/@firebase/util";
+import { Observable } from "@firebase/util";
 
 @Injectable()
 export class PhotoService {

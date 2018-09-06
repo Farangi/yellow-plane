@@ -1,6 +1,6 @@
-import { UserService } from './../../../../../../shared/services/user.service';
+import { UserService } from '../../../../../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '../../../../../../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-friends',

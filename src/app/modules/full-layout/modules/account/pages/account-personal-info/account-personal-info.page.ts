@@ -1,4 +1,4 @@
-import { PersonalInfoService } from './../../../../../../shared/services/profile/personalInfo.service';
+import { PersonalInfoService } from '../../../../../../shared/services/profile/personalInfo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
