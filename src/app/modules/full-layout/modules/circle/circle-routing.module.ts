@@ -26,6 +26,10 @@ const routes: Routes = [
         path: 'circle',
         children: [
           {
+            path: 'create',
+            component: CircleCreateCircleComponent
+          },
+          {
             path: ':id',
             children: [
               {
@@ -36,20 +40,16 @@ const routes: Routes = [
                 path: 'topic',
                 children: [
                   {
-                    path: ':topicId',
-                    component: CircleOpenTopicComponent
-                  },
-                  {
                     path: 'create',
                     component: CircleCreateTopicComponent
+                  },
+                  {
+                    path: ':topicId',
+                    component: CircleOpenTopicComponent
                   }
                 ]
               }
             ]
-          },
-          {
-            path: 'create',
-            component: CircleCreateCircleComponent
           }
         ]
       }
